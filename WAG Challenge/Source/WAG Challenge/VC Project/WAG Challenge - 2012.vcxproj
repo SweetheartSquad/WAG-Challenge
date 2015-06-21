@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Character.cpp" />
     <ClCompile Include="..\src\DialogueDisplay.cpp" />
     <ClCompile Include="..\src\DialogueSay.cpp" />
     <ClCompile Include="..\src\PD_Button.cpp" />
@@ -19,19 +18,14 @@
     <ClCompile Include="..\src\Main.cpp" />
     <ClCompile Include="..\src\PD_Game.cpp" />
     <ClCompile Include="..\src\PD_TestScene.cpp" />
-    <ClCompile Include="..\src\Room.cpp" />
-    <ClCompile Include="..\src\RoomLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\Character.h" />
     <ClInclude Include="..\include\DialogueDisplay.h" />
     <ClInclude Include="..\include\DialogueSay.h" />
     <ClInclude Include="..\include\PD_Button.h" />
     <ClInclude Include="..\include\PD_ResourceManager.h" />
     <ClInclude Include="..\include\PD_Game.h" />
     <ClInclude Include="..\include\PD_TestScene.h" />
-    <ClInclude Include="..\include\Room.h" />
-    <ClInclude Include="..\include\RoomLayout.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96FE28A2-BB06-4424-ADED-0DEDAEAF84B5}</ProjectGuid>

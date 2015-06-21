@@ -40,11 +40,6 @@ class PD_TestScene : public Scene{
 public:
 	ComponentShaderBase * shader;
 	ComponentShaderText * textShader;
-	ShaderComponentHsv * hsvComponent;
-	MousePerspectiveCamera * mouseCam;
-	MousePerspectiveCamera * debugCam;
-	FollowCamera * gameCam;
-	glm::vec3 lastPos;
 
 	Font  * font;
 
@@ -56,7 +51,6 @@ public:
 	float sceneHeight;
 	float sceneWidth;
 
-	bool firstPerson;
 	JoystickManager * joy;
 
 	virtual void update(Step * _step) override;
@@ -65,23 +59,9 @@ public:
 	virtual void load() override;
 	virtual void unload() override;
 
-	std::vector<MeshEntity *> audioVisualizer;
-
 	UILayer uiLayer;
-	Sprite * crosshair;
-	Sprite * playerIndicator;
 	Sprite * mouseIndicator;
-	Sprite * volumeIndicator;
-
-	TextArea * textArea;
 
 	PD_TestScene(Game * _game);
 	~PD_TestScene();
-
-	BulletWorld * bulletWorld;
-	BulletDebugDrawer * debugDrawer;
-
-	BulletMeshEntity * addThing();
-
-	BulletRagdoll * ragdoll;
 };
