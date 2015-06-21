@@ -4,8 +4,9 @@
 #include <json\json.h>
 
 #include <functional>
+#include <NodeContent.h>
 
-class Trigger abstract : public Node{
+class Trigger abstract : public NodeContent{
 public:
 	static Trigger * getTrigger(Json::Value _json);
 	
@@ -21,7 +22,7 @@ public:
 	virtual void trigger() override;
 };
 
-class DialogueSay : public Node{
+class DialogueSay : public NodeContent{
 public:
 	std::string speaker;
 	std::string portrait;

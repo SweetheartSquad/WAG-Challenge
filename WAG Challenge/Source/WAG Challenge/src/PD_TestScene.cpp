@@ -70,6 +70,7 @@
 #include <shader\ComponentShaderText.h>
 #include <DialogueDisplay.h>
 #include <HorizontalLinearLayout.h>
+#include <JsonPlaythroughParser.h>
 
 // Retrieves a JSON value from an HTTP request.
 pplx::task<void> RequestJSONValueAsync(Label * _label){
@@ -133,6 +134,9 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	joy(new JoystickManager()),
 	uiLayer(this, 0,0,0,0)
 {
+
+	JsonPlaythroughParser * parser = new JsonPlaythroughParser("../assets/test_convo.json");
+
 	shader->addComponent(new ShaderComponentTexture(shader));
 	shader->compileShader();
 
@@ -158,10 +162,10 @@ PD_TestScene::PD_TestScene(Game * _game) :
 		"{\"text\": \"option 1\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose one\" } ] },"
 		"{\"text\": \"option 2\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose two\" } ] } ] }";
 
-	dd->stuffToSay.push_back(new DialogueSay(test));
-	dd->stuffToSay.push_back(new DialogueSay(test2));
-	dd->stuffToSay.push_back(new DialogueAsk(test4));
-	dd->stuffToSay.push_back(new DialogueSay(test3));
+	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(0));
+	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(1));
+	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(2));
+	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(3));
 	Step step;
 	dd->update(&step);
 	//dd->sayNext();
