@@ -15,7 +15,8 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	font(_font),
 	textShader(_textShader),
 	NodeUI(_world, _scene),
-	NodeBulletBody(_world)
+	NodeBulletBody(_world),
+	optionClicked(false)
 {
 	setWidth(_width);
 	setHeight(_height);
@@ -115,10 +116,7 @@ bool DialogueDisplay::sayNext(){
 						t->trigger();
 					}
 					this->waitingForInput = false;
-					for(unsigned long int j = 0; j < this->options.size(); ++j){
-						this->optionslayout->removeChild(this->options.at(j));
-					}
-					this->sayNext();
+					this->optionClicked = true;
 				};
 			}
 		}
@@ -136,6 +134,16 @@ bool DialogueDisplay::sayNext(){
 }
 
 void DialogueDisplay::update(Step * _step){
+	if(optionClicked){
+		while(options.size() > 0){
+			optionslayout->removeChild(options.back());
+			delete options.back();
+			options.pop_back();
+		}
+		optionClicked = false;
+		sayNext();
+	}
+
 	NodeUI::update(_step);
 	timeout->update(_step);
 }

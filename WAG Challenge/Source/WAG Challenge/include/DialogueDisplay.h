@@ -9,6 +9,7 @@
 
 class DialogueDisplay : public NodeUI{
 public:
+	bool optionClicked;
 	std::vector<DialogueSay *> stuffToSay;
 	unsigned long int currentDialogue;
 
