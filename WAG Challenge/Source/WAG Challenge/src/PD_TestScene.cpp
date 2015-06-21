@@ -160,7 +160,8 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	std::string test3 = "{ \"speaker\":\"this is an extra long name to see if it wraps or not\", \"portrait\":\"not implemented\", \"text\": [\"this text is also pretty long so that we can test out the text-wrapping stuff.\"] }";
 	std::string test4 = "{ \"speaker\":\"cheryl\", \"portrait\":\"cheryl\", \"text\": [\"question???\"], \"options\": ["
 		"{\"text\": \"option 1\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose one\" } ] },"
-		"{\"text\": \"option 2\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose two\" } ] } ] }";
+		//"{\"text\": \"option 2\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose two\" } ] },"
+		"{\"text\": \"option 3\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose three\" } ] } ] }";
 
 	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(0));
 	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(1));
@@ -176,7 +177,7 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	mouseIndicator = new Sprite();
 	uiLayer.childTransform->addChild(mouseIndicator);
 	mouseIndicator->mesh->pushTexture2D(PD_ResourceManager::cursor);
-	mouseIndicator->parents.at(0)->scale(32 * 10, 32 * 10, 1);
+	mouseIndicator->parents.at(0)->scale(32, 32, 1);
 	mouseIndicator->mesh->scaleModeMag = GL_NEAREST;
 	mouseIndicator->mesh->scaleModeMin = GL_NEAREST;
 
