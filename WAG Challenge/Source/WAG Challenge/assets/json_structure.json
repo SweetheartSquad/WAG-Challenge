@@ -10,6 +10,7 @@
   ],
   "conversations": [
     {
+      "id":"WAG_CONVO_1",
       "dialogue": [
         {
           "speaker": "cheryl",
@@ -50,6 +51,10 @@
                   "target": "WAG_FOX",
                   "variable": "CHOICE_1",
                   "value": "1"
+                },
+                {
+                  "type": "setConversation",
+                  "conversation": "WAG_CONVO_2"
                 }
               ]
             },
@@ -61,6 +66,10 @@
                   "target": "WAG_FOX",
                   "variable": "CHOICE_1",
                   "value": "2"
+                },
+                {
+                  "type": "setConversation",
+                  "conversation": "WAG_CONVO_2"
                 }
               ]
             }
@@ -70,6 +79,7 @@
     },
 
     {
+      "id":"WAG_CONVO_2",
       "dialogue": [
         {
           "speaker": "cheryl",
@@ -131,6 +141,7 @@
           "portrait": "cheryl",
           "conditions": [
             {
+              "type": "equality",
               "target": "WAG_FOX",
               "variable": "CHOICE_1",
               "value": "1"
@@ -145,6 +156,7 @@
           "portrait": "cheryl",
           "conditions": [
             {
+              "type": "equality",
               "target": "WAG_FOX",
               "variable": "CHOICE_1",
               "value": "2"
@@ -159,6 +171,7 @@
           "portrait": "cheryl",
           "conditions": [
             {
+              "type": "equality",
               "target": "WAG_FOX",
               "variable": "CHOICE_2",
               "value": "1"
@@ -173,6 +186,7 @@
           "portrait": "cheryl",
           "conditions": [
             {
+              "type": "equality",
               "target": "WAG_FOX",
               "variable": "CHOICE_2",
               "value": "2"

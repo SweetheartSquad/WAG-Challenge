@@ -32,21 +32,8 @@ JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) {
 
 		 Json::Value conversationsJson = root["conversations"];
 		 for(auto i = 0; i < conversationsJson.size(); ++i) {
-			
-			Json::Value convoJson = conversationsJson[i];
-			Json::Value convoDialogueJson = convoJson["dialogue"];
-			
-			Conversation * convo = new Conversation();
-			
-			for(auto j = 0; j < convoDialogueJson.size(); ++j) {
-				Json::Value sayAction = convoDialogueJson[j];
-				if(sayAction.isMember("options")) {
-					convo->dialogueObjects.push_back(new DialogueAsk(sayAction));
-				}else {
-					convo->dialogueObjects.push_back(new DialogueSay(sayAction));
-				}
-			}
-			conversations.push_back(convo);
+			 Conversation * c = new Conversation(conversationsJson[i]);
+			 conversations[c->id] = c;
 		 }
 	}
 }

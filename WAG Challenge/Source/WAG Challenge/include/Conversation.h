@@ -5,7 +5,7 @@
 
 class Conversation : public NodeContent{
 public:
-
+	std::string id;
 	std::vector<DialogueSay *> dialogueObjects;
-	Conversation();
+	Conversation(Json::Value _json);
 };

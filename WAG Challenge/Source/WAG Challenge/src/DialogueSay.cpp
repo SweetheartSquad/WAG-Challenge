@@ -92,6 +92,8 @@ Trigger * Trigger::getTrigger(Json::Value _json){
 	// create a different type of Trigger depending on the value of type
 	if(type == "setVar"){
 		res = new TriggerSetVar(_json);
+	}else if(type == "setConversation"){
+		res = new TriggerSetConversation(_json);
 	}else{
 		throw "invalid trigger type";
 	}
@@ -109,9 +111,19 @@ void TriggerSetVar::trigger(){
 	WAG_ResourceManager::playthrough->characters.at(target)->variables.at(variable) = newValue;
 }
 
+TriggerSetConversation::TriggerSetConversation(Json::Value _json) :
+	newConversation(_json.get("conversation", "NO_NEW_CONVERSATION").asString())
+{
+}
+
+void TriggerSetConversation::trigger(){
+	// somehow switch to a new convo
+	std::cout << "should switch to conversation: " << newConversation << std::endl;
+}
+
 Condition * Condition::getCondition(Json::Value _json){
 	Condition * res = nullptr;
-	std::string type = _json.get("type", "equality").asString();
+	std::string type = _json.get("type", "NO_TYPE").asString();
 	// create a different type of Trigger depending on the value of type
 	if(type == "equality"){
 		res = new ConditionEquality(_json);

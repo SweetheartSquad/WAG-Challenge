@@ -20,7 +20,7 @@ class JsonPlaythroughParser : public NodeContent{
 public:	
 
 	Json::Value root;
-	std::vector<Conversation *> conversations; // this should probably be a map too, I'm guessing we'll give conversations IDs
+	std::map<std::string, Conversation *> conversations;
 	std::map<std::string, Character *> characters;
 
 	JsonPlaythroughParser(std::string _jsonSrc);

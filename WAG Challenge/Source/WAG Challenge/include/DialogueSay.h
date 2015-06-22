@@ -23,6 +23,14 @@ public:
 	virtual void trigger() override;
 };
 
+class TriggerSetConversation : public Trigger{
+public:
+	std::string newConversation;
+
+	TriggerSetConversation(Json::Value _json);
+	virtual void trigger() override;
+};
+
 class Condition abstract: public NodeContent{
 public:
 	static Condition * getCondition(Json::Value _json);
