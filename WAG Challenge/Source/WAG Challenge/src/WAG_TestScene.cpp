@@ -135,7 +135,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	uiLayer(this, 0,0,0,0)
 {
 
-	JsonPlaythroughParser * parser = new JsonPlaythroughParser("../assets/test_convo.json");
+	JsonPlaythroughParser * parser = new JsonPlaythroughParser("../assets/json_structure.json");
 
 	shader->addComponent(new ShaderComponentTexture(shader));
 	shader->compileShader();

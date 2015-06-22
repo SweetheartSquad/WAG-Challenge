@@ -1,15 +1,27 @@
 #pragma once
 
+#include <NodeContent.h>
+#include <node/NodeResource.h>
 #include <json/json.h>
-#include <vector>
+
 #include <Conversation.h>
 
-class JsonPlaythroughParser {
+#include <vector>
+#include <map>
+
+class Character : public NodeContent{
+public:
+	Character(Json::Value _json);
+	std::string id;
+	std::map<std::string, std::string> variables;
+};
+
+class JsonPlaythroughParser : public NodeContent{
 public:	
 
 	Json::Value root;
-	std::vector<Conversation *> conversations;
+	std::vector<Conversation *> conversations; // this should probably be a map too, I'm guessing we'll give conversations IDs
+	std::map<std::string, Character *> characters;
 
 	JsonPlaythroughParser(std::string _jsonSrc);
-
 };

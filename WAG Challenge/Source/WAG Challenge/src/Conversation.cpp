@@ -2,7 +2,5 @@
 
 #include <Conversation.h>
 
-Conversation::Conversation() :
-	NodeContent()
-{
+Conversation::Conversation(){
 }

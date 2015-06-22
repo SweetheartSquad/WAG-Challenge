@@ -2,7 +2,7 @@
 
 #include <node/Node.h>
 
-class NodeContent : public virtual Node {
+class NodeContent abstract : public virtual Node {
 public:
 	NodeContent();
 };

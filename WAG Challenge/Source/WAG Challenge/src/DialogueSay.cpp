@@ -85,20 +85,17 @@ Trigger * Trigger::getTrigger(Json::Value _json){
 	std::string type = _json.get("type", "NO_TYPE").asString();
 	// create a different type of Trigger depending on the value of type
 	if(type == "stateChange"){
-		res = new TriggerStateChange(_json);
+		res = new TriggerSetVar(_json);
 	}
 	return res;
 }
 
-TriggerStateChange::TriggerStateChange(Json::Value _json) :
+TriggerSetVar::TriggerSetVar(Json::Value _json) :
 	target(_json.get("target", "NO_TARGET").asString()),
-	newState(_json.get("newState", "NO_STATE").asString())
+	variable(_json.get("variable", "NO_TARGET").asString()),
+	newValue(_json.get("value", "NO_STATE").asString())
 {
 }
 
-void TriggerStateChange::trigger(){
-	// retrieve pointer to trigger's target
-	std::cout << "target: " << target << std::endl;
-	// update target's state with newState
-	std::cout << "newState: " << newState << std::endl;
+void TriggerSetVar::trigger(){
 }

@@ -2,6 +2,5 @@
 
 #include <NodeContent.h>
 
-NodeContent::NodeContent() : Node()
-{
+NodeContent::NodeContent(){
 }

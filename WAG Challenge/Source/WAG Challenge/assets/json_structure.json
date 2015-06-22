@@ -1,4 +1,13 @@
 {
+  "characters": [
+    {
+      "id": "WAG_FOX",
+      "variables": {
+        "CHOICE_1": null,
+        "CHOICE_2": null
+      }
+    }
+  ],
   "conversations": [
     {
       "dialogue": [
@@ -37,9 +46,10 @@
               "text": "option 1",
               "triggers": [
                 {
-                  "type": "stateChange",
-                  "target": "CHOICE",
-                  "newState": "you chose one"
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "CHOICE_2",
+                  "value": "1"
                 }
               ]
             },
@@ -47,9 +57,10 @@
               "text": "option 2",
               "triggers": [
                 {
-                  "type": "stateChange",
-                  "target": "CHOICE",
-                  "newState": "you chose two"
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "CHOICE_2",
+                  "value": "2"
                 }
               ]
             }
@@ -96,9 +107,9 @@
               "triggers": [
                 {
                   "type": "setVar",
-                  "target": "2",
-                  "variable" : "OPTION_2",
-                  "value" : "true"
+                  "target": "WAG_FOX",
+                  "variable": "CHOICE_2",
+                  "value": "1"
                 }
               ]
             },
@@ -107,9 +118,9 @@
               "triggers": [
                 {
                   "type": "setVar",
-                  "target": "2",
-                  "variable" : "OPTION_1",
-                  "value" : "true"
+                  "target": "WAG_FOX",
+                  "variable": "CHOICE_2",
+                  "value": "2"
                 }
               ]
             }
@@ -118,25 +129,25 @@
         {
           "speaker": "cheryl",
           "portrait": "cheryl",
-          "condition" : {
-            "target" : "2",
-            "variable" : "OPTION_1",
-            "value" : "true"
+          "condition": {
+            "target": "WAG_FOX",
+            "variable": "CHOICE_1",
+            "value": "1"
           },
           "text": [
-            "You chose one."
+            "You chose one for the first choice."
           ]
         },
         {
           "speaker": "cheryl",
           "portrait": "cheryl",
-          "condition" : {
-            "target" : "2",
-            "variable" : "OPTION_2",
-            "value" : "true"
+          "condition": {
+            "target": "WAG_FOX",
+            "variable": "CHOICE_2",
+            "value": "2"
           },
           "text": [
-            "You chose two."
+            "You chose two for the second choice."
           ]
         }
       ]

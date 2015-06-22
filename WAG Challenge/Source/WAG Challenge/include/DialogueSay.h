@@ -13,12 +13,13 @@ public:
 	virtual void trigger() = 0;
 };
 
-class TriggerStateChange : public Trigger{
+class TriggerSetVar : public Trigger{
 public:
 	std::string target;
-	std::string newState;
+	std::string variable;
+	std::string newValue;
 
-	TriggerStateChange(Json::Value _json);
+	TriggerSetVar(Json::Value _json);
 	virtual void trigger() override;
 };
 
