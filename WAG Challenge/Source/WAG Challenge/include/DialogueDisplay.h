@@ -9,6 +9,8 @@
 
 class DialogueDisplay : public NodeUI{
 public:
+	bool autoProgress;
+
 	bool shouldSayNext;
 	std::vector<DialogueSay *> stuffToSay;
 	unsigned long int currentDialogue;
@@ -16,13 +18,12 @@ public:
 	DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width, float _height);
 	~DialogueDisplay();
 	
-	LinearLayout * hlayout;
 	LinearLayout * vlayout;
 	LinearLayout * optionslayout;
 	NodeUI * portraitPanel;
 	TextArea * speaker;
 	TextArea * dialogue;
-	Timeout * timeout;
+	Timeout * autoProgressTimer;
 	
 	bool waitingForInput;
 	std::vector<PD_Button *> options;

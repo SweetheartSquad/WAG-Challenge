@@ -12,6 +12,8 @@ PD_Button::PD_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader 
 	NodeBulletBody(_world)
 {
 	mouseEnabled = true;
+	horizontalAlignment = kCENTER;
+	verticalAlignment = kMIDDLE;
 }
 
 void PD_Button::update(Step * _step){

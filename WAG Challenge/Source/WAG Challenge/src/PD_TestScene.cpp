@@ -144,15 +144,15 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	screenSurface->scaleModeMag = GL_NEAREST;
 	screenSurface->scaleModeMin = GL_NEAREST;
 
-	font = new Font("../assets/arial.ttf", 24, false);
+	font = new Font("../assets/fonts/Mathlete-Skinny.otf", 24, false);
 	
-	textShader->textComponent->setColor(glm::vec3(0.0f, 0.0f, 0.0f));
+	textShader->textComponent->setColor(glm::vec3(1.f, 1.f, 1.f));
 	
 	glm::uvec2 sd = vox::getScreenDimensions();
 	uiLayer.resize(0, sd.x, 0, sd.y);
 
 	srand(time(NULL));
-	DialogueDisplay * dd = new DialogueDisplay(uiLayer.world, this, font, textShader, 0.75f, 200);
+	DialogueDisplay * dd = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
 	uiLayer.addChild(dd);
 	//childTransform->addChild(dd);
 	std::string test = "{ \"speaker\":\"cheryl\", \"portrait\":\"cheryl\", \"text\": [\"This is a dialogue thing\", \"beep\", \"boop\", \"i am a robot\"] }";
@@ -169,7 +169,7 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(3));
 	Step step;
 	dd->update(&step);
-	//dd->sayNext();
+	dd->sayNext();
 	//dd->portraitPanel->mesh->pushTexture2D(PD_ResourceManager::cheryl);
 	//childTransform->addChild(dd);
 	//dd->parents.at(0)->translate(300, 300, 0);
@@ -203,9 +203,13 @@ PD_TestScene::~PD_TestScene(){
 
 
 void PD_TestScene::update(Step * _step){
+	PD_ResourceManager::stream->update(_step);
 	// handle inputs
 	joy->update(_step);
-
+	
+	if(keyboard->keyJustUp(GLFW_KEY_P)){	
+		PD_ResourceManager::stream->play(true);
+	}
 	if(keyboard->keyJustUp(GLFW_KEY_E)){	
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;
 		//RequestJSONValueAsync(label);

@@ -13,22 +13,22 @@
           ]
         },
         {
-          "speaker": "not cheryl",
+          "speaker": "this is an extra long name to see if it wraps or not",
           "portrait": "not implemented",
+          "text": [
+            "this text is also pretty long so that we can test out the text-wrapping stuff and I'm making it even longer now so that it isn't the same height as the button stuff."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "animals",
           "text": [
             "thanks cheryl"
           ]
         },
         {
-          "speaker": "this is an extra long name to see if it wraps or not",
-          "portrait": "not implemented",
-          "text": [
-            "this text is also pretty long so that we can test out the text-wrapping stuff."
-          ]
-        },
-        {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
+          "speaker": "Rabbit",
+          "portrait": "animals",
           "text": [
             "question???"
           ],

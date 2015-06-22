@@ -16,50 +16,66 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	textShader(_textShader),
 	NodeUI(_world, _scene),
 	NodeBulletBody(_world),
-	shouldSayNext(false)
+	shouldSayNext(false),
+	autoProgress(false)
 {
 	setWidth(_width);
 	setHeight(_height);
 	//setPadding(0.1f, 0);
 	//setMargin(0.1f, 0);
-
-
-	/*hlayout = new HorizontalLinearLayout(_world, _scene);
-	hlayout->setRationalWidth(1.f);
-	hlayout->setRationalHeight(1.f);*/
+	
 	vlayout = new VerticalLinearLayout(_world, _scene);
 	vlayout->setRationalWidth(1.f, this);
-	vlayout->setHeight(getHeight());
-	vlayout->setMarginLeft(getHeight()+vlayout->getMarginLeft());
+	vlayout->setRationalHeight(1.f, this);
 	vlayout->verticalAlignment = kTOP;
-	optionslayout = new VerticalLinearLayout(_world, _scene);
-	optionslayout->setRationalWidth(1.f);
-	optionslayout->verticalAlignment = kTOP;
-	
+	vlayout->setPadding(10);
+
 	portraitPanel = new NodeUI(_world, _scene);
-	portraitPanel->setHeight(getHeight());
-	portraitPanel->setWidth(getHeight());
-	
+	portraitPanel->setHeight(1.f);
+	portraitPanel->setWidth(1.f);
+
 	dialogue = new TextArea(_world, _scene, _font, _textShader, -1);
-	dialogue->setRationalWidth(1.f, vlayout);
+	dialogue->setRationalWidth(0.75f, vlayout);
+	dialogue->setRationalHeight(1.f, vlayout);
+	dialogue->verticalAlignment = kTOP;
 	speaker = new TextArea(_world, _scene, _font, _textShader, -1);
 	speaker->setRationalWidth(1.f, vlayout);
+	speaker->setMarginTop(0.80f);
 
 	
-	//addChild(hlayout);
-	//hlayout->addChild(portraitPanel);
-	//hlayout->addChild(vlayout);
+	PD_Button * progressButton = new PD_Button(world, scene, font, textShader, 1.f);
+	progressButton->setText(L"->");
+	progressButton->setRationalWidth(0.25f);
+	progressButton->setRationalHeight(1.f);
+	progressButton->onClickFunction = [this](NodeUI * _this) {
+		this->autoProgressTimer->trigger();
+	};
+
+	optionslayout = new VerticalLinearLayout(_world, _scene);
+	optionslayout->setRationalWidth(1.f);
+	optionslayout->setRationalHeight(1.f);
+	optionslayout->verticalAlignment = kTOP;
+	optionslayout->horizontalAlignment = kCENTER;
+	
+	HorizontalLinearLayout * hlayout = new HorizontalLinearLayout(_world, _scene);
+	hlayout->verticalAlignment = kTOP;
+	hlayout->setRationalHeight(1.f);
+	hlayout->setRationalWidth(1.f);
+	hlayout->addChild(dialogue);
+	hlayout->addChild(progressButton);
+
 	addChild(portraitPanel);
 	addChild(vlayout);
 	vlayout->addChild(speaker);
-	vlayout->addChild(dialogue);
-	vlayout->addChild(optionslayout);
+	vlayout->addChild(hlayout);
+	addChild(optionslayout);
 
-	timeout = new Timeout(2.f);
-	timeout->onCompleteFunction = [this](Timeout * _this) {
+	autoProgressTimer = new Timeout(2.f);
+	autoProgressTimer->onCompleteFunction = [this](Timeout * _this) {
 		this->shouldSayNext = true;
 	};
 
+	
 }
 
 DialogueDisplay::~DialogueDisplay(){
@@ -86,8 +102,8 @@ bool DialogueDisplay::sayNext(){
 	}
 	if(stuffToSay.at(currentDialogue)->portrait == "cheryl"){
 		portraitPanel->background->mesh->pushTexture2D(PD_ResourceManager::cheryl);
-	}else{
-
+	}else if(stuffToSay.at(currentDialogue)->portrait == "animals"){
+		portraitPanel->background->mesh->pushTexture2D(PD_ResourceManager::frameWithAnimals);
 	}
 
 	// move to the next text in the current dialogue object
@@ -125,7 +141,7 @@ bool DialogueDisplay::sayNext(){
 		}
 
 		if(!waitingForInput){
-			timeout->restart();
+			autoProgressTimer->restart();
 		}
 
 		return true;
@@ -147,6 +163,8 @@ void DialogueDisplay::update(Step * _step){
 		shouldSayNext = false;
 	}
 	
-	timeout->update(_step);
+	if(autoProgress){
+		autoProgressTimer->update(_step);
+	}
 	NodeUI::update(_step);
 }
