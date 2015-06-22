@@ -34,20 +34,27 @@ bool Conversation::sayNextDialogue(){
 	if(dialogueObjects.at(currentDialogue)->sayNextText()){
 		return true;
 	}
-	++currentDialogue;
-	
-	// if there aren't any dialogue objects left, the conversation is over so return false
-	if(currentDialogue >= dialogueObjects.size()){
-		return false;
-	}
-	// if any conditions are untrue for a given dialogue object, skip over it
-	for(Condition * c : dialogueObjects.at(currentDialogue)->conditions){
-		if(!c->evaluate()){
-			++currentDialogue;
-			return sayNextDialogue();
+
+
+	// go to next dialogue
+	// check that we still have something to say
+	// check if we are allowed to say the current selection
+	bool valid = false;
+	while(currentDialogue < dialogueObjects.size()-1 && !valid){
+		// if any conditions are untrue for a given dialogue object, skip over it
+		valid = true;
+		for(Condition * c : dialogueObjects.at(++currentDialogue)->conditions){
+			if(!c->evaluate()){
+				valid = false;
+				break;
+			}
 		}
 	}
-
-	// get the first text in the new dialogue object
-	return dialogueObjects.at(currentDialogue)->sayNextText();
+	if(valid){
+		// get the first text in the new dialogue object
+		return dialogueObjects.at(currentDialogue)->sayNextText();
+	}else{
+		// no valid dialogue objects were found past this one
+		return false;
+	}
 }
