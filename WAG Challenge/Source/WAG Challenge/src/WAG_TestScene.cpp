@@ -153,7 +153,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	uiLayer.addChild(dd);
 	//childTransform->addChild(dd);
 
-	dd->stuffToSay = WAG_ResourceManager::playthrough->conversations.at(0);
+	dd->stuffToSay = WAG_ResourceManager::playthrough->conversations.at(1);
 	Step step;
 	dd->update(&step);
 	dd->sayNext();

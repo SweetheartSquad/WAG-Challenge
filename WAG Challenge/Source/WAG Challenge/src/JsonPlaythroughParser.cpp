@@ -40,7 +40,6 @@ JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) {
 			
 			for(auto j = 0; j < convoDialogueJson.size(); ++j) {
 				Json::Value sayAction = convoDialogueJson[j];
-				DialogueSay * say = new DialogueSay();
 				if(sayAction.isMember("options")) {
 					convo->dialogueObjects.push_back(new DialogueAsk(sayAction));
 				}else {
