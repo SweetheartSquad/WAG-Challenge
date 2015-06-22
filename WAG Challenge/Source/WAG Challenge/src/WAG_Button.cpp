@@ -1,13 +1,13 @@
 #pragma once
 
-#include <PD_Button.h>
+#include <WAG_Button.h>
 #include <Font.h>
 #include <shader\ComponentShaderBase.h>
 #include <shader\ShaderComponentText.h>
 #include <shader/ShaderComponentTexture.h>
 #include <MeshFactory.h>
 
-PD_Button::PD_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width) :
+WAG_Button::WAG_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width) :
 	TextArea(_world, _scene, _font, _textShader, _width),
 	NodeBulletBody(_world)
 {
@@ -16,7 +16,7 @@ PD_Button::PD_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader 
 	verticalAlignment = kMIDDLE;
 }
 
-void PD_Button::update(Step * _step){
+void WAG_Button::update(Step * _step){
 	TextArea::update(_step);
 	if(isHovered){
 		if(isDown){

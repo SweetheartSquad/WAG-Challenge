@@ -1,8 +1,8 @@
 #pragma once
 
-#include <PD_TestScene.h>
-#include <PD_Game.h>
-#include <PD_ResourceManager.h>
+#include <WAG_TestScene.h>
+#include <WAG_Game.h>
+#include <WAG_ResourceManager.h>
 
 #include <MeshEntity.h>
 #include <MeshInterface.h>
@@ -50,7 +50,7 @@
 
 #include <BulletRagdoll.h>
 #include <NodeUI.h>
-#include <PD_Button.h>
+#include <WAG_Button.h>
 
 #include <OpenALSound.h>
 #include <sqlite\sqlite3.h>
@@ -121,7 +121,7 @@ void testSql(std::string _sql, bool _async){
 	}
 }
 
-PD_TestScene::PD_TestScene(Game * _game) :
+WAG_TestScene::WAG_TestScene(Game * _game) :
 	Scene(_game),
 	shader(new ComponentShaderBase(true)),
 	textShader(new ComponentShaderText(true)),
@@ -170,13 +170,13 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	Step step;
 	dd->update(&step);
 	dd->sayNext();
-	//dd->portraitPanel->mesh->pushTexture2D(PD_ResourceManager::cheryl);
+	//dd->portraitPanel->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
 	//childTransform->addChild(dd);
 	//dd->parents.at(0)->translate(300, 300, 0);
 
 	mouseIndicator = new Sprite();
 	uiLayer.childTransform->addChild(mouseIndicator);
-	mouseIndicator->mesh->pushTexture2D(PD_ResourceManager::cursor);
+	mouseIndicator->mesh->pushTexture2D(WAG_ResourceManager::cursor);
 	mouseIndicator->parents.at(0)->scale(32, 32, 1);
 	mouseIndicator->mesh->scaleModeMag = GL_NEAREST;
 	mouseIndicator->mesh->scaleModeMin = GL_NEAREST;
@@ -189,7 +189,7 @@ PD_TestScene::PD_TestScene(Game * _game) :
 	mouseIndicator->setShader(uiLayer.shader, true);
 }
 
-PD_TestScene::~PD_TestScene(){
+WAG_TestScene::~WAG_TestScene(){
 	deleteChildTransform();
 	shader->safeDelete();
 	//delete phongMat;
@@ -202,13 +202,13 @@ PD_TestScene::~PD_TestScene(){
 }
 
 
-void PD_TestScene::update(Step * _step){
-	PD_ResourceManager::stream->update(_step);
+void WAG_TestScene::update(Step * _step){
+	WAG_ResourceManager::stream->update(_step);
 	// handle inputs
 	joy->update(_step);
 	
 	if(keyboard->keyJustUp(GLFW_KEY_P)){	
-		PD_ResourceManager::stream->play(true);
+		WAG_ResourceManager::stream->play(true);
 	}
 	if(keyboard->keyJustUp(GLFW_KEY_E)){	
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;
@@ -245,12 +245,12 @@ void PD_TestScene::update(Step * _step){
 	mouseIndicator->parents.at(0)->translate(mouse->mouseX(), mouse->mouseY(), 0, false);
 }
 
-void PD_TestScene::render(vox::MatrixStack * _matrixStack, RenderOptions * _renderOptions){
+void WAG_TestScene::render(vox::MatrixStack * _matrixStack, RenderOptions * _renderOptions){
 	clear();
 	uiLayer.render(_matrixStack, _renderOptions);
 }
 
-void PD_TestScene::load(){
+void WAG_TestScene::load(){
 	Scene::load();	
 
 	screenSurface->load();
@@ -258,7 +258,7 @@ void PD_TestScene::load(){
 	uiLayer.load();
 }
 
-void PD_TestScene::unload(){
+void WAG_TestScene::unload(){
 	uiLayer.unload();
 	screenFBO->unload();
 	screenSurface->unload();

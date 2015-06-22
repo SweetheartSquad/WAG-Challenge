@@ -5,9 +5,9 @@
 #include <typeinfo>
 #include <Texture.h>
 #include <Game.h>
-#include <PD_ResourceManager.h>
+#include <WAG_ResourceManager.h>
 
-#include <PD_Game.h>
+#include <WAG_Game.h>
 
 // memory leak debugging
 #define _CRTDBG_MAP_ALLOC
@@ -21,9 +21,9 @@ int main(void){
 #endif
 
 	vox::initialize("Party, Darling? -super test build EX edition MAX transform: 3.0++ now with audible sound");
-	PD_ResourceManager::init();
-	PD_ResourceManager::load();
-	PD_Game * game = new PD_Game();
+	WAG_ResourceManager::init();
+	WAG_ResourceManager::load();
+	WAG_Game * game = new WAG_Game();
 
 	while (game->isRunning){
 		game->performGameLoop();
@@ -31,7 +31,7 @@ int main(void){
 	
 	delete game;
 	game = nullptr;
-	PD_ResourceManager::destruct();
+	WAG_ResourceManager::destruct();
 #ifdef _DEBUG
 	std::cout << "Final node count: " << Node::nodes.size() << std::endl;
 

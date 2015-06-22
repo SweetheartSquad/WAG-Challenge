@@ -16,11 +16,11 @@
     <ClCompile Include="..\src\DialogueSay.cpp" />
     <ClCompile Include="..\src\JsonPlaythroughParser.cpp" />
     <ClCompile Include="..\src\NodeContent.cpp" />
-    <ClCompile Include="..\src\PD_Button.cpp" />
-    <ClCompile Include="..\src\PD_ResourceManager.cpp" />
+    <ClCompile Include="..\src\WAG_Button.cpp" />
+    <ClCompile Include="..\src\WAG_ResourceManager.cpp" />
     <ClCompile Include="..\src\Main.cpp" />
-    <ClCompile Include="..\src\PD_Game.cpp" />
-    <ClCompile Include="..\src\PD_TestScene.cpp" />
+    <ClCompile Include="..\src\WAG_Game.cpp" />
+    <ClCompile Include="..\src\WAG_TestScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Conversation.h" />
@@ -28,10 +28,10 @@
     <ClInclude Include="..\include\DialogueSay.h" />
     <ClInclude Include="..\include\JsonPlaythroughParser.h" />
     <ClInclude Include="..\include\NodeContent.h" />
-    <ClInclude Include="..\include\PD_Button.h" />
-    <ClInclude Include="..\include\PD_ResourceManager.h" />
-    <ClInclude Include="..\include\PD_Game.h" />
-    <ClInclude Include="..\include\PD_TestScene.h" />
+    <ClInclude Include="..\include\WAG_Button.h" />
+    <ClInclude Include="..\include\WAG_ResourceManager.h" />
+    <ClInclude Include="..\include\WAG_Game.h" />
+    <ClInclude Include="..\include\WAG_TestScene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96FE28A2-BB06-4424-ADED-0DEDAEAF84B5}</ProjectGuid>

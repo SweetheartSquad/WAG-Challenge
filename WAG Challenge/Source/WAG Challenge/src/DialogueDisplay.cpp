@@ -5,7 +5,7 @@
 #include <shader\ShaderComponentTexture.h>
 #include <MeshInterface.h>
 #include <Font.h>
-#include <PD_ResourceManager.h>
+#include <WAG_ResourceManager.h>
 #include <VerticalLinearLayout.h>
 #include <HorizontalLinearLayout.h>
 
@@ -29,10 +29,14 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	vlayout->setRationalHeight(1.f, this);
 	vlayout->verticalAlignment = kTOP;
 	vlayout->setPadding(10);
-
+	
 	portraitPanel = new NodeUI(_world, _scene);
 	portraitPanel->setHeight(1.f);
 	portraitPanel->setWidth(1.f);
+	portraitPanelOverlay = new NodeUI(_world, _scene);
+	portraitPanelOverlay->setHeight(1.f);
+	portraitPanelOverlay->setWidth(1.f);
+	portraitPanelOverlay->setBackgroundColour(0,0,0,0);
 
 	dialogue = new TextArea(_world, _scene, _font, _textShader, -1);
 	dialogue->setRationalWidth(0.75f, vlayout);
@@ -43,7 +47,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	speaker->setMarginTop(0.80f);
 
 	
-	PD_Button * progressButton = new PD_Button(world, scene, font, textShader, 1.f);
+	WAG_Button * progressButton = new WAG_Button(world, scene, font, textShader, 1.f);
 	progressButton->setText(L"->");
 	progressButton->setRationalWidth(0.25f);
 	progressButton->setRationalHeight(1.f);
@@ -63,8 +67,9 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	hlayout->setRationalWidth(1.f);
 	hlayout->addChild(dialogue);
 	hlayout->addChild(progressButton);
-
+	
 	addChild(portraitPanel);
+	addChild(portraitPanelOverlay);
 	addChild(vlayout);
 	vlayout->addChild(speaker);
 	vlayout->addChild(hlayout);
@@ -75,11 +80,21 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 		this->shouldSayNext = true;
 	};
 
-	
+	fadeTimeout = new FadeTimeout(1.f, portraitPanelOverlay);
+	fadeTimeout->onCompleteFunction = [this](Timeout * _this){
+		while(portraitPanel->background->mesh->textures.size() > 0){
+			portraitPanel->background->mesh->popTexture2D();
+		}
+		while(portraitPanelOverlay->background->mesh->textures.size() > 0){
+			portraitPanel->background->mesh->pushTexture2D(portraitPanelOverlay->background->mesh->popTexture2D());
+		}
+		portraitPanelOverlay->setBackgroundColour(0,0,0,0);
+	};
 }
 
 DialogueDisplay::~DialogueDisplay(){
-
+	delete autoProgressTimer;
+	delete fadeTimeout;
 }
 
 bool DialogueDisplay::sayNext(){
@@ -97,15 +112,9 @@ bool DialogueDisplay::sayNext(){
 	// set the speaker and portrait
 	std::string sp = stuffToSay.at(currentDialogue)->speaker;
 	speaker->setText(std::wstring(sp.begin(), sp.end()));
-	while(portraitPanel->background->mesh->textures.size() > 0){
-		portraitPanel->background->mesh->popTexture2D();
-	}
-	if(stuffToSay.at(currentDialogue)->portrait == "cheryl"){
-		portraitPanel->background->mesh->pushTexture2D(PD_ResourceManager::cheryl);
-	}else if(stuffToSay.at(currentDialogue)->portrait == "animals"){
-		portraitPanel->background->mesh->pushTexture2D(PD_ResourceManager::frameWithAnimals);
-	}
 
+	loadPortrait(stuffToSay.at(currentDialogue)->portrait);
+	
 	// move to the next text in the current dialogue object
 	++stuffToSay.at(currentDialogue)->currentText;
 	// check if there's any text left to say in the current dialogue object
@@ -119,7 +128,7 @@ bool DialogueDisplay::sayNext(){
 			waitingForInput = true;
 			for(unsigned long int i = 0; i < ask->options.size(); ++i){
 				//dialogue->appendText(std::wstring(s.begin(), s.end()));
-				PD_Button * o = new PD_Button(world, scene, font, textShader, 1.f);
+				WAG_Button * o = new WAG_Button(world, scene, font, textShader, 1.f);
 				std::wstringstream ss;
 				ss << (i+1) << L". " << std::wstring(ask->options.at(i).begin(), ask->options.at(i).end());
 				o->setText(ss.str());
@@ -166,5 +175,37 @@ void DialogueDisplay::update(Step * _step){
 	if(autoProgress){
 		autoProgressTimer->update(_step);
 	}
+	fadeTimeout->update(_step);
 	NodeUI::update(_step);
+}
+
+void DialogueDisplay::loadPortrait(std::string _portrait){
+	if(!fadeTimeout->complete){
+		fadeTimeout->trigger();
+	}
+	while(portraitPanelOverlay->background->mesh->textures.size() > 0){
+		portraitPanelOverlay->background->mesh->popTexture2D();
+	}
+	if(stuffToSay.at(currentDialogue)->portrait == "cheryl"){
+		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
+	}else if(stuffToSay.at(currentDialogue)->portrait == "animals"){
+		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::frameWithAnimals);
+	}else{
+		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::frameWithAnimals);
+	}
+
+	fadeTimeout->restart();
+}
+
+FadeTimeout::FadeTimeout(float _targetSeconds, NodeUI * _target) :
+	Timeout(_targetSeconds),
+	target(_target)
+{
+}
+
+void FadeTimeout::update(Step * _step){
+	Timeout::update(_step);
+	if(!complete){
+		target->setBackgroundColour(0,0,0, Easing::easeInQuad(elapsedSeconds, 0, 1, targetSeconds));
+	}
 }

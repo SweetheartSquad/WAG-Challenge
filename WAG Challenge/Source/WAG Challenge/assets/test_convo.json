@@ -3,6 +3,13 @@
     {
       "dialogue": [
         {
+          "speaker": "Fox",
+          "portrait": "animals",
+          "text": [
+            "thanks cheryl"
+          ]
+        },
+        {
           "speaker": "cheryl",
           "portrait": "cheryl",
           "text": [
@@ -17,13 +24,6 @@
           "portrait": "not implemented",
           "text": [
             "this text is also pretty long so that we can test out the text-wrapping stuff and I'm making it even longer now so that it isn't the same height as the button stuff."
-          ]
-        },
-        {
-          "speaker": "Fox",
-          "portrait": "animals",
-          "text": [
-            "thanks cheryl"
           ]
         },
         {

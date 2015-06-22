@@ -6,7 +6,7 @@
 
 #include <OpenALSound.h>
 
-class PD_ResourceManager : public ResourceManager{
+class WAG_ResourceManager : public ResourceManager{
 public:
 	static Texture * cursor;
 	static Texture * cheryl;

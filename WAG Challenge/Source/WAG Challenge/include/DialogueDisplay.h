@@ -5,7 +5,18 @@
 #include <TextArea.h>
 #include <Timeout.h>
 #include <DialogueSay.h>
-#include <PD_Button.h>
+#include <WAG_Button.h>
+#include <Easing.h>
+
+
+class FadeTimeout : public Timeout{
+public:
+	NodeUI * target;
+	FadeTimeout(float _targetSeconds, NodeUI * _target);
+
+	virtual void update(Step * _step) override;
+};
+
 
 class DialogueDisplay : public NodeUI{
 public:
@@ -21,12 +32,13 @@ public:
 	LinearLayout * vlayout;
 	LinearLayout * optionslayout;
 	NodeUI * portraitPanel;
+	NodeUI * portraitPanelOverlay;
 	TextArea * speaker;
 	TextArea * dialogue;
 	Timeout * autoProgressTimer;
 	
 	bool waitingForInput;
-	std::vector<PD_Button *> options;
+	std::vector<WAG_Button *> options;
 	Font * font;
 	Shader * textShader;
 
@@ -36,4 +48,8 @@ public:
 	// increments currentDialogue and sets text to stuffToSay.at(currentDialogue)
 	// if there is nothing left to say, returns false. Returns true otherwise
 	bool sayNext();
+
+	
+	FadeTimeout * fadeTimeout;
+	void loadPortrait(std::string _portrait);
 };

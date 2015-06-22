@@ -36,7 +36,7 @@ class BulletRagdoll;
 class ComponentShaderText;
 
 
-class PD_TestScene : public Scene{
+class WAG_TestScene : public Scene{
 public:
 	ComponentShaderBase * shader;
 	ComponentShaderText * textShader;
@@ -62,6 +62,6 @@ public:
 	UILayer uiLayer;
 	Sprite * mouseIndicator;
 
-	PD_TestScene(Game * _game);
-	~PD_TestScene();
+	WAG_TestScene(Game * _game);
+	~WAG_TestScene();
 };

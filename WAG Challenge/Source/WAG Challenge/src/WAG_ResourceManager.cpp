@@ -1,18 +1,18 @@
 #pragma once
 
-#include <PD_ResourceManager.h>
+#include <WAG_ResourceManager.h>
 
 #include <NumberUtils.h>
 #include <Easing.h>
 
 #include <math.h>
 
-Texture * PD_ResourceManager::cursor = new Texture("../assets/engine basics/cursor.png", 32, 32, true, false);
-Texture * PD_ResourceManager::cheryl = new Texture("../assets/img_cheryl.jpg", 256, 256, true, false);
-Texture * PD_ResourceManager::frameWithAnimals = new Texture("../assets/framewithanimalsaspectratio.PNG", 1920, 1080, true, false);
-OpenAL_Sound * PD_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false);
+Texture * WAG_ResourceManager::cursor = new Texture("../assets/engine basics/cursor.png", 32, 32, true, false);
+Texture * WAG_ResourceManager::cheryl = new Texture("../assets/img_cheryl.jpg", 256, 256, true, false);
+Texture * WAG_ResourceManager::frameWithAnimals = new Texture("../assets/framewithanimalsaspectratio.PNG", 1920, 1080, true, false);
+OpenAL_Sound * WAG_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false);
 
-void PD_ResourceManager::init(){
+void WAG_ResourceManager::init(){
 	resources.push_back(cursor);
 	resources.push_back(cheryl);
 	resources.push_back(frameWithAnimals);
