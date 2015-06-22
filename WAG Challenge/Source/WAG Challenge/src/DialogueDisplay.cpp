@@ -16,7 +16,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	textShader(_textShader),
 	NodeUI(_world, _scene),
 	NodeBulletBody(_world),
-	optionClicked(false)
+	shouldSayNext(false)
 {
 	setWidth(_width);
 	setHeight(_height);
@@ -54,9 +54,9 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	vlayout->addChild(dialogue);
 	vlayout->addChild(optionslayout);
 
-	timeout = new Timeout(2.f);
+	timeout = new Timeout(0.1f);
 	timeout->onCompleteFunction = [this](Timeout * _this) {
-		this->sayNext();
+		this->shouldSayNext = true;
 	};
 
 }
@@ -116,7 +116,7 @@ bool DialogueDisplay::sayNext(){
 						t->trigger();
 					}
 					this->waitingForInput = false;
-					this->optionClicked = true;
+					this->shouldSayNext = true;
 				};
 			}
 		}
@@ -134,16 +134,16 @@ bool DialogueDisplay::sayNext(){
 }
 
 void DialogueDisplay::update(Step * _step){
-	if(optionClicked){
+	if(shouldSayNext){
 		while(options.size() > 0){
 			optionslayout->removeChild(options.back());
 			delete options.back();
 			options.pop_back();
 		}
-		optionClicked = false;
+		shouldSayNext = false;
 		sayNext();
 	}
-
-	NodeUI::update(_step);
+	
 	timeout->update(_step);
+	NodeUI::update(_step);
 }
