@@ -129,11 +129,13 @@
         {
           "speaker": "cheryl",
           "portrait": "cheryl",
-          "condition": {
-            "target": "WAG_FOX",
-            "variable": "CHOICE_1",
-            "value": "1"
-          },
+          "conditions": [
+            {
+              "target": "WAG_FOX",
+              "variable": "CHOICE_1",
+              "value": "1"
+            }
+          ],
           "text": [
             "You chose one for the first choice."
           ]
@@ -141,11 +143,13 @@
         {
           "speaker": "cheryl",
           "portrait": "cheryl",
-          "condition": {
-            "target": "WAG_FOX",
-            "variable": "CHOICE_2",
-            "value": "2"
-          },
+          "conditions": [
+            {
+              "target": "WAG_FOX",
+              "variable": "CHOICE_2",
+              "value": "2"
+            }
+          ],
           "text": [
             "You chose two for the second choice."
           ]
