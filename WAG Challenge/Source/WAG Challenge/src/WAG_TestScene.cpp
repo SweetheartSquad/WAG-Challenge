@@ -134,9 +134,6 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	joy(new JoystickManager()),
 	uiLayer(this, 0,0,0,0)
 {
-
-	JsonPlaythroughParser * parser = new JsonPlaythroughParser("../assets/json_structure.json");
-
 	shader->addComponent(new ShaderComponentTexture(shader));
 	shader->compileShader();
 
@@ -155,18 +152,8 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	DialogueDisplay * dd = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
 	uiLayer.addChild(dd);
 	//childTransform->addChild(dd);
-	std::string test = "{ \"speaker\":\"cheryl\", \"portrait\":\"cheryl\", \"text\": [\"This is a dialogue thing\", \"beep\", \"boop\", \"i am a robot\"] }";
-	std::string test2 = "{ \"speaker\":\"not cheryl\", \"portrait\":\"not implemented\", \"text\": [\"thanks cheryl\"] }";
-	std::string test3 = "{ \"speaker\":\"this is an extra long name to see if it wraps or not\", \"portrait\":\"not implemented\", \"text\": [\"this text is also pretty long so that we can test out the text-wrapping stuff.\"] }";
-	std::string test4 = "{ \"speaker\":\"cheryl\", \"portrait\":\"cheryl\", \"text\": [\"question???\"], \"options\": ["
-		"{\"text\": \"option 1\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose one\" } ] },"
-		//"{\"text\": \"option 2\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose two\" } ] },"
-		"{\"text\": \"option 3\", \"triggers\": [ {\"type\":\"stateChange\", \"target\":\"CHOICE\", \"newState\":\"you chose three\" } ] } ] }";
 
-	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(0));
-	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(1));
-	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(2));
-	dd->stuffToSay.push_back(parser->conversations.at(0)->dialogueObjects.at(3));
+	dd->stuffToSay = WAG_ResourceManager::playthrough->conversations.at(0);
 	Step step;
 	dd->update(&step);
 	dd->sayNext();

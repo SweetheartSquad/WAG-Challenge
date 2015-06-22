@@ -11,8 +11,10 @@ Texture * WAG_ResourceManager::cursor = new Texture("../assets/engine basics/cur
 Texture * WAG_ResourceManager::cheryl = new Texture("../assets/img_cheryl.jpg", 256, 256, true, false);
 Texture * WAG_ResourceManager::frameWithAnimals = new Texture("../assets/framewithanimalsaspectratio.PNG", 1920, 1080, true, false);
 OpenAL_Sound * WAG_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false);
+JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
 
 void WAG_ResourceManager::init(){
+	playthrough = new JsonPlaythroughParser("../assets/json_structure.json");
 	resources.push_back(cursor);
 	resources.push_back(cheryl);
 	resources.push_back(frameWithAnimals);

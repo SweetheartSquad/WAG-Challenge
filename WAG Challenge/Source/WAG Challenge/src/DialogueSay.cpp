@@ -2,6 +2,7 @@
 
 #include <DialogueSay.h>
 #include <iostream>
+#include <WAG_ResourceManager.h>
 
 DialogueSay::DialogueSay() :
 	currentText(-1)
@@ -84,8 +85,10 @@ Trigger * Trigger::getTrigger(Json::Value _json){
 	Trigger * res = nullptr;
 	std::string type = _json.get("type", "NO_TYPE").asString();
 	// create a different type of Trigger depending on the value of type
-	if(type == "stateChange"){
+	if(type == "setVar"){
 		res = new TriggerSetVar(_json);
+	}else{
+		throw "invalid trigger type";
 	}
 	return res;
 }
@@ -98,4 +101,5 @@ TriggerSetVar::TriggerSetVar(Json::Value _json) :
 }
 
 void TriggerSetVar::trigger(){
+	WAG_ResourceManager::playthrough->characters.at(target)->variables.at(variable) = newValue;
 }

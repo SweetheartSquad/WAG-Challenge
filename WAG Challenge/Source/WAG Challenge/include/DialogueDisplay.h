@@ -7,6 +7,7 @@
 #include <DialogueSay.h>
 #include <WAG_Button.h>
 #include <Easing.h>
+#include <Conversation.h>
 
 
 class FadeTimeout : public Timeout{
@@ -23,7 +24,7 @@ public:
 	bool autoProgress;
 
 	bool shouldSayNext;
-	std::vector<DialogueSay *> stuffToSay;
+	Conversation * stuffToSay;
 	unsigned long int currentDialogue;
 
 	DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width, float _height);

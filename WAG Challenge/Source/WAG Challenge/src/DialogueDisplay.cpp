@@ -99,7 +99,7 @@ DialogueDisplay::~DialogueDisplay(){
 
 bool DialogueDisplay::sayNext(){
 	// check if there's anything left to say at all
-	if(currentDialogue >= stuffToSay.size()){
+	if(currentDialogue >= stuffToSay->dialogueObjects.size()){
 		return false;
 	}
 
@@ -110,20 +110,20 @@ bool DialogueDisplay::sayNext(){
 	}*/
 
 	// set the speaker and portrait
-	std::string sp = stuffToSay.at(currentDialogue)->speaker;
+	std::string sp = stuffToSay->dialogueObjects.at(currentDialogue)->speaker;
 	speaker->setText(std::wstring(sp.begin(), sp.end()));
 
-	loadPortrait(stuffToSay.at(currentDialogue)->portrait);
+	loadPortrait(stuffToSay->dialogueObjects.at(currentDialogue)->portrait);
 	
 	// move to the next text in the current dialogue object
-	++stuffToSay.at(currentDialogue)->currentText;
+	++stuffToSay->dialogueObjects.at(currentDialogue)->currentText;
 	// check if there's any text left to say in the current dialogue object
-	if(stuffToSay.at(currentDialogue)->currentText < stuffToSay.at(currentDialogue)->text.size()){
+	if(stuffToSay->dialogueObjects.at(currentDialogue)->currentText < stuffToSay->dialogueObjects.at(currentDialogue)->text.size()){
 		// if there is, read the text in the current dialogue and return
-		std::string thingToSay = stuffToSay.at(currentDialogue)->getCurrentText();
+		std::string thingToSay = stuffToSay->dialogueObjects.at(currentDialogue)->getCurrentText();
 		dialogue->setText(std::wstring(thingToSay.begin(), thingToSay.end()));
 
-		DialogueAsk * ask = dynamic_cast<DialogueAsk *>(stuffToSay.at(currentDialogue));
+		DialogueAsk * ask = dynamic_cast<DialogueAsk *>(stuffToSay->dialogueObjects.at(currentDialogue));
 		if(ask != nullptr){
 			waitingForInput = true;
 			for(unsigned long int i = 0; i < ask->options.size(); ++i){
@@ -186,9 +186,9 @@ void DialogueDisplay::loadPortrait(std::string _portrait){
 	while(portraitPanelOverlay->background->mesh->textures.size() > 0){
 		portraitPanelOverlay->background->mesh->popTexture2D();
 	}
-	if(stuffToSay.at(currentDialogue)->portrait == "cheryl"){
+	if(stuffToSay->dialogueObjects.at(currentDialogue)->portrait == "cheryl"){
 		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
-	}else if(stuffToSay.at(currentDialogue)->portrait == "animals"){
+	}else if(stuffToSay->dialogueObjects.at(currentDialogue)->portrait == "animals"){
 		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::frameWithAnimals);
 	}else{
 		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::frameWithAnimals);

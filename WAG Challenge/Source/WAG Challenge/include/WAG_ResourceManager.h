@@ -5,6 +5,7 @@
 #include <Texture.h>
 
 #include <OpenALSound.h>
+#include <JsonPlaythroughParser.h>
 
 class WAG_ResourceManager : public ResourceManager{
 public:
@@ -12,6 +13,7 @@ public:
 	static Texture * cheryl;
 	static Texture * frameWithAnimals;
 	static OpenAL_Sound * stream;
+	static JsonPlaythroughParser * playthrough;
 
 	static void init();
 };

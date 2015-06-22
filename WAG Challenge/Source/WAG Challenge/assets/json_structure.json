@@ -48,7 +48,7 @@
                 {
                   "type": "setVar",
                   "target": "WAG_FOX",
-                  "variable": "CHOICE_2",
+                  "variable": "CHOICE_1",
                   "value": "1"
                 }
               ]
@@ -59,7 +59,7 @@
                 {
                   "type": "setVar",
                   "target": "WAG_FOX",
-                  "variable": "CHOICE_2",
+                  "variable": "CHOICE_1",
                   "value": "2"
                 }
               ]
