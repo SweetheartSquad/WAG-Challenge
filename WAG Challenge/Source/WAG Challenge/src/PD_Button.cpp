@@ -12,6 +12,8 @@ PD_Button::PD_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader 
 	NodeBulletBody(_world),
 	Entity()
 {
+	setText(L"PD_Button");
+	setAutoresizeHeight();
 	mouseEnabled = true;
 }
 

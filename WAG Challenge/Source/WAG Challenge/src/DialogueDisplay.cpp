@@ -34,6 +34,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	vlayout->verticalAlignment = kTOP;
 	optionslayout = new VerticalLinearLayout(_world, _scene);
 	optionslayout->setRationalWidth(1.f);
+	optionslayout->verticalAlignment = kTOP;
 	
 	portraitPanel = new NodeUI(_world, _scene);
 	portraitPanel->setHeight(getHeight());
@@ -54,7 +55,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	vlayout->addChild(dialogue);
 	vlayout->addChild(optionslayout);
 
-	timeout = new Timeout(0.1f);
+	timeout = new Timeout(2.f);
 	timeout->onCompleteFunction = [this](Timeout * _this) {
 		this->shouldSayNext = true;
 	};
@@ -119,6 +120,8 @@ bool DialogueDisplay::sayNext(){
 					this->shouldSayNext = true;
 				};
 			}
+			optionslayout->setAutoresizeHeight();
+			optionslayout->layoutChildren();
 		}
 
 		if(!waitingForInput){
@@ -140,8 +143,8 @@ void DialogueDisplay::update(Step * _step){
 			delete options.back();
 			options.pop_back();
 		}
-		shouldSayNext = false;
 		sayNext();
+		shouldSayNext = false;
 	}
 	
 	timeout->update(_step);
