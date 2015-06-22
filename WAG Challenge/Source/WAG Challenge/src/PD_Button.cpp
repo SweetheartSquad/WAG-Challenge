@@ -9,11 +9,8 @@
 
 PD_Button::PD_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width) :
 	TextArea(_world, _scene, _font, _textShader, _width),
-	NodeBulletBody(_world),
-	Entity()
+	NodeBulletBody(_world)
 {
-	setText(L"PD_Button");
-	setAutoresizeHeight();
 	mouseEnabled = true;
 }
 
