@@ -24,6 +24,11 @@ DialogueSay::DialogueSay(Json::Value _json) :
 	currentText(-1)
 {
 	init(_json);
+	
+	const Json::Value conditionsArray = _json["conditions"];
+	for(int i = 0; i < conditionsArray.size(); ++i){
+		conditions.push_back(Condition::getCondition(conditionsArray[i]));
+	}
 }
 
 void DialogueSay::init(Json::Value _json){

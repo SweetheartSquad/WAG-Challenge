@@ -102,6 +102,14 @@ bool DialogueDisplay::sayNext(){
 	if(currentDialogue >= stuffToSay->dialogueObjects.size()){
 		return false;
 	}
+	
+	// if any conditions are untrue for a given dialogue object, skip over it
+	for(Condition * c : stuffToSay->dialogueObjects.at(currentDialogue)->conditions){
+		if(!c->evaluate()){
+			++currentDialogue;
+			return sayNext();
+		}
+	}
 
 	// clear out the options list (they'll still be there if the last thing was an ask)
 	/*while(options.size() > 0){

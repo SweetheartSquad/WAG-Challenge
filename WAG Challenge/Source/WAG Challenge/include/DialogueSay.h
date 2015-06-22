@@ -50,6 +50,8 @@ public:
 	std::string portrait;
 	std::vector<std::string> text;
 	unsigned long int currentText;
+
+	std::vector<Condition *> conditions;
 	
 	// this constructor doesn't call init
 	DialogueSay();
