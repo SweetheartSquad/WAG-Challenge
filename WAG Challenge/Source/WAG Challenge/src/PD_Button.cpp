@@ -10,12 +10,8 @@
 PD_Button::PD_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width) :
 	TextArea(_world, _scene, _font, _textShader, _width),
 	NodeBulletBody(_world),
-	Entity(),
-	normalLabel(L"normal"),
-	downLabel(L"down"),
-	overLabel(L"over")
+	Entity()
 {
-	setText(normalLabel);
 	mouseEnabled = true;
 }
 
