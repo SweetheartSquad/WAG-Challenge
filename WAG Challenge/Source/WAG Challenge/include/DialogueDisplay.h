@@ -21,11 +21,10 @@ public:
 
 class DialogueDisplay : public NodeUI{
 public:
-	bool autoProgress;
+	Conversation ** stuffToSay;
 
+	bool autoProgress;
 	bool shouldSayNext;
-	Conversation * stuffToSay;
-	unsigned long int currentDialogue;
 
 	DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width, float _height);
 	~DialogueDisplay();
@@ -46,7 +45,7 @@ public:
 
 	virtual void update(Step * _step) override;
 
-	// increments currentDialogue and sets text to stuffToSay.at(currentDialogue)
+	// moves the conversation forward by one step and updates all of the display properties to match the new state
 	// if there is nothing left to say, returns false. Returns true otherwise
 	bool sayNext();
 

@@ -10,14 +10,14 @@
 #include <HorizontalLinearLayout.h>
 
 DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width, float _height) :
-	currentDialogue(0),
 	waitingForInput(false),
 	font(_font),
 	textShader(_textShader),
 	NodeUI(_world, _scene),
 	NodeBulletBody(_world),
 	shouldSayNext(false),
-	autoProgress(false)
+	autoProgress(false),
+	stuffToSay(&WAG_ResourceManager::playthrough->currentConversation)
 {
 	setWidth(_width);
 	setHeight(_height);
@@ -98,75 +98,55 @@ DialogueDisplay::~DialogueDisplay(){
 }
 
 bool DialogueDisplay::sayNext(){
-	// check if there's anything left to say at all
-	if(currentDialogue >= stuffToSay->dialogueObjects.size()){
+	// move conversation forward
+	if(!(*stuffToSay)->sayNextDialogue()){
+		// if there's nothing left to say, return false
 		return false;
 	}
-	
-	// if any conditions are untrue for a given dialogue object, skip over it
-	for(Condition * c : stuffToSay->dialogueObjects.at(currentDialogue)->conditions){
-		if(!c->evaluate()){
-			++currentDialogue;
-			return sayNext();
-		}
-	}
 
-	// clear out the options list (they'll still be there if the last thing was an ask)
-	/*while(options.size() > 0){
-		delete options.back()->parents.at(0);
-		options.pop_back();
-	}*/
-
-	// set the speaker and portrait
-	std::string sp = stuffToSay->dialogueObjects.at(currentDialogue)->speaker;
+	// set the speaker
+	std::string sp = (*stuffToSay)->getCurrentDialogue()->speaker;
 	speaker->setText(std::wstring(sp.begin(), sp.end()));
-
-	loadPortrait(stuffToSay->dialogueObjects.at(currentDialogue)->portrait);
+	// set the portrait
+	loadPortrait((*stuffToSay)->getCurrentDialogue()->portrait);
 	
-	// move to the next text in the current dialogue object
-	++stuffToSay->dialogueObjects.at(currentDialogue)->currentText;
-	// check if there's any text left to say in the current dialogue object
-	if(stuffToSay->dialogueObjects.at(currentDialogue)->currentText < stuffToSay->dialogueObjects.at(currentDialogue)->text.size()){
-		// if there is, read the text in the current dialogue and return
-		std::string thingToSay = stuffToSay->dialogueObjects.at(currentDialogue)->getCurrentText();
-		dialogue->setText(std::wstring(thingToSay.begin(), thingToSay.end()));
+	// set the text
+	std::string thingToSay = (*stuffToSay)->getCurrentDialogue()->getCurrentText();
+	dialogue->setText(std::wstring(thingToSay.begin(), thingToSay.end()));
 
-		DialogueAsk * ask = dynamic_cast<DialogueAsk *>(stuffToSay->dialogueObjects.at(currentDialogue));
-		if(ask != nullptr){
-			waitingForInput = true;
-			for(unsigned long int i = 0; i < ask->options.size(); ++i){
-				//dialogue->appendText(std::wstring(s.begin(), s.end()));
-				WAG_Button * o = new WAG_Button(world, scene, font, textShader, 1.f);
-				std::wstringstream ss;
-				ss << (i+1) << L". " << std::wstring(ask->options.at(i).begin(), ask->options.at(i).end());
-				o->setText(ss.str());
-				options.push_back(o);
-				optionslayout->addChild(o);
-				//o->parents.at(0)->scale(50,50,1);
+	// check for dialogue options
+	DialogueAsk * ask = dynamic_cast<DialogueAsk *>((*stuffToSay)->getCurrentDialogue());
+	if(ask != nullptr){
+		waitingForInput = true;
+		for(unsigned long int i = 0; i < ask->options.size(); ++i){
+			//dialogue->appendText(std::wstring(s.begin(), s.end()));
+			WAG_Button * o = new WAG_Button(world, scene, font, textShader, 1.f);
+			std::wstringstream ss;
+			ss << (i+1) << L". " << std::wstring(ask->options.at(i).begin(), ask->options.at(i).end());
+			o->setText(ss.str());
+			options.push_back(o);
+			optionslayout->addChild(o);
+			//o->parents.at(0)->scale(50,50,1);
 				
-				std::vector<Trigger *> optionResult = ask->optionsResults.at(i);
-				o->onClickFunction = [this, optionResult](NodeUI * _this) {
-					for(auto t : optionResult){
-						t->trigger();
-					}
-					this->waitingForInput = false;
-					this->shouldSayNext = true;
-				};
-			}
-			optionslayout->setAutoresizeHeight();
-			optionslayout->layoutChildren();
+			std::vector<Trigger *> optionResult = ask->optionsResults.at(i);
+			o->onClickFunction = [this, optionResult](NodeUI * _this) {
+				for(auto t : optionResult){
+					t->trigger();
+				}
+				this->waitingForInput = false;
+				this->shouldSayNext = true;
+			};
 		}
-
-		if(!waitingForInput){
-			autoProgressTimer->restart();
-		}
-
-		return true;
-	}else{
-		// if there isn't move to the next dialogue object and try again
-		++currentDialogue;
-		return sayNext();
+		optionslayout->setAutoresizeHeight();
+		optionslayout->layoutChildren();
 	}
+
+	// if auto-progression is enabled, restart the timer (should also set the duration here based on length of content)
+	if(!waitingForInput){
+		autoProgressTimer->restart();
+	}
+
+	return true;
 }
 
 void DialogueDisplay::update(Step * _step){
@@ -194,9 +174,9 @@ void DialogueDisplay::loadPortrait(std::string _portrait){
 	while(portraitPanelOverlay->background->mesh->textures.size() > 0){
 		portraitPanelOverlay->background->mesh->popTexture2D();
 	}
-	if(stuffToSay->dialogueObjects.at(currentDialogue)->portrait == "cheryl"){
+	if((*stuffToSay)->getCurrentDialogue()->portrait == "cheryl"){
 		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
-	}else if(stuffToSay->dialogueObjects.at(currentDialogue)->portrait == "animals"){
+	}else if((*stuffToSay)->getCurrentDialogue()->portrait == "animals"){
 		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::frameWithAnimals);
 	}else{
 		portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::frameWithAnimals);

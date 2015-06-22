@@ -57,7 +57,7 @@ public:
 	std::string speaker;
 	std::string portrait;
 	std::vector<std::string> text;
-	unsigned long int currentText;
+	signed long int currentText;
 
 	std::vector<Condition *> conditions;
 	
@@ -67,8 +67,12 @@ public:
 	DialogueSay(std::string _jsonString);
 	DialogueSay(Json::Value _json);
 	virtual void init(Json::Value _json);
-
+	
 	std::string getCurrentText();
+	// increments currentText
+	// returns true if there is a corresponding text to say
+	// returns false if the end of the dialogue has been reached
+	bool sayNextText();
 };
 
 

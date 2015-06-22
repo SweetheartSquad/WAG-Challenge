@@ -40,7 +40,7 @@
           "speaker": "cheryl",
           "portrait": "cheryl",
           "text": [
-            "question???"
+            "question one???"
           ],
           "options": [
             {
@@ -85,31 +85,14 @@
           "speaker": "cheryl",
           "portrait": "cheryl",
           "text": [
-            "This is a dialogue thing",
-            "beep",
-            "boop",
-            "i am a robot"
-          ]
-        },
-        {
-          "speaker": "not cheryl",
-          "portrait": "not implemented",
-          "text": [
-            "thanks cheryl"
-          ]
-        },
-        {
-          "speaker": "this is an extra long name to see if it wraps or not",
-          "portrait": "not implemented",
-          "text": [
-            "this text is also pretty long so that we can test out the text-wrapping stuff."
+            "This is a brand new conversation!!"
           ]
         },
         {
           "speaker": "cheryl",
           "portrait": "cheryl",
           "text": [
-            "question???"
+            "question two???"
           ],
           "options": [
             {

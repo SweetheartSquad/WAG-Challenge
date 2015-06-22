@@ -16,7 +16,9 @@ Character::Character(Json::Value _json) :
 	}
 }
 
-JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) {
+JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) :
+	currentConversation(nullptr)
+{
 	std::string jsonLoaded = FileUtils::voxReadFile(_jsonSrc);
 	Json::Reader reader;
 	bool parsingSuccessful = reader.parse( jsonLoaded, root );

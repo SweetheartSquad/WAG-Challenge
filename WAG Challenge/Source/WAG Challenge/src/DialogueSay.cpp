@@ -44,6 +44,11 @@ std::string DialogueSay::getCurrentText(){
 	return text.at(currentText);
 }
 
+bool DialogueSay::sayNextText(){
+	++currentText;
+	return currentText < text.size();
+}
+
 
 
 
@@ -117,8 +122,7 @@ TriggerSetConversation::TriggerSetConversation(Json::Value _json) :
 }
 
 void TriggerSetConversation::trigger(){
-	// somehow switch to a new convo
-	std::cout << "should switch to conversation: " << newConversation << std::endl;
+	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations[newConversation];
 }
 
 Condition * Condition::getCondition(Json::Value _json){

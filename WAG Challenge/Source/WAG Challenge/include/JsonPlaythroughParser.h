@@ -23,5 +23,7 @@ public:
 	std::map<std::string, Conversation *> conversations;
 	std::map<std::string, Character *> characters;
 
+	Conversation * currentConversation;
+
 	JsonPlaythroughParser(std::string _jsonSrc);
 };
