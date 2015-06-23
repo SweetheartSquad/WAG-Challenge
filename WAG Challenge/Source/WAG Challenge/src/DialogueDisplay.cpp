@@ -130,6 +130,13 @@ bool DialogueDisplay::sayNext(){
 				
 			std::vector<Trigger *> optionResult = ask->optionsResults.at(i);
 			o->onClickFunction = [this, optionResult](NodeUI * _this) {
+				// remove the function pointers on all the other buttons to avoid multiple buttons getting triggered at the same time
+				for(auto o : options){
+					if(o != _this){
+						o->onClickFunction = nullptr;
+					}
+				}
+
 				for(auto t : optionResult){
 					t->trigger();
 				}
