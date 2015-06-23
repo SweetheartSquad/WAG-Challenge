@@ -47,7 +47,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	speaker->setMarginTop(0.80f);
 
 	
-	WAG_Button * progressButton = new WAG_Button(world, scene, font, textShader, 1.f);
+	progressButton = new WAG_Button(world, scene, font, textShader, 1.f);
 	progressButton->setText(L"->");
 	progressButton->setRationalWidth(0.25f);
 	progressButton->setRationalHeight(1.f);
@@ -61,7 +61,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	optionslayout->verticalAlignment = kTOP;
 	optionslayout->horizontalAlignment = kCENTER;
 	
-	HorizontalLinearLayout * hlayout = new HorizontalLinearLayout(_world, _scene);
+	hlayout = new HorizontalLinearLayout(_world, _scene);
 	hlayout->verticalAlignment = kTOP;
 	hlayout->setRationalHeight(1.f);
 	hlayout->setRationalWidth(1.f);
@@ -118,6 +118,7 @@ bool DialogueDisplay::sayNext(){
 	DialogueAsk * ask = dynamic_cast<DialogueAsk *>((*stuffToSay)->getCurrentDialogue());
 	if(ask != nullptr){
 		waitingForInput = true;
+		hlayout->removeChild(progressButton);
 		for(unsigned long int i = 0; i < ask->options.size(); ++i){
 			//dialogue->appendText(std::wstring(s.begin(), s.end()));
 			WAG_Button * o = new WAG_Button(world, scene, font, textShader, 1.f);
@@ -142,6 +143,7 @@ bool DialogueDisplay::sayNext(){
 				}
 				this->waitingForInput = false;
 				this->shouldSayNext = true;
+				this->hlayout->addChild(progressButton);
 			};
 		}
 		optionslayout->setAutoresizeHeight();
