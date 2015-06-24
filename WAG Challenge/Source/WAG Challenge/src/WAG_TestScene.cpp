@@ -71,6 +71,7 @@
 #include <DialogueDisplay.h>
 #include <HorizontalLinearLayout.h>
 #include <JsonPlaythroughParser.h>
+#include <FpsDisplay.h>
 
 // Retrieves a JSON value from an HTTP request.
 pplx::task<void> RequestJSONValueAsync(Label * _label){
@@ -134,6 +135,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	joy(new JoystickManager()),
 	uiLayer(this, 0,0,0,0)
 {
+
 	shader->addComponent(new ShaderComponentTexture(shader));
 	shader->compileShader();
 
@@ -161,6 +163,8 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	//dd->portraitPanel->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
 	//childTransform->addChild(dd);
 	//dd->parents.at(0)->translate(300, 300, 0);
+	
+	uiLayer.addChild(new FpsDisplay(uiLayer.world, this, font, textShader));
 
 	mouseIndicator = new Sprite();
 	uiLayer.childTransform->addChild(mouseIndicator);
