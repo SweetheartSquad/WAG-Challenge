@@ -8,16 +8,8 @@
 #include <WAG_Button.h>
 #include <Easing.h>
 #include <Conversation.h>
-
-
-class FadeTimeout : public Timeout{
-public:
-	NodeUI * target;
-	FadeTimeout(float _targetSeconds, NodeUI * _target);
-
-	virtual void update(Step * _step) override;
-};
-
+#include <DialogueText.h>
+#include <TimeoutEffects.h>
 
 class DialogueDisplay : public NodeUI{
 public:
@@ -30,13 +22,14 @@ public:
 	~DialogueDisplay();
 	
 	LinearLayout * vlayout;
+	LinearLayout * hlayout;
 	LinearLayout * optionslayout;
 	NodeUI * portraitPanel;
 	NodeUI * portraitPanelOverlay;
 	TextArea * speaker;
-	TextArea * dialogue;
+	DialogueTextArea * dialogue;
 	Timeout * autoProgressTimer;
-	
+	WAG_Button * progressButton;
 	bool waitingForInput;
 	std::vector<WAG_Button *> options;
 	Font * font;
@@ -50,6 +43,6 @@ public:
 	bool sayNext();
 
 	
-	FadeTimeout * fadeTimeout;
+	Fadein * fadeTimeout;
 	void loadPortrait(std::string _portrait);
 };

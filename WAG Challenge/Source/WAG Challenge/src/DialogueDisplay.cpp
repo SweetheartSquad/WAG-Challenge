@@ -38,7 +38,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	portraitPanelOverlay->setWidth(1.f);
 	portraitPanelOverlay->setBackgroundColour(0,0,0,0);
 
-	dialogue = new TextArea(_world, _scene, _font, _textShader, -1);
+	dialogue = new DialogueTextArea(_world, _scene, _font, _textShader);
 	dialogue->setRationalWidth(0.75f, vlayout);
 	dialogue->setRationalHeight(1.f, vlayout);
 	dialogue->verticalAlignment = kTOP;
@@ -79,8 +79,9 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	autoProgressTimer->onCompleteFunction = [this](Timeout * _this) {
 		this->shouldSayNext = true;
 	};
+	autoProgressTimer->start();
 
-	fadeTimeout = new FadeTimeout(1.f, portraitPanelOverlay);
+	fadeTimeout = new Fadein(1.f, portraitPanelOverlay);
 	fadeTimeout->onCompleteFunction = [this](Timeout * _this){
 		while(portraitPanel->background->mesh->textures.size() > 0){
 			portraitPanel->background->mesh->popTexture2D();
@@ -90,6 +91,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 		}
 		portraitPanelOverlay->setBackgroundColour(0,0,0,0);
 	};
+	fadeTimeout->start();
 }
 
 DialogueDisplay::~DialogueDisplay(){
@@ -192,17 +194,4 @@ void DialogueDisplay::loadPortrait(std::string _portrait){
 	}
 
 	fadeTimeout->restart();
-}
-
-FadeTimeout::FadeTimeout(float _targetSeconds, NodeUI * _target) :
-	Timeout(_targetSeconds),
-	target(_target)
-{
-}
-
-void FadeTimeout::update(Step * _step){
-	Timeout::update(_step);
-	if(!complete){
-		target->setBackgroundColour(0,0,0, Easing::easeInQuad(elapsedSeconds, 0, 1, targetSeconds));
-	}
 }
