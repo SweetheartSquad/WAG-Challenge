@@ -20,7 +20,7 @@ int main(void){
 	_CrtMemCheckpoint( &s1 );
 #endif
 
-	vox::initialize("Party, Darling? -super test build EX edition MAX transform: 3.0++ now with audible sound");
+	vox::initialize("WAG Challenge - demo");
 	WAG_ResourceManager::init();
 	WAG_ResourceManager::load();
 	WAG_Game * game = new WAG_Game();

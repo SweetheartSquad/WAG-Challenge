@@ -13,8 +13,8 @@
       "id":"WAG_CONVO_1",
       "dialogue": [
         {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
+          "speaker": "Fox",
+          "portrait": "river",
           "text": [
             "This is a dialogue thing",
             "beep",
@@ -23,17 +23,18 @@
           ]
         },
         {
-          "speaker": "not cheryl",
-          "portrait": "not implemented",
+          "speaker": "Rabbit",
+          "portrait": "burrow",
           "text": [
             "thanks cheryl"
           ]
         },
         {
-          "speaker": "this is an extra long name to see if it wraps or not",
-          "portrait": "not implemented",
+          "speaker": "Fox",
+          "portrait": "animals",
           "text": [
-            "this text is also pretty long so that we can test out the text-wrapping stuff."
+            "This text is also pretty long so that we can test out the text-wrapping stuff when it gets to around this point.",
+            "Bacon ipsum dolor amet cillum dolor sausage elit. Pariatur pork belly elit, ut aliqua kielbasa leberkas jowl. Cillum nulla et excepteur spare ribs ham landjaeger doner rump aliquip commodo laborum tenderloin swine. Short ribs boudin in cupidatat salami. Non venison cupim laborum pastrami tongue ipsum consequat quis ut.\nBall tip non ham hock, occaecat aliquip pastrami short loin spare ribs. Strip steak nisi commodo in, ea aliqua tenderloin biltong sunt anim sausage ball tip turkey. Pork kevin short ribs veniam. Ball tip ullamco shankle corned beef. Tri-tip sunt dolore, officia jowl pork loin enim ham hock eiusmod swine t-bone. Ad tail turducken aute rump lorem."
           ]
         },
         {

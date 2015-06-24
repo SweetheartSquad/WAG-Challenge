@@ -143,7 +143,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	screenSurface->scaleModeMag = GL_NEAREST;
 	screenSurface->scaleModeMin = GL_NEAREST;
 
-	font = new Font("../assets/fonts/Mathlete-Skinny.otf", 24, false);
+	font = new Font("../assets/fonts/Mathlete-Skinny.otf", 48, false);
 	
 	textShader->textComponent->setColor(glm::vec3(1.f, 1.f, 1.f));
 	

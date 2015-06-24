@@ -24,6 +24,8 @@ public:
 	LinearLayout * vlayout;
 	LinearLayout * hlayout;
 	LinearLayout * optionslayout;
+	NodeUI * framePanel;
+	NodeUI * framePanelOverlay;
 	NodeUI * portraitPanel;
 	NodeUI * portraitPanelOverlay;
 	TextArea * speaker;
@@ -43,6 +45,10 @@ public:
 	bool sayNext();
 
 	
-	Fadein * fadeTimeout;
-	void loadPortrait(std::string _portrait);
+	Fadein * fadeTimeoutFrame;
+	Fadein * fadeTimeoutPortrait;
+	// load a background frame (uses the portrait attribute of the dialogue object)
+	void loadFrame(std::string _portrait);
+	// load a character portrait (uses the speaker attribute of the dialogue object)
+	void loadPortrait(std::string _speaker);
 };
