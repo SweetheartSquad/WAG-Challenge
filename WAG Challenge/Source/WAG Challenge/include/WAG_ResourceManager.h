@@ -3,6 +3,7 @@
 #include <ResourceManager.h>
 #include <SoundManager.h>
 #include <Texture.h>
+#include <map>
 
 #include <OpenALSound.h>
 #include <JsonPlaythroughParser.h>
@@ -17,11 +18,11 @@ public:
 	static Texture * foxPortrait;
 	static Texture * rabbitPortrait;
 	static OpenAL_Sound * stream;
-	static OpenAL_Sound * blip;
 	static JsonPlaythroughParser * playthrough;
 	static Texture * scratchings;
 
-	static char dialogueChar;
+	static std::string speaker;
+	static std::map<std::string, OpenAL_Sound *> voices;
 
 	static void init();
 };

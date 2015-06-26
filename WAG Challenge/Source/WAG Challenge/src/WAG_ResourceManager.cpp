@@ -16,9 +16,12 @@ Texture * WAG_ResourceManager::foxPortrait = new Texture("../assets/fox_avatar.p
 Texture * WAG_ResourceManager::rabbitPortrait = new Texture("../assets/rabbit_avatar.png", 128, 128, true, false);
 Texture * WAG_ResourceManager::scratchings = new Texture("../assets/scratchthings.png", 1920, 1080, true, false);
 OpenAL_Sound * WAG_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false/*, 100, 10*/);
-OpenAL_Sound * WAG_ResourceManager::blip = new OpenAL_SoundSimple("../assets/audio/blip.ogg", false, false/*, 100, 10*/);
-char WAG_ResourceManager::dialogueChar = 0;
 JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
+
+std::map<std::string, OpenAL_Sound *> WAG_ResourceManager::voices;
+
+
+std::string WAG_ResourceManager::speaker = "blip";
 
 void WAG_ResourceManager::init(){
 	playthrough = new JsonPlaythroughParser("../assets/json_structure.json");
@@ -30,8 +33,19 @@ void WAG_ResourceManager::init(){
 	resources.push_back(foxPortrait);
 	resources.push_back(rabbitPortrait);
 	resources.push_back(stream);
-	resources.push_back(blip);
 	resources.push_back(scratchings);
+
+	OpenAL_Sound * voice = new OpenAL_SoundSimple("../assets/audio/fox.wav", false, false);
+	voices["Fox"] = voice;
+	resources.push_back(voice);
+
+	voice = new OpenAL_SoundSimple("../assets/audio/rabbit.wav", false, false);
+	voices["Rabbit"] = voice;
+	resources.push_back(voice);
+
+	voice = new OpenAL_SoundSimple("../assets/audio/blip.ogg", false, false);
+	voices["blip"] = voice;
+	resources.push_back(voice);
 	
 	stream->source->buffer->sampleRate = 48000;
 	stream->source->buffer->format = AL_FORMAT_STEREO8;

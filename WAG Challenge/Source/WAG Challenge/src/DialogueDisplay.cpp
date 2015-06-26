@@ -151,6 +151,9 @@ bool DialogueDisplay::sayNext(){
 	// set the speaker
 	std::string sp = (*stuffToSay)->getCurrentDialogue()->speaker;
 	speaker->setText(std::wstring(sp.begin(), sp.end()));
+	WAG_ResourceManager::speaker = sp;
+
+
 	// set the images
 	loadFrame((*stuffToSay)->getCurrentDialogue()->portrait);
 	loadPortrait((*stuffToSay)->getCurrentDialogue()->speaker);
