@@ -48,7 +48,6 @@
 #include <BulletMeshEntity.h>
 #include <Billboard.h>
 
-#include <BulletRagdoll.h>
 #include <NodeUI.h>
 #include <WAG_Button.h>
 
@@ -56,15 +55,10 @@
 #include <sqlite\sqlite3.h>
 #include <DatabaseConnection.h>
 
-#include <Room.h>
-#include <RoomLayout.h>
-
 #include <thread>
 #include <LinearLayout.h>
 #include <sqlite\sqlite3.h>
 #include <DatabaseConnection.h>
-
-#include "RoomLayout.h"
 
 #include <TextArea.h>
 #include <shader\ComponentShaderText.h>
@@ -74,7 +68,7 @@
 #include <FpsDisplay.h>
 
 // Retrieves a JSON value from an HTTP request.
-pplx::task<void> RequestJSONValueAsync(Label * _label){
+pplx::task<void> RequestJSONValueAsync(TextLabel * _label){
 	// TODO: To successfully use this example, you must perform the request  
 	// against a server that provides JSON data.
 	web::http::client::http_client client(L"https://seniorproject-ryanbluth.c9.io/api/users");
@@ -201,6 +195,9 @@ void WAG_TestScene::update(Step * _step){
 	
 	if(keyboard->keyJustUp(GLFW_KEY_P)){	
 		WAG_ResourceManager::stream->play(true);
+	}
+	if(keyboard->keyJustUp(GLFW_KEY_O)){	
+		WAG_ResourceManager::blip->play(false);
 	}
 	if(keyboard->keyJustUp(GLFW_KEY_E)){	
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;

@@ -16,7 +16,7 @@ DialogueTextLabel::~DialogueTextLabel(){
 	}
 }
 
-void DialogueTextLabel::tickerIn(){
+void DialogueTextLabel::tickerIn(float _delay){
 	while(timers.size() > 0){
 		delete timers.back();
 		timers.pop_back();
@@ -25,7 +25,7 @@ void DialogueTextLabel::tickerIn(){
 	for(unsigned long int i = 0; i < usedGlyphs.size(); ++i){
 		UIGlyph * g = usedGlyphs.at(i);
 		g->setVisible(false);
-		Timeout * t = new Timeout(0.05f * i);
+		Timeout * t = new Timeout(_delay * i);
 		t->onCompleteFunction = [g](Timeout * _this){
 			g->setVisible(true);
 		};
@@ -56,7 +56,7 @@ DialogueTextArea::~DialogueTextArea(){
 
 }
 
-void DialogueTextArea::tickerIn(){
+void DialogueTextArea::tickerIn(float _delay){
 	while(timers.size() > 0){
 		delete timers.back();
 		timers.pop_back();
@@ -66,17 +66,17 @@ void DialogueTextArea::tickerIn(){
 	for(unsigned long int i = 1; i < usedLines.size(); ++i){
 		DialogueTextLabel * tl = dynamic_cast<DialogueTextLabel *>(usedLines.at(i));
 		tl->setVisible(false);
-		time += usedLines.at(i-1)->usedGlyphs.size() * 0.05f;
+		time += usedLines.at(i-1)->usedGlyphs.size() * _delay;
 		Timeout * t = new Timeout(time);
-		t->onCompleteFunction = [tl](Timeout * _this){
+		t->onCompleteFunction = [tl, _delay](Timeout * _this){
 			tl->setVisible(true);
-			tl->tickerIn();
+			tl->tickerIn(_delay);
 		};
 		t->start();
 		timers.push_back(t);
 	}
 	for(unsigned long int i = 0; i < usedLines.size(); ++i){
-		dynamic_cast<DialogueTextLabel *>(usedLines.at(i))->tickerIn();
+		dynamic_cast<DialogueTextLabel *>(usedLines.at(i))->tickerIn(_delay);
 	}
 }
 

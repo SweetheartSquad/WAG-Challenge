@@ -158,7 +158,7 @@ bool DialogueDisplay::sayNext(){
 	// set the text
 	std::string thingToSay = (*stuffToSay)->getCurrentDialogue()->getCurrentText();
 	dialogue->setText(std::wstring(thingToSay.begin(), thingToSay.end()));
-	dialogue->tickerIn();
+	dialogue->tickerIn(0.05f);
 
 	// check for dialogue options
 	DialogueAsk * ask = dynamic_cast<DialogueAsk *>((*stuffToSay)->getCurrentDialogue());

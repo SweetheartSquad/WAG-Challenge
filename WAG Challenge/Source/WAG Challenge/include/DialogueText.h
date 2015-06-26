@@ -10,7 +10,7 @@ public:
 	~DialogueTextLabel();
 
 	std::vector<Timeout *> timers;
-	void tickerIn();
+	void tickerIn(float _delay);
 
 	virtual void update(Step * _step) override;
 };
@@ -18,7 +18,7 @@ public:
 class DialogueTextArea : public TextArea{
 public:
 	std::vector<Timeout *> timers;
-	void tickerIn();
+	void tickerIn(float _delay);
 	virtual TextLabel * getNewLine();
 	virtual void update(Step * _step) override;
 
