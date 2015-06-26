@@ -15,7 +15,9 @@ Texture * WAG_ResourceManager::river = new Texture("../assets/river.png", 1920, 
 Texture * WAG_ResourceManager::foxPortrait = new Texture("../assets/fox_avatar.png", 120, 120, true, false);
 Texture * WAG_ResourceManager::rabbitPortrait = new Texture("../assets/rabbit_avatar.png", 128, 128, true, false);
 Texture * WAG_ResourceManager::scratchings = new Texture("../assets/scratchthings.png", 1920, 1080, true, false);
-OpenAL_Sound * WAG_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false);
+OpenAL_Sound * WAG_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false/*, 100, 10*/);
+OpenAL_Sound * WAG_ResourceManager::blip = new OpenAL_SoundSimple("../assets/audio/blip.ogg", false, false/*, 100, 10*/);
+char WAG_ResourceManager::dialogueChar = 0;
 JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
 
 void WAG_ResourceManager::init(){
@@ -28,9 +30,10 @@ void WAG_ResourceManager::init(){
 	resources.push_back(foxPortrait);
 	resources.push_back(rabbitPortrait);
 	resources.push_back(stream);
+	resources.push_back(blip);
 	resources.push_back(scratchings);
 	
-	stream->source->buffer->sampleRate = 8000;
+	stream->source->buffer->sampleRate = 48000;
 	stream->source->buffer->format = AL_FORMAT_STEREO8;
 	dynamic_cast<OpenAL_SoundStreamGenerative *>(stream)->generativeFunction = [](unsigned long int t){
 		// a oneliner from http://countercomplex.blogspot.ca/2011/10/algorithmic-symphonies-from-one-line-of.html
@@ -51,9 +54,12 @@ void WAG_ResourceManager::init(){
 
 		// give it a couple seconds to warm up
 		//return (t|t*t>>8)*sqrt(t>>10);
-
+		
 		//return -t&20|t&40|t*10&t>>6|(t*100&t)/256;
+		//return t%63-WAG_ResourceManager::dialogueChar;
+		return OpenAL_SoundStreamGenerative::compressFloat(sin(t&4|-t*3&t>>9));
 		//return /*t*30>>50|*/(t*2&t)/2;
-		return t*2|t&-3|t/2*4/((unsigned long int)pow(t+1,2))>>t*3/1;
+		//return t*2|t&-3|t/2*4/((unsigned long int)pow(t+1,2))>>t*3/1;
+		//return t>>WAG_ResourceManager::dialogueChar;
 	};
 }

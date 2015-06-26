@@ -17,8 +17,11 @@ public:
 	static Texture * foxPortrait;
 	static Texture * rabbitPortrait;
 	static OpenAL_Sound * stream;
+	static OpenAL_Sound * blip;
 	static JsonPlaythroughParser * playthrough;
 	static Texture * scratchings;
+
+	static char dialogueChar;
 
 	static void init();
 };

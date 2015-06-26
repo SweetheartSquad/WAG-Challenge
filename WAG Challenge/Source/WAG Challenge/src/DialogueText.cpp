@@ -1,6 +1,7 @@
 #pragma once
 
 #include <DialogueText.h>
+#include <WAG_ResourceManager.h>
 
 DialogueTextLabel::DialogueTextLabel(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader) :
 	TextLabel(_world, _scene, _font, _textShader, 1.f),
@@ -28,6 +29,9 @@ void DialogueTextLabel::tickerIn(float _delay){
 		Timeout * t = new Timeout(_delay * i);
 		t->onCompleteFunction = [g](Timeout * _this){
 			g->setVisible(true);
+			checkForAlError(alSourcef(WAG_ResourceManager::blip->source->sourceId, AL_PITCH, g->character/256.f + 0.5f));
+			WAG_ResourceManager::blip->play();
+			//WAG_ResourceManager::dialogueChar = g->character;
 		};
 		t->start();
 		timers.push_back(t);
