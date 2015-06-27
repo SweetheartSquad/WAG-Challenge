@@ -3,6 +3,7 @@
 #include <DialogueSay.h>
 #include <iostream>
 #include <WAG_ResourceManager.h>
+#include <Log.h>
 
 DialogueSay::DialogueSay() :
 	currentText(-1)
@@ -113,6 +114,7 @@ TriggerSetVar::TriggerSetVar(Json::Value _json) :
 }
 
 void TriggerSetVar::trigger(){
+	Log::info("Set Var: " + variable + " -> " + newValue);
 	WAG_ResourceManager::playthrough->characters.at(target)->variables.at(variable) = newValue;
 }
 
@@ -122,6 +124,7 @@ TriggerSetConversation::TriggerSetConversation(Json::Value _json) :
 }
 
 void TriggerSetConversation::trigger(){
+	Log::info("New Conversation: " + newConversation);
 	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations[newConversation];
 }
 

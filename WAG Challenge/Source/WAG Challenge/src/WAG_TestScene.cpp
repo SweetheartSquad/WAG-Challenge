@@ -150,7 +150,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	//childTransform->addChild(dd);
 
 	//dd->stuffToSay = WAG_ResourceManager::playthrough->conversations["WAG_CONVO_1"];
-	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["WAG_CONVO_1"];
+	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["START"];
 	Step step;
 	dd->update(&step);
 	dd->sayNext();

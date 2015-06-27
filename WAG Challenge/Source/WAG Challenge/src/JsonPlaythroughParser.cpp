@@ -36,7 +36,7 @@ JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) :
 	std::string jsonLoaded = FileUtils::voxReadFile(_jsonSrc);
 	parsingSuccessful = reader.parse( jsonLoaded, root );
 	if(!parsingSuccessful){
-		Log::error("JSON parse failed: " + reader.getFormattedErrorMessages() + "\n" + jsonLoaded);
+		Log::error("JSON parse failed: " + reader.getFormattedErrorMessages()/* + "\n" + jsonLoaded*/);
 	}else{
 		
 		 Json::Value charactersJson = root["characters"];
