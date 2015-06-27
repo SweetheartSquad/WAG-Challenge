@@ -1,9 +1,9 @@
 {
   "assets": [
     {
-      "id": "BURROW",
+      "id": "FOREST",
       "type": "texture",
-      "src": "burrow.png",
+      "src": "forest.png",
       "width": 1920,
       "height": 1080
     },
@@ -15,6 +15,83 @@
       "height": 1080
     },
     {
+      "id": "CAVE",
+      "type": "texture",
+      "src": "cave.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "CLEARING",
+      "type": "texture",
+      "src": "clearing.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "GROUNDHOG_FALL",
+      "type": "texture",
+      "src": "groundhog_fall.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "GROUNDHOG_DEAD",
+      "type": "texture",
+      "src": "groundhog_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "BLACK",
+      "type": "texture",
+      "src": "black.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "BEAVER_DEAD",
+      "type": "texture",
+      "src": "beaver_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "MAYOR_DEAD",
+      "type": "texture",
+      "src": "mayor_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "DORMOUSE_DEAD",
+      "type": "texture",
+      "src": "dormouse_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "MARTEN_DEAD",
+      "type": "texture",
+      "src": "marten_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "CHIPMUNK_DEAD",
+      "type": "texture",
+      "src": "chipmunk_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "SQUIRREL_DEAD",
+      "type": "texture",
+      "src": "squirrel_dead.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
       "id": "Fox",
       "type": "texture",
       "src": "fox_avatar.png",
@@ -22,85 +99,112 @@
       "height": 120
     },
     {
-      "id": "Rabbit",
+      "id": "Beaver",
+      "type": "texture",
+      "src": "beaver_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Marten",
+      "type": "texture",
+      "src": "marten_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Chipmunk",
+      "type": "texture",
+      "src": "chipmunk_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Squirrel",
+      "type": "texture",
+      "src": "squirrel_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Raccoon",
+      "type": "texture",
+      "src": "raccoon_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Wolf",
+      "type": "texture",
+      "src": "wolf_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Mayor",
       "type": "texture",
       "src": "rabbit_avatar.png",
       "width": 128,
       "height": 128
-    }
+    },
+    {
+      "id": "Dormouse",
+      "type": "texture",
+      "src": "fox_avatar.png",
+      "width": 120,
+      "height": 120
+    },
+    {
+      "id": "Hawk",
+      "type": "texture",
+      "src": "hawk_avatar.png",
+      "width": 120,
+      "height": 120
+    },
   ],
   "characters": [
     {
       "id": "WAG_FOX",
       "variables": {
-        "CHOICE_1": null,
-        "CHOICE_2": null
+        "SAW_MURDER": null,
+        "TELL_MAYOR": null,
+        "ATE": null
       }
     }
   ],
   "conversations": [
     {
-      "id":"WAG_CONVO_1",
+      "id":"START",
       "dialogue": [
         {
-          "speaker": "Fox",
-          "portrait": "RIVER",
+          "speaker": "None",
+          "portrait": "FOREST",
           "text": [
-            "This is a dialogue thing",
-            "beep",
-            "boop",
-            "i am a robot"
+            "As usual, your morning starts with a visit from your neighbour."
           ]
         },
         {
-          "speaker": "Rabbit",
-          "portrait": "BURROW",
+          "speaker": "Beaver",
+          "portrait": "FOREST",
           "text": [
-            "thanks cheryl"
-          ]
-        },
-        {
-          "speaker": "Fox",
-          "portrait": "animals",
-          "text": [
-            "This text is also pretty long so that we can test out the text-wrapping stuff when it gets to around this point.",
-            "Bacon ipsum dolor amet cillum dolor sausage elit. Pariatur pork belly elit, ut aliqua kielbasa leberkas jowl. Cillum nulla et excepteur spare ribs ham landjaeger doner rump aliquip commodo laborum tenderloin swine. Short ribs boudin in cupidatat salami. Non venison cupim laborum pastrami tongue ipsum consequat quis ut.\nBall tip non ham hock, occaecat aliquip pastrami short loin spare ribs. Strip steak nisi commodo in, ea aliqua tenderloin biltong sunt anim sausage ball tip turkey. Pork kevin short ribs veniam. Ball tip ullamco shankle corned beef. Tri-tip sunt dolore, officia jowl pork loin enim ham hock eiusmod swine t-bone. Ad tail turducken aute rump lorem."
-          ]
-        },
-        {
-          "speaker": "Rabbit",
-          "portrait": "BURROW",
-          "text": [
-            "question one???"
+            "Morning, Fox!"
           ],
           "options": [
             {
-              "text": "option 1",
+              "text": "Be friendly",
               "triggers": [
                 {
-                  "type": "setVar",
-                  "target": "WAG_FOX",
-                  "variable": "CHOICE_1",
-                  "value": "1"
-                },
-                {
                   "type": "setConversation",
-                  "conversation": "WAG_CONVO_2"
+                  "conversation": "GREET_BEAVER"
                 }
               ]
             },
             {
-              "text": "option 2",
+              "text": "Be reserved",
               "triggers": [
                 {
-                  "type": "setVar",
-                  "target": "WAG_FOX",
-                  "variable": "CHOICE_1",
-                  "value": "2"
-                },
-                {
                   "type": "setConversation",
-                  "conversation": "WAG_CONVO_2"
+                  "conversation": "GREET_BEAVER"
                 }
               ]
             }
@@ -109,60 +213,27 @@
       ]
     },
 
+
+
+
+
+
     {
-      "id":"WAG_CONVO_2",
+      "id":"GREET_BEAVER",
       "dialogue": [
         {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
-          "text": [
-            "This is a brand new conversation!!"
-          ]
-        },
-        {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
-          "text": [
-            "question two???"
-          ],
-          "options": [
-            {
-              "text": "option 1",
-              "triggers": [
-                {
-                  "type": "setVar",
-                  "target": "WAG_FOX",
-                  "variable": "CHOICE_2",
-                  "value": "1"
-                }
-              ]
-            },
-            {
-              "text": "option 2",
-              "triggers": [
-                {
-                  "type": "setVar",
-                  "target": "WAG_FOX",
-                  "variable": "CHOICE_2",
-                  "value": "2"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
+          "speaker": "Fox",
+          "portrait": "FOREST",
           "conditions": [
             {
               "type": "equality",
               "target": "WAG_FOX",
-              "variable": "CHOICE_1",
+              "variable": "GREETING",
               "value": "1"
             }
           ],
           "text": [
-            "You chose one for the first choice."
+            "Beaver! Good to see you. What's the plan for today?"
           ]
         },
         {
@@ -172,45 +243,3836 @@
             {
               "type": "equality",
               "target": "WAG_FOX",
-              "variable": "CHOICE_1",
+              "variable": "GREETING",
               "value": "2"
             }
           ],
           "text": [
-            "You chose two for the first choice."
+            "Hey, Beaver."
           ]
         },
         {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
-          "conditions": [
-            {
-              "type": "equality",
-              "target": "WAG_FOX",
-              "variable": "CHOICE_2",
-              "value": "1"
-            }
-          ],
+          "speaker": "Beaver",
+          "portrait": "FOREST",
           "text": [
-            "You chose one for the second choice."
+            "Marten's had the idea to take a dip in the river. Want to join?"
           ]
         },
         {
-          "speaker": "cheryl",
-          "portrait": "cheryl",
-          "conditions": [
-            {
-              "type": "equality",
-              "target": "WAG_FOX",
-              "variable": "CHOICE_2",
-              "value": "2"
-            }
-          ],
+          "speaker": "Fox",
+          "portrait": "FOREST",
           "text": [
-            "You chose two for the second choice."
+            "Yeah, I might for a bit."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "You walk down to the river with Beaver."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "Marten is already in the water. Wolf is standing by the shore."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "Heyo! Come have a dip with us, yeah?"
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "It's a bit cold..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "That's quitter talk, Wolf!"
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "Well, I'm coming in. Fox?"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I, uh, might take a walk first."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "That's all you ever want to do. C'mon, take a swim! You'll like it!"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I'll swim when I get back, promise."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "Alright, but I'm holding you to that. Hurry back."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You wander a long way into the woods."
+          ]
+          "triggers": [
+          	{
+                "type": "setConversation",
+            	"conversation": "KILLING"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {
+      "id":"KILLING",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "CLEARING",
+          "text": [
+            "You step into a clearing you do not recognize."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "GROUNDHOG_FALL",
+          "text": [
+            "An animal falls to the ground in front of you."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "GROUNDHOG_DEAD",
+          "text": [
+            "Another animal flies down from above and begins to eat the first."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "GROUNDHOG_DEAD",
+          "text": [
+            "The new animal looks up and sees you. He bristles."
+          ]
+        },
+        {
+          "speaker": "Hawk",
+          "portrait": "CLEARING",
+          "text": [
+            "Piss off, scav! This is my kill!"
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CLEARING",
+          "text": [
+            "Not knowing what to say, you run back to the others."
+          ]
+          "triggers": [
+          	{
+                "type": "setConversation",
+            	"conversation": "RETURN_TO_RIVER"
+            }
           ]
         }
       ]
     }
+   
+   
+   
+   {
+      "id":"RETURN_TO_RIVER",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "Marten and Beaver are still in the river. Wolf seems to have left."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "You okay, Fox? Walk too fast?"
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "You do look pretty ill, Fox. What happened?"
+          ],
+          "options": [
+            {
+              "text": "Something",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "TELL_THEM_SOMETHING"
+                }
+              ]
+            },
+            {
+              "text": "Nothing",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "TELL_THEM_NOTHING"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id":"TELL_THEM_SOMETHING",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I saw something. Out there, in a clearing."
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [ "What did you see?" ]
+          "options": [
+            {
+              "text": "A murder",
+              "triggers": [
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "SAW_MURDER",
+                  "value": "1"
+                },
+                {
+                  "type": "setConversation",
+                  "conversation": "A_MURDER"
+                }
+              ]
+            },
+            {
+              "text": "I don't know",
+              "triggers": [
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "SAW_MURDER",
+                  "value": "0"
+                },
+                {
+                  "type": "setConversation",
+                  "conversation": "DONT_KNOW"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id":"A_MURDER",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "There was... there was an animal. He fell right out of the sky in front of me."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+           "As animals are known to do, of course."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+           "And... there was another animal. Flew down from the sky and..."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "He started... eating... the other one."
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "What?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "You're nutty, Fox. This is some bit."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "No, I... I really saw it!"
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "Fox, are you sure?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "Come on now, Fox is just having a laugh! What part of that story sounds true!"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I don't.. I don't know. But I saw it. That flying one was... crazy. He was just..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+			"Eat something, Fox. You always get a little loopy when you're hungry."
+			]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I'm not... I... "
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "Er... maybe you should take a nap, Fox."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "..."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Fine."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "You head back to the Hollow, confused by what you saw."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "NIGHT_ONE"
+            }
+          ]
+        }
+      ]
+    },
+    
+    {
+      "id":"DONT_KNOW",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I... don't know. I think... well... I'm not sure."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "Hallucations, I suspect! I bet you forgot to eat breakfast again, didn't you?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "You're always a bit loopy when you're hungry."
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "Maybe you should take a nap, Fox."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I think I will."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "NIGHT_ONE"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    {
+      "id":"TELL_THEM_NOTHING",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Nothing, I just... feel a little ill."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "Marten sighs dramatically."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "RIVER",
+          "text": [
+            "I suppose you're not well enough to swim, then?"
+          ]
+        },
+        {
+          "speaker": "Beaver",
+          "portrait": "RIVER",
+          "text": [
+            "Maybe you should take a nap, Fox."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I think I will."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "NIGHT_ONE"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"NIGHT_ONE",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "On your way back to the Hollow, you run into Wolf."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "He is very flustered."
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "FOREST",
+          "text": [
+            "Fox, uh, you were there, right? You saw it too?"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "What do you mean?"
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "FOREST",
+          "text": [
+            "Out past the river. You, uh, saw the murder?"
+          ],
+          "options": [
+            {
+              "text": "Yes",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "TELL_WOLF_TRUTH"
+                }
+              ]
+            },
+            {
+              "text": "No",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LIE_TO_WOLF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"TELL_WOLF_TRUTH",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Yeah. I did."
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "I... can't believe it. Right? Why did he... and.. well... Wow! You know?"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I don't know. It seems crazy. It is crazy. I thought I dreamed it."
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "I... we can't tell anyone, right? That would be too weird.  I... Promise not to tell anyone?"
+          ],
+          "options": [
+			{
+              "text": "Sure",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "STAY_QUIET"
+                }
+              ]
+            },
+            {
+              "text": "No",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "MUST_TELL"
+                }
+              ]
+            }          
+          ]
+        }
+      ]
+    },
+    
+    
+    {
+      "id":"STAY_QUIET",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Sure, I guess."
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "I.. I think it's for the best. We don't want to panic anyone..."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Ok. But if we see that flying guy again, we've got to warn the mayor."
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "Yeah, sure, sure... we'll tell him later..."
+          ],
+          "triggers": [
+            {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "TELL_MAYOR",
+                  "value": "0"
+            },
+            {
+                "type": "setConversation",
+            	"conversation": "MORNING"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"MUST_TELL",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "We have to tell everyone! That animal is dangerous!"
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "But they... they won't understand! They'll panic! Please... we can't tell. Don't tell!"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Well, we should at least tell the mayor!"
+            ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "Okay, okay... fine, I'll... I'll go tell him."
+            ],
+          "triggers": [
+              {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "TELL_MAYOR",
+                  "value": "1"
+              }
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "Wolf wanders off, shaken."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "MORNING"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"LIE_TO_WOLF",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "What are you talking about?"
+          ]
+        },
+        {
+          "speaker": "Wolf",
+          "portrait": "RIVER",
+          "text": [
+            "Oh! I, uh, I thought... well... never mind."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "See you later, Wolf."
+          ],
+          "triggers": [
+              {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "TELL_MAYOR",
+                  "value": "0"
+              }
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "You walk back to your den and go to bed."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "MORNING"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"MORNING",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "Your sleep that night is unpleasant."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "In the morning, you wake and leave your den."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You see Marten. He looks pale."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "Marten? What's wrong?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "text": [
+            "I... He... He's dead..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "It-- it ate him..."
+          ]
+        },
+        {
+          "speaker": "FOX",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Drop it, Marten! I'm not in the mood."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I'm serious!"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "So am I! Stop it!"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "W-what are you saying, Marten? Who's dead?"
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Marten points off into the distance. You see Beaver laying on the ground."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BEAVER_DEAD",
+          "text": [
+            "He's dead."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BEAVER_DEAD",
+          "text": [
+            "The other animals begin to gather."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "Make way, make way!"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "What happened here?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "It ate him! The hawk ate him!"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "What are you talking about? Move back, Marten!"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "Oh... oh, no..."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "The mayor stares at Beaver. No one moves or speaks."
+          ],
+          "options": [
+            {
+              "text": "Examine the body",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "BODY_AT_SCENE"
+                }
+              ]
+            },
+            {
+              "text": "Talk to the mayor",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "MAYOR_AT_SCENE"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"BODY_AT_SCENE",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "BEAVER_DEAD",
+          "text": [
+            "There are deep lacerations across the body."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BEAVER_DEAD",
+          "text": [
+            "You see what you think are teeth marks. The body has been pried open and gutted."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BEAVER_DEAD",
+          "text": [
+            "You aren't sure what to do now."
+          ],
+          "options": [
+            {
+              "text": "Talk to the mayor",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "MAYOR_AT_SCENE"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "START_LOCKDOWN"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"MAYOR_AT_SCENE",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "Mayor, I..."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "Not now, Fox."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "But, I think..."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "Not now."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "TELL_MAYOR",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Didn't Wolf tell you about the flying animal?"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "TELL_MAYOR",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "What flying animal? I haven't seen Wolf since yesterday."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "TELL_MAYOR",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I just thought... never mind."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "TELL_MAYOR",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I think I know what happened..."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "TELL_MAYOR",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I said not now, Fox!"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "TELL_MAYOR",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "You go quiet and turn away."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "RIVER",
+          "text": [
+            "You look over at Beaver and feel sick."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "START_LOCKDOWN"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"START_LOCKDOWN",
+      "dialogue": [
+        {
+          "speaker": "Squirrel",
+          "portrait": "RIVER",
+          "text": [
+            "Wh-wh-- what happened?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "There was an animal in the woods. It killed him, I know it!"
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Why? Why would anyone kill Beaver?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "To eat him!"
+          ]
+        },
+        {
+          "speaker": "Badger",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Marten, are you alright?"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "What are you blathering on about, Marten! Quiet down!"
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "It looks like he was... ripped open..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Why would... who..."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "This is horrible!"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "May I have your attention, please!"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "All we know right now is that Beaver is dead."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "We don't know who, or what, did this terrible deed."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "FOREST",
+          "text": [
+            "But we will take every effort to find the truth."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "text": [
+            "Please return to your homes. The Mayor and I will conduct an investigation."
+          ]
+        },
+        {
+          "speaker": "Squirrel",
+          "portrait": "FOREST",
+          "text": [
+            "Please... find out who did this."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "NIGHT_TWO"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"NIGHT_TWO",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You walk for hours."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "This doesn't help your restlessness, but it makes you tired."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "It is getting late. You return to the Hollow."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "As you walk to your den, you see a light in the meeting cave."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "You approach the cave."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "Inside, you see the mayor and Dormouse."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "I saw Fox coming out of the forest, shaking like a leaf."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "A little later, Wolf came out looking the same."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "I went to see what they saw, and, well..."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "This is terrible... it took nothing! It's already falling apart!"
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "It's in the instincts. And they must feel it, right?"
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "They can't survive on our food. They feel weak."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "We should have prepared for this! Why didn't we think?"
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "We failed, Rabbit. But what do we do now? We need a permanent fix. We can't--"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Be quiet, Dor! Let me think!"
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "Look, this is bad. We thought we could do this, but we failed. Give it up!"
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "What do we say about Beaver? What about Wolf? What about--"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I took care of Wolf. I convinced him to leave. He's acres away by now."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "We'll say it was... I don't know. We'll say it was that hawk."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "We'll tell them to stay indoors for a few days until the threat passes."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "Well, even if that works, what about Fox?"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Calm down. I will get this situation under control."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "We need to end this, Rabbit. There's no other option!"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Let me try, Dor. I can do this." 
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "..."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "Fine."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "But they're dying, Rabbit. It's only a matter of time."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "CAVE",
+          "text": [
+            "I'm leaving tomorrow night. With or without you."
+          ]
+        }
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "You leave before Dormouse catches you."
+          ]
+        }
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+          	"You return to your den for more uneasy sleep."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "MORNING_TWO"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"MORNING_TWO",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You wake up and leave your den. The wind is quiet."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Raccoon appears from her den as well. She comes to greet you."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "Hello, Fox."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "Hello, Raccoon."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "..."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "What did you see, Fox? Out in the woods?"
+          ],
+          "options": [
+            {
+              "text": "Explain it",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EXPLAIN"
+                }
+              ]
+            },
+            {
+              "text": "Deny it",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "DENY"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"EXPLAIN",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "There was an animal. He... killed someone. I saw it happen."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "Oh..."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "Do you... do you think he killed Beaver, too?"
+          ],
+          "options": [
+            {
+              "text": "Yes",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "YES_RACCOON"
+                }
+              ]
+            },
+            {
+              "text": "No",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "NO_RACCOON"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"YES_RACCOON",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I... yes. It makes sense, right? He... killed Beaver. Like he killed the other animal."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "Yes... I think so too. It must be."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "..."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "We'd... better go back inside, I think."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "Yes."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Raccoon stares off into the woods for a second, then leaves."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You need to talk to the mayor."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "CONFRONT"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"NO_RACCOON",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "I don't... think so."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "What do you mean?"
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "I think it was someone else."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "But..."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "Well... I can't say more until I know for sure."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Raccoon stares off into the woods for a moment."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "I think... we should go back inside, now."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Raccoon goes back into her den."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You need to talk to the mayor."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "CONFRONT"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+	{
+      "id":"DENY",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "RIVER",
+          "text": [
+            "What are you talking about?"
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Marten says you saw an animal in the woods."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "He said it... ate another animal."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "SAW_MURDER",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I heard... someone said you saw something."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "I don't know what you're talking about, Raccoon."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "Oh."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Raccoon stares off into the woods for a moment."
+          ]
+        },
+        {
+          "speaker": "Raccoon",
+          "portrait": "FOREST",
+          "text": [
+            "We... we should go back inside, I think."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Raccoon goes back into her den."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You need to talk to the mayor."
+          ],
+          "triggers": [
+            {
+                "type": "setConversation",
+            	"conversation": "CONFRONT"
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"CONFRONT",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "You find the mayor in the meeting cave. He sits in the corner with his back to you."
+          ],
+          "options": [
+            {
+              "text": "Greet",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "GREET_CONFRONT"
+                }
+              ]
+            },
+            {
+              "text": "Confront",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "JUST_CONFRONT"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"GREET_CONFRONT",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "CAVE",
+          "text": [
+            "Hello, mayor."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "The mayor does not respond."
+          ],
+          "options": [
+            {
+              "text": "Confront",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "JUST_CONFRONT"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"JUST_CONFRONT",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "CAVE",
+          "text": [
+            "Did Wolf kill Beaver?"
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "..."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I think you know why, Fox..."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "A better question would be why animals eat each other."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Or why I kept that a secret from you."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Or why I thought it would work."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "The mayor begins to pace."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Some animals eat each other."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "This is normal."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "It's part of you, it's how your body works, it's what you need to do to survive."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "You're dying, Fox. You should know that."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "You are weak. You can feel it. But I suppose we accept illness we think is normal."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I was tired, I suppose. Of being in fear. Or not being in control."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I was tired of what I needed to do to survive."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I don't know that I was trying to create a utopia."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I think I was just scared, and I wanted a solution."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "That's why I stole you. I stole you and I isolated you. As I did with the others."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Maybe it was a test to see if it would work."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Maybe I thought it would work the first time."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I think it's presumptuous to assume that I had any idea what I was doing. Or why."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I don't know."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "The mayor stops pacing."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I don't know, I don't know. But it's not working."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I had a speech for Wolf but that was when I thought I had this under control."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Whatever this is, it's over. And I can't clean it up."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "I'm leaving tonight."
+          ]
+        },
+        {
+          "speaker": "Mayor",
+          "portrait": "CAVE",
+          "text": [
+            "Do whatever compels you."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "CAVE",
+          "text": [
+            "The mayor sits down."
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_MAYOR"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_MAYOR"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    
+    {
+      "id":"EAT_MAYOR",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "MAYOR_DEAD",
+          "text": [
+            "You eat the mayor."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_DORMOUSE"
+                },
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "EAT",
+                  "value": "1"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"LEAVE_MAYOR",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You leave the cave."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_DORMOUSE"
+                },
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "EAT",
+                  "value": "0"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"CONFRONT_DORMOUSE",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Dormouse approaches you."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Fox, I..."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You.... oh, oh no...."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Dormouse starts tugging at his own ears."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You killed him!"
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_DORMOUSE"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_DORMOUSE"
+                }
+              ]
+            }
+          ]
+        }
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Fox! I, uh... how are you?"
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Shouldn't you be inside?"
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_DORMOUSE"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_DORMOUSE"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"EAT_DORMOUSE",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "DORMOUSE_DEAD",
+          "text": [
+            "You eat Dormouse."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_MARTEN"
+                },
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "EAT",
+                  "value": "1"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"LEAVE_DORMOUSE",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I'm sorry."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I.. need to leave."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Dormouse breathes deeply, then lets go of his ears."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Yes, you do."
+          ]
+        },
+        {
+          "speaker": "Dormouse",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You need to go as far away as you can."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Yes, I... I'll go back inside, now."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You walk past Dormouse."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_MARTEN"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    
+    {
+      "id":"CONFRONT_MARTEN",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "As you walk by his den, Marten comes out."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Fox! Where are you going?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "text": [
+            "We shouldn't be out here..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "We... Fox?"
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Why is there blood on your face? Are you..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "u..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "No, I... Fox, please. Don't..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "No. No, no, no...."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "What if the murderer comes back?"
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Marten looks around fervently."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I hate this..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Everything was so... well..."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Why aren't we safe here, anymore?"
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_MARTEN"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_MARTEN"
+                }
+              ]
+            }
+          ]
+        }
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "No..."
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_MARTEN"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_MARTEN"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"EAT_MARTEN",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "MARTEN_DEAD",
+          "text": [
+            "You eat Marten."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_CHIPMUNK"
+                },
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "EAT",
+                  "value": "1"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"LEAVE_MARTEN",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Marten, I didn't kill Beaver."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "But I... I did kill."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "This is who I am, I think."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I-- I don't know. I'm..."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I have to leave, Marten, before I do it again."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Something's happening, Marten."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I have to leave befor it gets worse."
+          ]
+        },
+        {
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "What are you talking about?"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I just-- I have to go. I'm leaving the Hollow."
+          ]
+        },
+		{
+          "speaker": "Marten",
+          "portrait": "FOREST",
+          "text": [
+            "B-but--"
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+            "Let me go, Marten."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "Marten looks confused and hurt."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "After a moment, he steps aside."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You walk past Marten."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_CHIPMUNK"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"CONFRONT_CHIPMUNK",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You continue on. You see Chipmunk ahead, blocking your path."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "When you get close, she shuts her eyes."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Oh."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Oh dear."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I didn't want to be right."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "But that's not your blood, is it."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Her breathing become purposefully slow as she opens her eyes."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I don't know what to say."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "But--"
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I want you to do the right thing."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Fox, I need to ask you a question."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I need you to be honest."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "I need you to be honest."
+          ]
+        },
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Did you kill Beaver?"
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_CHIPMUNK"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_CHIPMUNK"
+                }
+              ]
+            }
+          ]
+        }
+        {
+          "speaker": "Chipmunk",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Please."
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_CHIPMUNK"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_CHIPMUNK"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"EAT_CHIPMUNK",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "CHIPMUNK_DEAD",
+          "text": [
+            "You eat Chipmunk."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_SQUIRREL"
+                },
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "EAT",
+                  "value": "1"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"LEAVE_CHIPMUNK",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "I'm sorry, Chipmunk."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "Chipmunk closes her eyes and doesn't speak."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "No."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "But... it might as well have been."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "You know something's wrong, Chipmunk."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "But please don't worry. I'm leaving."
+          ]
+        },
+		{
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Chipmunk looks at you blankly."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "She nods, slightly."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You leave her standing there."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "CONFRONT_SQUIRREL"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    
+    {
+      "id":"CONFRONT_SQUIRREL",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "The night around you gets darker as you reach the edge of the Hollow."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "You see Squirrel's tree to the right. He emerges from it."
+          ]
+        },
+        {
+          "speaker": "Squirrel",
+          "portrait": "FOREST",
+          "text": [
+            "Fox!"
+          ]
+        },
+        {
+          "speaker": "Squirrel",
+          "portrait": "FOREST",
+          "text": [
+            "Shouldn't you be inside? It's dangerous out there!"
+          ]
+        },
+        {
+          "speaker": "Squirrel",
+          "portrait": "FOREST",
+          "text": [
+            "Come in here! You'll be safer."
+          ],
+          "options": [
+            {
+              "text": "Eat",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "EAT_SQUIRREL"
+                }
+              ]
+            },
+            {
+              "text": "Leave",
+              "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "LEAVE_SQUIRREL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"EAT_SQUIRREL",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "CHIPMUNK_DEAD",
+          "text": [
+            "You eat Squirrel."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "ENDING"
+                },
+                {
+                  "type": "setVar",
+                  "target": "WAG_FOX",
+                  "variable": "EAT",
+                  "value": "1"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    {
+      "id":"LEAVE_SQUIRREL",
+      "dialogue": [
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+             "It's okay, Squirrel."
+          ]
+        },
+        {
+          "speaker": "Fox",
+          "portrait": "FOREST",
+          "text": [
+             "Don't worry."
+          ]
+        },
+        {
+          "speaker": "Squirrel",
+          "portrait": "FOREST",
+          "text": [
+             "Well... okay, Fox. But please be safe..."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "FOREST",
+          "text": [
+            "She goes back inside."
+          ],
+          "triggers": [
+                {
+                  "type": "setConversation",
+                  "conversation": "ENDING"
+                }
+          ]
+        }
+      ]
+    },
+    
+    
+    
+    
+    {
+      "id":"ENDING",
+      "dialogue": [
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "You leave your old home."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "You find a new one, alone."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "There you live a new life that feels familiar."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "You hunt to eat."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            " Sometimes, you think about your friends."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "Every meal makes you stronger."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "The weakness falls off like dirt."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "text": [
+            "One day in Spring, you find yourself in a part of the woods you remember."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You find bones you remember."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You don't remember most of the bones you've made over the last few seasons."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You don't remember most of the days you used to spend by the river here."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "1"
+            }
+          ],
+          "text": [
+            "You do remember how, on some days, the wind got quiet just like this."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "There is nothing to see."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "There are no animals, no voices, no movement."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "You wonder where they went. If some went together."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "If they found homes or empty spaces."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "You remember feeling concern for them, for a moment."
+          ]
+        },
+        {
+          "speaker": "None",
+          "portrait": "BLACK",
+          "conditions": [
+            {
+              "type": "equality",
+              "target": "WAG_FOX",
+              "variable": "EAT",
+              "value": "0"
+            }
+          ],
+          "text": [
+            "Then it falls off like dirt."
+          ]
+        }
+      ]
+    }
+    
+    
+    
+   
   ]
 }
