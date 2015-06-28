@@ -39,6 +39,10 @@ void DialogueSay::init(Json::Value _json){
 	for(int i = 0; i < textArray.size(); ++i){
 		text.push_back(textArray[i].asString());
 	}
+	const Json::Value triggersArray = _json["triggers"];
+	for(int j = 0; j < triggersArray.size(); ++j){
+		triggers.push_back(Trigger::getTrigger(triggersArray[j]));
+	}
 }
 
 std::string DialogueSay::getCurrentText(){

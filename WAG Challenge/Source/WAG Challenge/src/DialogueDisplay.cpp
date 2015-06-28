@@ -142,6 +142,12 @@ DialogueDisplay::~DialogueDisplay(){
 }
 
 bool DialogueDisplay::sayNext(){
+	// trigger anything left on the current dialogue object
+	// (note that if there are multiple lines of text for the object, the triggers will be called multiple times)
+	for(Trigger * t : (*stuffToSay)->getCurrentDialogue()->triggers){
+		t->trigger();
+	}
+
 	// move conversation forward
 	if(!(*stuffToSay)->sayNextDialogue()){
 		// if there's nothing left to say, return false

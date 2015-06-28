@@ -58,6 +58,7 @@ public:
 	std::string portrait;
 	std::vector<std::string> text;
 	signed long int currentText;
+	std::vector<Trigger *> triggers;
 
 	std::vector<Condition *> conditions;
 	

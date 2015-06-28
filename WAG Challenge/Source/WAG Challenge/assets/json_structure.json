@@ -1072,7 +1072,7 @@
                         }
                     ],
                     "text": [
-                        "It ate him! The hawk ate him!"
+                        "It ate him! That thing ate him!"
                     ]
                 },
                 {
@@ -2352,6 +2352,13 @@
                     "portrait": "MAYOR_DEAD",
                     "text": [
                         "You eat the mayor."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "MAYOR_DEAD",
+                    "text": [
+                        "When you are finished, you leave the cave."
                     ],
                     "triggers": [
                         {
@@ -2361,7 +2368,7 @@
                         {
                             "type": "setVar",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ]
@@ -2385,7 +2392,7 @@
                         {
                             "type": "setVar",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ]
@@ -2399,7 +2406,7 @@
                     "speaker": "None",
                     "portrait": "FOREST",
                     "text": [
-                        "Dormouse approaches you."
+                        "As you leave, Dormouse approaches the cave."
                     ]
                 },
                 {
@@ -2409,7 +2416,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2424,7 +2431,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2439,7 +2446,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2454,7 +2461,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2489,7 +2496,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2504,7 +2511,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2551,7 +2558,7 @@
                         {
                             "type": "setVar",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ]
@@ -2568,7 +2575,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2583,7 +2590,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2598,7 +2605,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2613,7 +2620,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2628,7 +2635,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2643,7 +2650,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2673,7 +2680,7 @@
                     "speaker": "None",
                     "portrait": "FOREST",
                     "text": [
-                        "As you walk by his den, Marten comes out."
+                        "As you enter the Hollow, Marten comes out of his den."
                     ]
                 },
                 {
@@ -2683,7 +2690,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2705,7 +2712,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2720,7 +2727,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2735,22 +2742,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
-                            "value": "1"
-                        }
-                    ],
-                    "text": [
-                        "u..."
-                    ]
-                },
-                {
-                    "speaker": "Marten",
-                    "portrait": "FOREST",
-                    "conditions": [
-                        {
-                            "type": "equality",
-                            "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2765,7 +2757,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2780,7 +2772,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2795,7 +2787,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2810,7 +2802,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2825,7 +2817,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2840,7 +2832,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -2875,7 +2867,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2922,7 +2914,7 @@
                         {
                             "type": "setVar",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ]
@@ -2939,7 +2931,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2954,7 +2946,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2969,7 +2961,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2984,7 +2976,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -2999,7 +2991,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3014,7 +3006,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3029,7 +3021,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3044,7 +3036,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3059,7 +3051,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3127,7 +3119,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3142,7 +3134,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3157,7 +3149,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3172,7 +3164,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3187,7 +3179,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3202,7 +3194,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3217,7 +3209,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3232,7 +3224,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3247,7 +3239,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3262,57 +3254,12 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
-                            "value": "0"
+                            "variable": "ATE",
+                            "value": "1"
                         }
                     ],
                     "text": [
-                        "Fox, I need to ask you a question."
-                    ]
-                },
-                {
-                    "speaker": "Chipmunk",
-                    "portrait": "FOREST",
-                    "conditions": [
-                        {
-                            "type": "equality",
-                            "target": "WAG_FOX",
-                            "variable": "EAT",
-                            "value": "0"
-                        }
-                    ],
-                    "text": [
-                        "I need you to be honest."
-                    ]
-                },
-                {
-                    "speaker": "Chipmunk",
-                    "portrait": "FOREST",
-                    "conditions": [
-                        {
-                            "type": "equality",
-                            "target": "WAG_FOX",
-                            "variable": "EAT",
-                            "value": "0"
-                        }
-                    ],
-                    "text": [
-                        "I need you to be honest."
-                    ]
-                },
-                {
-                    "speaker": "Chipmunk",
-                    "portrait": "FOREST",
-                    "conditions": [
-                        {
-                            "type": "equality",
-                            "target": "WAG_FOX",
-                            "variable": "EAT",
-                            "value": "0"
-                        }
-                    ],
-                    "text": [
-                        "Did you kill Beaver?"
+                        "Please."
                     ],
                     "options": [
                         {
@@ -3342,12 +3289,42 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
-                            "value": "1"
+                            "variable": "ATE",
+                            "value": "0"
                         }
                     ],
                     "text": [
-                        "Please."
+                        "Fox, I need to ask you a question."
+                    ]
+                },
+                {
+                    "speaker": "Chipmunk",
+                    "portrait": "FOREST",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "I need you to be honest."
+                    ]
+                },
+                {
+                    "speaker": "Chipmunk",
+                    "portrait": "FOREST",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Did you kill Beaver?"
                     ],
                     "options": [
                         {
@@ -3389,7 +3366,7 @@
                         {
                             "type": "setVar",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ]
@@ -3406,7 +3383,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3421,7 +3398,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3436,7 +3413,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3451,7 +3428,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3466,7 +3443,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3481,7 +3458,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3496,7 +3473,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3511,7 +3488,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3611,7 +3588,7 @@
                         {
                             "type": "setVar",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ]
@@ -3646,7 +3623,7 @@
                     "speaker": "None",
                     "portrait": "FOREST",
                     "text": [
-                        "She goes back inside."
+                        "He goes back inside."
                     ],
                     "triggers": [
                         {
@@ -3723,7 +3700,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3738,7 +3715,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3753,7 +3730,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3768,7 +3745,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "1"
                         }
                     ],
@@ -3783,7 +3760,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3798,7 +3775,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3813,7 +3790,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3828,7 +3805,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3843,7 +3820,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
@@ -3858,7 +3835,7 @@
                         {
                             "type": "equality",
                             "target": "WAG_FOX",
-                            "variable": "EAT",
+                            "variable": "ATE",
                             "value": "0"
                         }
                     ],
