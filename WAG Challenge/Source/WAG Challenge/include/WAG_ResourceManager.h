@@ -16,7 +16,6 @@ public:
 	static JsonPlaythroughParser * playthrough;
 
 	static std::string speaker;
-	static std::map<std::string, OpenAL_Sound *> voices;
 
 	static void init();
 };

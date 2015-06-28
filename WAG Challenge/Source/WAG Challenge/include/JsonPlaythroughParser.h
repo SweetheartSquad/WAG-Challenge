@@ -25,10 +25,12 @@ public:
 	std::map<std::string, Conversation *> conversations;
 	std::map<std::string, Character *> characters;
 	std::map<std::string, AssetTexture *> textures;
+	std::map<std::string, AssetAudio *> audio;
 
 	Conversation * currentConversation;
 
 	JsonPlaythroughParser(std::string _jsonSrc);
-
+	
 	AssetTexture * getTexture(std::string _id);
+	AssetAudio * getAudio(std::string _id);
 };

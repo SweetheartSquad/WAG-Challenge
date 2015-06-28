@@ -12,8 +12,6 @@ Texture * WAG_ResourceManager::cheryl = new Texture("../assets/engine basics/img
 OpenAL_Sound * WAG_ResourceManager::stream = new OpenAL_SoundStreamGenerative(false, false/*, 100, 10*/);
 JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
 
-std::map<std::string, OpenAL_Sound *> WAG_ResourceManager::voices;
-
 
 std::string WAG_ResourceManager::speaker = "blip";
 
@@ -23,18 +21,6 @@ void WAG_ResourceManager::init(){
 	resources.push_back(cheryl);
 	resources.push_back(stream);
 
-	OpenAL_Sound * voice = new OpenAL_SoundSimple("../assets/audio/fox.wav", false, false);
-	voices["Fox"] = voice;
-	resources.push_back(voice);
-
-	voice = new OpenAL_SoundSimple("../assets/audio/rabbit.wav", false, false);
-	voices["Rabbit"] = voice;
-	resources.push_back(voice);
-
-	voice = new OpenAL_SoundSimple("../assets/audio/blip.ogg", false, false);
-	voices["blip"] = voice;
-	resources.push_back(voice);
-	
 	stream->source->buffer->sampleRate = 48000;
 	stream->source->buffer->format = AL_FORMAT_STEREO8;
 	dynamic_cast<OpenAL_SoundStreamGenerative *>(stream)->generativeFunction = [](unsigned long int t){

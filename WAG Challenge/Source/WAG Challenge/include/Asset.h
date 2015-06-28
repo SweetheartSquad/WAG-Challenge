@@ -4,6 +4,7 @@
 #include <Texture.h>
 #include <TextureSampler.h>
 #include <json\json.h>
+#include <OpenALSound.h>
 
 class Asset abstract : public NodeContent{
 public:
@@ -22,4 +23,12 @@ public:
 
 	AssetTexture(Json::Value _json);
 	~AssetTexture();
+};
+
+class AssetAudio : public Asset{
+public:
+	OpenAL_Sound * sound;
+
+	AssetAudio(Json::Value _json);
+	~AssetAudio();
 };

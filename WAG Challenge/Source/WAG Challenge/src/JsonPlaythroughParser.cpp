@@ -31,6 +31,13 @@ JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) :
 			"\"height\": 256"
 		"}", defTexJson);
 	textures["DEFAULT"] = new AssetTexture(defTexJson);
+	parsingSuccessful = reader.parse(
+		"{"
+			"\"id\":\"DEFAULT\",\""
+			"\"type\": \"audio\","
+			"\"stream\": false"
+		"}", defTexJson);
+	audio["DEFAULT"] = new AssetAudio(defTexJson);
 
 
 	std::string jsonLoaded = FileUtils::voxReadFile(_jsonSrc);
@@ -57,6 +64,12 @@ JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) :
 			 AssetTexture * at = dynamic_cast<AssetTexture *>(a);
 			 if(at != nullptr){
 				textures[at->id] = at;
+				continue;
+			 }
+			 AssetAudio * aa = dynamic_cast<AssetAudio *>(a);
+			 if(aa != nullptr){
+				 audio[aa->id] = aa;
+				 continue;
 			 }
 		 }
 	}
@@ -69,6 +82,17 @@ AssetTexture * JsonPlaythroughParser::getTexture(std::string _id){
 		res = it->second;
 	}else{
 		res = textures["DEFAULT"];
+	}
+	return res;
+}
+
+AssetAudio * JsonPlaythroughParser::getAudio(std::string _id){
+	AssetAudio * res = nullptr;
+	auto it = audio.find(_id);
+	if(it != audio.end()){
+		res = it->second;
+	}else{
+		res = audio["DEFAULT"];
 	}
 	return res;
 }

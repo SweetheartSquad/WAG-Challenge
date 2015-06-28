@@ -28,13 +28,7 @@ void DialogueTextLabel::tickerIn(float _delay){
 		g->setVisible(false);
 		Timeout * t = new Timeout(_delay * i);
 		t->onCompleteFunction = [g](Timeout * _this){
-			auto it = WAG_ResourceManager::voices.find(WAG_ResourceManager::speaker);
-			OpenAL_Sound * voice;
-			if(it == WAG_ResourceManager::voices.end()){
-				voice = WAG_ResourceManager::voices["blip"];
-			}else{
-				voice = it->second;
-			}
+			OpenAL_Sound * voice = WAG_ResourceManager::playthrough->getAudio(WAG_ResourceManager::speaker)->sound;
 			g->setVisible(true);
 			//std::cout << g->character/128.f+0.5f << std::endl;
 			checkForAlError(alSourcef(voice->source->sourceId, AL_PITCH, g->character/128.f+0.5f));
