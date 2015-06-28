@@ -62,8 +62,8 @@
             "id": "BLACK",
             "type": "texture",
             "src": "black.png",
-            "width": 1,
-            "height": 1
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "Fox",
