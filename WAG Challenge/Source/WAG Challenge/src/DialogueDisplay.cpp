@@ -66,12 +66,13 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	speaker->setVisible(false);
 
 	progressButton = new WAG_Button(world, scene, font, textShader, 1.f);
-	progressButton->setText(L"->");
-	progressButton->setRationalWidth(0.20f);
+	progressButton->setText(L"Next");
+	progressButton->setRationalWidth(1.f);
 	progressButton->setRationalHeight(1.f);
 	progressButton->onClickFunction = [this](NodeUI * _this) {
 		this->autoProgressTimer->trigger();
 	};
+	progressButton->setVisible(false);
 
 	optionslayout = new HorizontalLinearLayout(_world, _scene);
 	optionslayout->setRationalWidth(1.f);
@@ -84,7 +85,6 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	hlayout->setRationalHeight(1.f);
 	hlayout->setRationalWidth(1.f);
 	hlayout->addChild(dialogue);
-	hlayout->addChild(progressButton);
 	
 	addChild(framePanel);
 	addChild(framePanelOverlay);
@@ -94,6 +94,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	vlayout->addChild(speaker);
 	vlayout->addChild(hlayout);
 	addChild(optionslayout);
+	addChild(progressButton);
 
 	autoProgressTimer = new Timeout(2.f);
 	autoProgressTimer->onCompleteFunction = [this](Timeout * _this) {
@@ -179,7 +180,7 @@ bool DialogueDisplay::sayNext(){
 	if(ask != nullptr){
 		if(ask->currentText == ask->text.size()-1){
 			waitingForInput = true;
-			hlayout->removeChild(progressButton);
+			removeChild(progressButton);
 			for(unsigned long int i = 0; i < ask->options.size(); ++i){
 				//dialogue->appendText(std::wstring(s.begin(), s.end()));
 				WAG_Button * o = new WAG_Button(world, scene, font, textShader, 0.3f);
@@ -207,7 +208,7 @@ bool DialogueDisplay::sayNext(){
 					}
 					this->waitingForInput = false;
 					this->shouldSayNext = true;
-					this->hlayout->addChild(progressButton);
+					this->addChild(progressButton);
 				};
 			}
 			optionslayout->layoutChildren();
