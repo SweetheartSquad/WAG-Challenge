@@ -110,6 +110,18 @@
             "src": "narration_avatar.png",
             "width": 128,
             "height": 128
+        },
+        {
+            "id": "Fox",
+            "type": "audio",
+            "src": "fox.wav",
+            "stream": false
+        },
+        {
+            "id": "Mayor",
+            "type": "audio",
+            "src": "rabbit.wav",
+            "stream": false
         }
     ],
     "characters": [

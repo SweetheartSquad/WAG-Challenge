@@ -63,6 +63,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	speaker->setRationalWidth(1.f, vlayout);
 	speaker->setMarginLeft(0.1f);
 	speaker->setMarginTop(0.80f);
+	speaker->setVisible(false);
 
 	progressButton = new WAG_Button(world, scene, font, textShader, 1.f);
 	progressButton->setText(L"->");
