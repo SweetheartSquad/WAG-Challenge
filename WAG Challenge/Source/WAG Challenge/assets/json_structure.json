@@ -175,8 +175,8 @@
                     ]
                 },
                 {
-                    "speaker": "cheryl",
-                    "portrait": "cheryl",
+                    "speaker": "Fox",
+                    "portrait": "FOREST",
                     "conditions": [
                         {
                             "type": "equality",
@@ -302,7 +302,7 @@
                     "speaker": "None",
                     "portrait": "GROUNDHOG_FALL",
                     "text": [
-                        "An animal falls to the ground in front of you."
+                        "All of a sudden, an animal falls to the ground in front of you."
                     ]
                 },
                 {
@@ -515,7 +515,7 @@
                     "speaker": "Marten",
                     "portrait": "RIVER",
                     "text": [
-                        "Eat something, Fox. You always get a little loopy when you're hungry."
+                        "Go eat something, Fox. You always get a little loopy when you're hungry."
                     ]
                 },
                 {
@@ -628,7 +628,7 @@
                     "speaker": "Marten",
                     "portrait": "RIVER",
                     "text": [
-                        "I suppose you're not well enough to swim, then?"
+                        "I suppose you're not well enough to swim then?"
                     ]
                 },
                 {
@@ -718,28 +718,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Yeah. I did."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "I... can't believe it. Right? Why did he... and.. well... Wow! You know?"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "I don't know. It seems crazy. It is crazy. I thought I dreamed it."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "I... we can't tell anyone, right? That would be too weird.  I... Promise not to tell anyone?"
                     ],
@@ -771,28 +771,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Sure, I guess."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "I.. I think it's for the best. We don't want to panic anyone..."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Ok. But if we see that flying guy again, we've got to warn the mayor."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Yeah, sure, sure... we'll tell him later..."
                     ],
@@ -816,28 +816,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "We have to tell everyone! That animal is dangerous!"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "But they... they won't understand! They'll panic! Please... we can't tell. Don't tell!"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Well, we should at least tell the mayor!"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Okay, okay... fine, I'll... I'll go tell him."
                     ],
@@ -852,7 +852,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Wolf wanders off, shaken."
                     ],
@@ -870,21 +870,21 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "What are you talking about?"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Oh! I, uh, I thought... well... never mind."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "See you later, Wolf."
                     ],
@@ -899,7 +899,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "You walk back to your den and go to bed."
                     ],
@@ -1177,7 +1177,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Mayor, I..."
                     ]
@@ -1313,7 +1313,7 @@
             "dialogue": [
                 {
                     "speaker": "Squirrel",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "Wh-wh-- what happened?"
                     ]
@@ -1600,7 +1600,7 @@
                     "speaker": "Dormouse",
                     "portrait": "CAVE",
                     "text": [
-                        "Look, this is bad. We thought we could do this, but we failed. Give it up!"
+                        "Look, this is bad. We thought we could do this but we failed. Give it up!"
                     ]
                 },
                 {
@@ -1797,7 +1797,7 @@
                     "speaker": "Raccoon",
                     "portrait": "FOREST",
                     "text": [
-                        "Do you... do you think he killed Beaver, too?"
+                        "Do you... do you think he killed Beaver too?"
                     ],
                     "options": [
                         {
@@ -1887,7 +1887,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "I don't... think so."
                     ]
@@ -1931,7 +1931,7 @@
                     "speaker": "Raccoon",
                     "portrait": "FOREST",
                     "text": [
-                        "I think... we should go back inside, now."
+                        "I think... we should go back inside now."
                     ]
                 },
                 {
@@ -1961,7 +1961,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST",
                     "text": [
                         "What are you talking about?"
                     ]
@@ -2130,7 +2130,7 @@
                     "speaker": "Fox",
                     "portrait": "CAVE",
                     "text": [
-                        "Did Wolf kill Beaver?"
+                        "Why did Wolf kill Beaver?"
                     ]
                 },
                 {
@@ -2228,7 +2228,7 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "I don't know that I was trying to create a utopia."
+                        "I didn't realize that I was trying to create a utopia."
                     ]
                 },
                 {
@@ -2249,7 +2249,7 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "Maybe it was a test to see if it would work."
+                        "Maybe it was just a test to see if it would work."
                     ]
                 },
                 {
@@ -2263,7 +2263,7 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "I think it's presumptuous to assume that I had any idea what I was doing. Or why."
+                        "I guess it's presumptuous to assume that I had any idea what I was doing. Or why."
                     ]
                 },
                 {
@@ -2305,14 +2305,14 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "I'm leaving tonight."
+                        "I'm leaving later tonight."
                     ]
                 },
                 {
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "Do whatever compels you."
+                        "Do whatever suits you."
                     ]
                 },
                 {
@@ -2595,7 +2595,7 @@
                         }
                     ],
                     "text": [
-                        "I.. need to leave."
+                        "I... need to leave."
                     ]
                 },
                 {
@@ -2837,7 +2837,7 @@
                         }
                     ],
                     "text": [
-                        "Why aren't we safe here, anymore?"
+                        "Why aren't we safe here anymore?"
                     ],
                     "options": [
                         {
@@ -3184,7 +3184,7 @@
                         }
                     ],
                     "text": [
-                        "But that's not your blood, is it."
+                        "But that's not your blood, is it?"
                     ]
                 },
                 {
