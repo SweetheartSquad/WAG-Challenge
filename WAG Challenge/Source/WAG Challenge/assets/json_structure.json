@@ -138,6 +138,12 @@
                             "text": "Be friendly",
                             "triggers": [
                                 {
+                                    "type": "setVar",
+                                    "target": "WAG_FOX",
+                                    "variable": "GREETING",
+                                    "value": "1"
+                                },
+                                {
                                     "type": "setConversation",
                                     "conversation": "GREET_BEAVER"
                                 }
@@ -146,6 +152,12 @@
                         {
                             "text": "Be reserved",
                             "triggers": [
+                                {
+                                    "type": "setVar",
+                                    "target": "WAG_FOX",
+                                    "variable": "GREETING",
+                                    "value": "2"
+                                },
                                 {
                                     "type": "setConversation",
                                     "conversation": "GREET_BEAVER"
