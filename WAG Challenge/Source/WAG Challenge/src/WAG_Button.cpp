@@ -13,21 +13,30 @@ WAG_Button::WAG_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shade
 {
 	mouseEnabled = true;
 	horizontalAlignment = kCENTER;
-	verticalAlignment = kMIDDLE;
+	verticalAlignment = kTOP;
+	setPadding(3);
+
+	setBackgroundColour(195.f/255.f-1, 174.f/255.f-1, 155.f/255.f-1, 1.f);
 }
 
 void WAG_Button::update(Step * _step){
+	for(TextLabel * l : usedLines){
+		l->setPaddingBottom(15);
+	}
 	TextArea::update(_step);
 	if(isHovered){
 		if(isDown){
-			setBackgroundColour(0, -1, -1);
-			//setText(downLabel);
+			for(TextLabel * l : usedLines){
+				l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 0.1f);
+			}
 		}else{
-			setBackgroundColour(-1, 0, -1);
-			//setText(overLabel);
+			for(TextLabel * l : usedLines){
+				l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 0.5f);
+			}
 		}
 	}else{
-		setBackgroundColour(-1, -1, 0);
-		//setText(normalLabel);
+		for(TextLabel * l : usedLines){
+			l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 1.f);
+		}
 	}
 }
