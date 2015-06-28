@@ -137,6 +137,24 @@
     ],
     "conversations": [
         {
+            "id": "MENU",
+            "dialogue": [
+                {
+                    "speaker": "None",
+                    "portrait": "MENU",
+                    "text": [
+                        "Click to Start"
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setConversation",
+                            "conversation": "START"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": "START",
             "dialogue": [
                 {
