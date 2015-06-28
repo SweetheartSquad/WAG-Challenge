@@ -2,6 +2,7 @@
 
 #include <Conversation.h>
 #include <Log.h>
+#include <assert.h>
 
 Conversation::Conversation(Json::Value _json) :
 	id(_json.get("id", "NO_ID").asString()),
@@ -9,7 +10,7 @@ Conversation::Conversation(Json::Value _json) :
 {
 	Json::Value convoDialogueJson = _json["dialogue"];
 
-	for(auto j = 0; j < convoDialogueJson.size(); ++j) {
+	for(auto j = 0; j < convoDialogueJson.size(); ++j){
 		dialogueObjects.push_back(Dialogue::getDialogue(convoDialogueJson[j]));
 	}
 }
@@ -38,13 +39,7 @@ bool Conversation::sayNextDialogue(){
 	bool valid = false;
 	while(currentDialogue < dialogueObjects.size()-1 && !valid){
 		// if any conditions are untrue for a given dialogue object, skip over it
-		valid = true;
-		for(Condition * c : dialogueObjects.at(++currentDialogue)->conditions){
-			if(!c->evaluate()){
-				valid = false;
-				break;
-			}
-		}
+		valid = dialogueObjects.at(++currentDialogue)->evaluateConditions();
 	}
 	if(valid){
 		// get the first text in the new dialogue object
@@ -52,5 +47,18 @@ bool Conversation::sayNextDialogue(){
 	}else{
 		// no valid dialogue objects were found past this one
 		return false;
+	}
+}
+
+void Conversation::reset(){
+	Log::info("Reset conversation: " + id);
+	for(Dialogue * d : dialogueObjects){
+		d->reset();
+	}
+
+	currentDialogue = 0;
+	while(!dialogueObjects.at(currentDialogue)->evaluateConditions()){
+		++currentDialogue;
+		assert(currentDialogue < dialogueObjects.size());
 	}
 }

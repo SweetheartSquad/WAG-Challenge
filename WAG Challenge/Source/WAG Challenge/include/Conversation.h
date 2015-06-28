@@ -19,4 +19,8 @@ public:
 	// returns true if there is a corresponding dialogue object
 	// returns false if the end of the conversation has been reached
 	bool sayNextDialogue();
+
+	// sets the currentDialogue to the first valid dialogue object
+	// also calls reset on all dialogue objects
+	void reset();
 };

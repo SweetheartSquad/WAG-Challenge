@@ -38,4 +38,5 @@ TriggerSetConversation::TriggerSetConversation(Json::Value _json) :
 void TriggerSetConversation::trigger(){
 	Log::info("New Conversation: " + newConversation);
 	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations[newConversation];
+	WAG_ResourceManager::playthrough->currentConversation->reset();
 }

@@ -33,6 +33,19 @@ bool Dialogue::sayNextText(){
 	return currentText < text.size();
 }
 
+bool Dialogue::evaluateConditions(){
+	for(Condition * c : conditions){
+		if(!c->evaluate()){
+			return false;
+		}
+	}
+	return true;
+}
+
+void Dialogue::reset(){
+	currentText = -1;
+}
+
 DialogueSay::DialogueSay(Json::Value _json) :
 	Dialogue(_json)
 {

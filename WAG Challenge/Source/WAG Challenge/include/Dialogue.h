@@ -24,6 +24,13 @@ public:
 	// returns false if the end of the dialogue has been reached
 	bool sayNextText();
 
+	// loops through the dialogue's conditions
+	// if any evaluate to false, returns false immediately
+	// otherwise, returns true
+	bool evaluateConditions();
+
+	void reset();
+
 	static Dialogue * getDialogue(Json::Value _json);
 };
 
