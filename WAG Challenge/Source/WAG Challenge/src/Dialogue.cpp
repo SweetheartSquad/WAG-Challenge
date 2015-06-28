@@ -24,6 +24,17 @@ Dialogue::Dialogue(Json::Value _json) :
 	}
 }
 
+Dialogue::~Dialogue(){
+	while(triggers.size() > 0){
+		delete triggers.back();
+		triggers.pop_back();
+	}
+	while(conditions.size() > 0){
+		delete conditions.back();
+		conditions.pop_back();
+	}
+}
+
 std::string Dialogue::getCurrentText(){
 	return text.at(currentText);
 }

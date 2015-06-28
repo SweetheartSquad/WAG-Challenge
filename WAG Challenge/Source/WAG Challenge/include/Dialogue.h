@@ -15,8 +15,9 @@ public:
 	signed long int currentText;
 	std::vector<Trigger *> triggers;
 	std::vector<Condition *> conditions;
-
+	
 	Dialogue(Json::Value _json);
+	~Dialogue();
 	
 	std::string getCurrentText();
 	// increments currentText

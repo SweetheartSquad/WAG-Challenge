@@ -28,8 +28,9 @@ public:
 	std::map<std::string, AssetAudio *> audio;
 
 	Conversation * currentConversation;
-
+	
 	JsonPlaythroughParser(std::string _jsonSrc);
+	~JsonPlaythroughParser();
 	
 	AssetTexture * getTexture(std::string _id);
 	AssetAudio * getAudio(std::string _id);

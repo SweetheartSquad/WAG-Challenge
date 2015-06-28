@@ -12,6 +12,7 @@ public:
 	std::string id;
 	std::vector<Dialogue *> dialogueObjects;
 	Conversation(Json::Value _json);
+	~Conversation();
 
 	// returns dialogueObjects.at(currentDialogue)
 	Dialogue * getCurrentDialogue();

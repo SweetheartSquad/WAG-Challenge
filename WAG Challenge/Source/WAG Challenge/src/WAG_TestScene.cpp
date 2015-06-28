@@ -53,7 +53,6 @@
 #include <DialogueDisplay.h>
 #include <HorizontalLinearLayout.h>
 #include <JsonPlaythroughParser.h>
-#include <FpsDisplay.h>
 
 // Retrieves a JSON value from an HTTP request.
 pplx::task<void> RequestJSONValueAsync(TextLabel * _label){
@@ -114,7 +113,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	sceneHeight(150),
 	sceneWidth(50),
 	joy(new JoystickManager()),
-	uiLayer(this, 0,0,0,0)
+	uiLayer(new UILayer(this, 0,0,0,0))
 {
 
 	shader->addComponent(new ShaderComponentTexture(shader));
@@ -130,21 +129,19 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	
 	textShader->textComponent->setColor(glm::vec3(1.f, 1.f, 1.f));
 	
-	uiLayer.resize(0, sd.x, 0, sd.y);
+	uiLayer->resize(0, sd.x, 0, sd.y);
 
 	srand(time(NULL));
-	dialogueDisplay = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
-	uiLayer.addChild(dialogueDisplay);
+	dialogueDisplay = new DialogueDisplay(uiLayer->world, this, font, textShader, 1.f, 1.f);
+	uiLayer->addChild(dialogueDisplay);
 
 	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["MENU"];
 	Step step;
 	dialogueDisplay->update(&step);
 	dialogueDisplay->sayNext();
 	
-	uiLayer.addChild(new FpsDisplay(uiLayer.world, this, font, textShader));
-
 	mouseIndicator = new Sprite();
-	uiLayer.childTransform->addChild(mouseIndicator);
+	uiLayer->childTransform->addChild(mouseIndicator);
 	mouseIndicator->mesh->pushTexture2D(WAG_ResourceManager::cursor);
 	mouseIndicator->parents.at(0)->scale(32, 32, 1);
 	mouseIndicator->mesh->scaleModeMag = GL_NEAREST;
@@ -155,7 +152,9 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 		mouseIndicator->mesh->vertices[i].y -= 0.5f;
 	}
 	mouseIndicator->mesh->dirty = true;
-	mouseIndicator->setShader(uiLayer.shader, true);
+	mouseIndicator->setShader(uiLayer->shader, true);
+
+	childTransform->addChild(uiLayer, false);
 }
 
 WAG_TestScene::~WAG_TestScene(){
@@ -200,9 +199,9 @@ void WAG_TestScene::update(Step * _step){
 	
 	if(keyboard->keyJustUp(GLFW_KEY_2)){
 		if(Transform::drawTransforms){
-			uiLayer.bulletDebugDrawer->setDebugMode(btIDebugDraw::DBG_NoDebug);
+			uiLayer->bulletDebugDrawer->setDebugMode(btIDebugDraw::DBG_NoDebug);
 		}else{
-			uiLayer.bulletDebugDrawer->setDebugMode(btIDebugDraw::DBG_MAX_DEBUG_DRAW_MODE);
+			uiLayer->bulletDebugDrawer->setDebugMode(btIDebugDraw::DBG_MAX_DEBUG_DRAW_MODE);
 		}
 		Transform::drawTransforms = !Transform::drawTransforms;
 	}
@@ -212,15 +211,15 @@ void WAG_TestScene::update(Step * _step){
 
 	// update ui stuff
 	glm::uvec2 sd = vox::getScreenDimensions();
-	uiLayer.resize(0, sd.x, 0, sd.y);
-	uiLayer.update(_step);
+	uiLayer->resize(0, sd.x, 0, sd.y);
+	//uiLayer->update(_step);
 
 	mouseIndicator->parents.at(0)->translate(mouse->mouseX(), mouse->mouseY(), 0, false);
 }
 
 void WAG_TestScene::render(vox::MatrixStack * _matrixStack, RenderOptions * _renderOptions){
 	clear();
-	uiLayer.render(_matrixStack, _renderOptions);
+	uiLayer->render(_matrixStack, _renderOptions);
 }
 
 void WAG_TestScene::load(){
@@ -228,11 +227,11 @@ void WAG_TestScene::load(){
 
 	screenSurface->load();
 	screenFBO->load();
-	uiLayer.load();
+	//uiLayer->load();
 }
 
 void WAG_TestScene::unload(){
-	uiLayer.unload();
+	//uiLayer->unload();
 	screenFBO->unload();
 	screenSurface->unload();
 

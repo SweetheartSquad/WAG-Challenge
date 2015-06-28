@@ -15,6 +15,13 @@ Conversation::Conversation(Json::Value _json) :
 	}
 }
 
+Conversation::~Conversation(){
+	while(dialogueObjects.size() > 0){
+		delete dialogueObjects.back();
+		dialogueObjects.pop_back();
+	}
+}
+
 Dialogue * Conversation::getCurrentDialogue(){
 	return dialogueObjects.at(currentDialogue);
 }

@@ -59,7 +59,7 @@ public:
 	virtual void load() override;
 	virtual void unload() override;
 
-	UILayer uiLayer;
+	UILayer * uiLayer;
 	Sprite * mouseIndicator;
 
 	WAG_TestScene(Game * _game);

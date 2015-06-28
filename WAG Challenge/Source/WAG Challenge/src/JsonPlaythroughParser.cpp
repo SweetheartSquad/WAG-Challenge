@@ -75,6 +75,21 @@ JsonPlaythroughParser::JsonPlaythroughParser(std::string _jsonSrc) :
 	}
 }
 
+JsonPlaythroughParser::~JsonPlaythroughParser(){
+	for(auto i : conversations){
+		delete i.second;
+	}conversations.clear();
+	for(auto i : characters){
+		delete i.second;
+	}characters.clear();
+	for(auto i : textures){
+		delete i.second;
+	}textures.clear();
+	for(auto i : audio){
+		delete i.second;
+	}audio.clear();
+}
+
 AssetTexture * JsonPlaythroughParser::getTexture(std::string _id){
 	AssetTexture * res = nullptr;
 	auto it = textures.find(_id);

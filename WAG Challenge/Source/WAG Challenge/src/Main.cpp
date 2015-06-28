@@ -8,6 +8,7 @@
 #include <WAG_ResourceManager.h>
 
 #include <WAG_Game.h>
+#include <Log.h>
 
 // memory leak debugging
 #define _CRTDBG_MAP_ALLOC
@@ -33,11 +34,17 @@ int main(void){
 	delete game;
 	game = nullptr;
 	WAG_ResourceManager::destruct();
+	delete WAG_ResourceManager::playthrough;
+	WAG_ResourceManager::playthrough = nullptr;
 #ifdef _DEBUG
-	std::cout << "Final node count: " << Node::nodes.size() << std::endl;
+	if(Node::nodes.size() > 0){
+		std::stringstream ss;
+		ss << "Probable node leaks: " << Node::nodes.size();
+		Log::warn(ss.str());
 
-	for(auto n : Node::nodes){
-		std::cout << typeid(*n).name() << std::endl;
+		for(auto n : Node::nodes){
+			Log::warn(typeid(*n).name());
+		}
 	}
 #endif
 
