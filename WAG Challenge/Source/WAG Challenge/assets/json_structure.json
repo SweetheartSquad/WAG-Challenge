@@ -103,6 +103,13 @@
         {
             "id": "Hawk",
             "type": "texture"
+        },
+        {
+            "id": "None",
+            "type": "texture",
+            "src": "narration_avatar.png",
+            "width": 128,
+            "height": 128
         }
     ],
     "characters": [
