@@ -55,18 +55,18 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	portraitPanelOverlay->setBackgroundColour(0,0,0,0);
 
 	dialogue = new DialogueTextArea(_world, _scene, _font, _textShader);
-	dialogue->setRationalWidth(0.75f, vlayout);
+	dialogue->setRationalWidth(0.8f, vlayout);
 	dialogue->setRationalHeight(1.f, vlayout);
-	dialogue->setMarginLeft(0.2f);
+	dialogue->setMarginLeft(0.1f);
 	dialogue->verticalAlignment = kTOP;
 	speaker = new TextArea(_world, _scene, _font, _textShader, -1);
 	speaker->setRationalWidth(1.f, vlayout);
-	dialogue->setMarginLeft(0.2f);
+	speaker->setMarginLeft(0.1f);
 	speaker->setMarginTop(0.80f);
 
 	progressButton = new WAG_Button(world, scene, font, textShader, 1.f);
 	progressButton->setText(L"->");
-	progressButton->setRationalWidth(0.25f);
+	progressButton->setRationalWidth(0.20f);
 	progressButton->setRationalHeight(1.f);
 	progressButton->onClickFunction = [this](NodeUI * _this) {
 		this->autoProgressTimer->trigger();
@@ -77,7 +77,6 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	optionslayout->setRationalHeight(1.f);
 	optionslayout->verticalAlignment = kMIDDLE;
 	optionslayout->horizontalAlignment = kCENTER;
-	optionslayout->setMarginBottom(0.5f);
 	
 	hlayout = new HorizontalLinearLayout(_world, _scene);
 	hlayout->verticalAlignment = kTOP;
@@ -173,37 +172,41 @@ bool DialogueDisplay::sayNext(){
 	// check for dialogue options
 	DialogueAsk * ask = dynamic_cast<DialogueAsk *>((*stuffToSay)->getCurrentDialogue());
 	if(ask != nullptr){
-		waitingForInput = true;
-		hlayout->removeChild(progressButton);
-		for(unsigned long int i = 0; i < ask->options.size(); ++i){
-			//dialogue->appendText(std::wstring(s.begin(), s.end()));
-			WAG_Button * o = new WAG_Button(world, scene, font, textShader, 0.3f);
-			std::wstringstream ss;
-			ss << (i+1) << L". " << std::wstring(ask->options.at(i).begin(), ask->options.at(i).end());
-			o->setText(ss.str());
-			options.push_back(o);
-			optionslayout->addChild(o);
-			//o->parents.at(0)->scale(50,50,1);
+		if(ask->currentText == ask->text.size()-1){
+			waitingForInput = true;
+			hlayout->removeChild(progressButton);
+			for(unsigned long int i = 0; i < ask->options.size(); ++i){
+				//dialogue->appendText(std::wstring(s.begin(), s.end()));
+				WAG_Button * o = new WAG_Button(world, scene, font, textShader, 0.3f);
+				if(i != 0){
+					o->setMarginLeft(10);
+				}
+				std::wstringstream ss;
+				ss << (i+1) << L". " << std::wstring(ask->options.at(i).begin(), ask->options.at(i).end());
+				o->setText(ss.str());
+				options.push_back(o);
+				optionslayout->addChild(o);
+				//o->parents.at(0)->scale(50,50,1);
 				
-			std::vector<Trigger *> optionResult = ask->optionsResults.at(i);
-			o->onClickFunction = [this, optionResult](NodeUI * _this) {
-				// remove the function pointers on all the other buttons to avoid multiple buttons getting triggered at the same time
-				for(auto o : options){
-					if(o != _this){
-						o->onClickFunction = nullptr;
+				std::vector<Trigger *> optionResult = ask->optionsResults.at(i);
+				o->onClickFunction = [this, optionResult](NodeUI * _this) {
+					// remove the function pointers on all the other buttons to avoid multiple buttons getting triggered at the same time
+					for(auto o : options){
+						if(o != _this){
+							o->onClickFunction = nullptr;
+						}
 					}
-				}
 
-				for(auto t : optionResult){
-					t->trigger();
-				}
-				this->waitingForInput = false;
-				this->shouldSayNext = true;
-				this->hlayout->addChild(progressButton);
-			};
+					for(auto t : optionResult){
+						t->trigger();
+					}
+					this->waitingForInput = false;
+					this->shouldSayNext = true;
+					this->hlayout->addChild(progressButton);
+				};
+			}
+			optionslayout->layoutChildren();
 		}
-		optionslayout->setAutoresizeHeight();
-		optionslayout->layoutChildren();
 	}
 
 	// if auto-progression is enabled, restart the timer (should also set the duration here based on length of content)

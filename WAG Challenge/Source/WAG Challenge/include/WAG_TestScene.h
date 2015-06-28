@@ -33,7 +33,7 @@ class PointLight;
 class BulletMeshEntity;
 class BulletRagdoll;
 class ComponentShaderText;
-
+class DialogueDisplay;
 
 class WAG_TestScene : public Scene{
 public:
@@ -46,6 +46,8 @@ public:
 	RenderSurface * screenSurface;
 	StandardFrameBuffer * screenFBO;
 	Material * phongMat;
+
+	DialogueDisplay * dialogueDisplay;
 
 	float sceneHeight;
 	float sceneWidth;

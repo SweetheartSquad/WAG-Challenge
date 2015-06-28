@@ -136,24 +136,25 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	//Set up cameras
 	screenSurface->scaleModeMag = GL_NEAREST;
 	screenSurface->scaleModeMin = GL_NEAREST;
+	
+	glm::uvec2 sd = vox::getScreenDimensions();
 
-	font = new Font("../assets/fonts/Mathlete-Skinny.otf", 48, false);
+	font = new Font("../assets/fonts/Mathlete-Skinny.otf", sd.x/40, false);
 	
 	textShader->textComponent->setColor(glm::vec3(1.f, 1.f, 1.f));
 	
-	glm::uvec2 sd = vox::getScreenDimensions();
 	uiLayer.resize(0, sd.x, 0, sd.y);
 
 	srand(time(NULL));
-	DialogueDisplay * dd = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
-	uiLayer.addChild(dd);
+	dialogueDisplay = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
+	uiLayer.addChild(dialogueDisplay);
 	//childTransform->addChild(dd);
 
 	//dd->stuffToSay = WAG_ResourceManager::playthrough->conversations["WAG_CONVO_1"];
-	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["JUST_CONFRONT"];
+	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["START"];
 	Step step;
-	dd->update(&step);
-	dd->sayNext();
+	dialogueDisplay->update(&step);
+	dialogueDisplay->sayNext();
 	//dd->portraitPanel->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
 	//childTransform->addChild(dd);
 	//dd->parents.at(0)->translate(300, 300, 0);
@@ -193,6 +194,13 @@ void WAG_TestScene::update(Step * _step){
 	// handle inputs
 	joy->update(_step);
 	
+	if(keyboard->keyDown(GLFW_KEY_SPACE)){
+		dialogueDisplay->autoProgress = true;
+		dialogueDisplay->autoProgressTimer->targetSeconds = 0.01f;
+	}else{
+		dialogueDisplay->autoProgress = false;
+	}
+
 	if(keyboard->keyJustUp(GLFW_KEY_P)){	
 		WAG_ResourceManager::stream->play(true);
 	}
