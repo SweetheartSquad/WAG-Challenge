@@ -39,6 +39,14 @@ void DialogueTextLabel::tickerIn(float _delay){
 	}
 }
 
+void DialogueTextLabel::finishTicking(){
+	while(timers.size() > 0){
+		timers.back()->trigger();
+		delete timers.back();
+		timers.pop_back();
+	}
+}
+
 void DialogueTextLabel::update(Step * _step){
 	TextLabel::update(_step);
 	for(signed long int i = timers.size()-1; i >= 0; --i){
@@ -52,16 +60,17 @@ void DialogueTextLabel::update(Step * _step){
 
 DialogueTextArea::DialogueTextArea(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader) :
 	TextArea(_world, _scene, _font, _textShader, 1.f),
-	NodeBulletBody(_world)
+	NodeBulletBody(_world),
+	ticking(false)
 {
 
 }
 
 DialogueTextArea::~DialogueTextArea(){
-
 }
 
 void DialogueTextArea::tickerIn(float _delay){
+	ticking = true;
 	while(timers.size() > 0){
 		delete timers.back();
 		timers.pop_back();
@@ -83,6 +92,24 @@ void DialogueTextArea::tickerIn(float _delay){
 	for(unsigned long int i = 0; i < usedLines.size(); ++i){
 		dynamic_cast<DialogueTextLabel *>(usedLines.at(i))->tickerIn(_delay);
 	}
+	Timeout * t = new Timeout(time+1.f);
+	t->onCompleteFunction = [this](Timeout * _this){
+		this->ticking = false;
+	};
+	t->start();
+	timers.push_back(t);
+}
+
+void DialogueTextArea::finishTicking(){
+	while(timers.size() > 0){
+		timers.back()->trigger();
+		delete timers.back();
+		timers.pop_back();
+	}
+	for(unsigned long int i = 0; i < usedLines.size(); ++i){
+		dynamic_cast<DialogueTextLabel *>(usedLines.at(i))->finishTicking();
+	}
+	ticking = false;
 }
 
 TextLabel * DialogueTextArea::getNewLine(){

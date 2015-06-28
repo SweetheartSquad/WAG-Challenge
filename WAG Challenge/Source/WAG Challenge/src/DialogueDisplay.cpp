@@ -97,7 +97,11 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 
 	autoProgressTimer = new Timeout(2.f);
 	autoProgressTimer->onCompleteFunction = [this](Timeout * _this) {
-		this->shouldSayNext = true;
+		if(dialogue->ticking){
+			dialogue->finishTicking();
+		}else{
+			this->shouldSayNext = true;
+		}
 	};
 	autoProgressTimer->start();
 
