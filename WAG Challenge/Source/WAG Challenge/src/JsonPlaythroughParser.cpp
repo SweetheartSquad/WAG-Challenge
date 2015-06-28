@@ -3,7 +3,7 @@
 #include <JsonPlaythroughParser.h>
 #include <Log.h>
 #include <Conversation.h>
-#include <DialogueSay.h>
+#include <Dialogue.h>
 #include <FileUtils.h>
 
 Character::Character(Json::Value _json) :

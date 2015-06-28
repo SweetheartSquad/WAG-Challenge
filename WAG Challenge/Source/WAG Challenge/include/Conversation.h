@@ -1,7 +1,7 @@
 #pragma once
 
 #include <NodeContent.h>
-#include <DialogueSay.h>
+#include <Dialogue.h>
 
 class Conversation : public NodeContent{
 private:
@@ -10,11 +10,11 @@ private:
 
 public:
 	std::string id;
-	std::vector<DialogueSay *> dialogueObjects;
+	std::vector<Dialogue *> dialogueObjects;
 	Conversation(Json::Value _json);
 
 	// returns dialogueObjects.at(currentDialogue)
-	DialogueSay * getCurrentDialogue();
+	Dialogue * getCurrentDialogue();
 	// increments currentDialogue
 	// returns true if there is a corresponding dialogue object
 	// returns false if the end of the conversation has been reached

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Conversation.h>
+#include <Log.h>
 
 Conversation::Conversation(Json::Value _json) :
 	id(_json.get("id", "NO_ID").asString()),
@@ -9,16 +10,11 @@ Conversation::Conversation(Json::Value _json) :
 	Json::Value convoDialogueJson = _json["dialogue"];
 
 	for(auto j = 0; j < convoDialogueJson.size(); ++j) {
-		Json::Value sayAction = convoDialogueJson[j];
-		if(sayAction.isMember("options")) {
-			dialogueObjects.push_back(new DialogueAsk(sayAction));
-		}else {
-			dialogueObjects.push_back(new DialogueSay(sayAction));
-		}
+		dialogueObjects.push_back(Dialogue::getDialogue(convoDialogueJson[j]));
 	}
 }
 
-DialogueSay * Conversation::getCurrentDialogue(){
+Dialogue * Conversation::getCurrentDialogue(){
 	return dialogueObjects.at(currentDialogue);
 }
 

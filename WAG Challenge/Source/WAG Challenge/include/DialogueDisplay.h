@@ -4,7 +4,7 @@
 #include <LinearLayout.h>
 #include <TextArea.h>
 #include <Timeout.h>
-#include <DialogueSay.h>
+#include <Dialogue.h>
 #include <WAG_Button.h>
 #include <Easing.h>
 #include <Conversation.h>

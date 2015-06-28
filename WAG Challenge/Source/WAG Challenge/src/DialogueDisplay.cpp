@@ -72,11 +72,12 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 		this->autoProgressTimer->trigger();
 	};
 
-	optionslayout = new VerticalLinearLayout(_world, _scene);
+	optionslayout = new HorizontalLinearLayout(_world, _scene);
 	optionslayout->setRationalWidth(1.f);
 	optionslayout->setRationalHeight(1.f);
-	optionslayout->verticalAlignment = kTOP;
+	optionslayout->verticalAlignment = kMIDDLE;
 	optionslayout->horizontalAlignment = kCENTER;
+	optionslayout->setMarginBottom(0.5f);
 	
 	hlayout = new HorizontalLinearLayout(_world, _scene);
 	hlayout->verticalAlignment = kTOP;
@@ -176,7 +177,7 @@ bool DialogueDisplay::sayNext(){
 		hlayout->removeChild(progressButton);
 		for(unsigned long int i = 0; i < ask->options.size(); ++i){
 			//dialogue->appendText(std::wstring(s.begin(), s.end()));
-			WAG_Button * o = new WAG_Button(world, scene, font, textShader, 1.f);
+			WAG_Button * o = new WAG_Button(world, scene, font, textShader, 0.3f);
 			std::wstringstream ss;
 			ss << (i+1) << L". " << std::wstring(ask->options.at(i).begin(), ask->options.at(i).end());
 			o->setText(ss.str());
