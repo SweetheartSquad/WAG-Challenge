@@ -91,8 +91,9 @@ void DialogueTextArea::tickerIn(float _delay){
 	}
 	for(unsigned long int i = 0; i < usedLines.size(); ++i){
 		dynamic_cast<DialogueTextLabel *>(usedLines.at(i))->tickerIn(_delay);
+		time += usedLines.at(i)->usedGlyphs.size() * _delay;
 	}
-	Timeout * t = new Timeout(time+1.f);
+	Timeout * t = new Timeout(time);
 	t->onCompleteFunction = [this](Timeout * _this){
 		this->ticking = false;
 	};

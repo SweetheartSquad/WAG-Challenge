@@ -49,7 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\assets\textures\fox_avatar.ico" />
-    <Image Include="..\assets\textures\fox_avatar.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{96FE28A2-BB06-4424-ADED-0DEDAEAF84B5}</ProjectGuid>
