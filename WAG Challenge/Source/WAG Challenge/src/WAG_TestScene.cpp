@@ -176,6 +176,7 @@ void WAG_TestScene::update(Step * _step){
 	joy->update(_step);
 	
 	if(keyboard->keyDown(GLFW_KEY_SPACE)){
+		dialogueDisplay->dialogue->finishTicking();
 		dialogueDisplay->autoProgress = true;
 		dialogueDisplay->autoProgressTimer->targetSeconds = 0.01f;
 	}else{

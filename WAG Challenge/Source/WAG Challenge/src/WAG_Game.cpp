@@ -4,7 +4,7 @@
 #include <WAG_TestScene.h>
 
 WAG_Game::WAG_Game() :
-	Game(true, std::pair<std::string, Scene *>("test", new WAG_TestScene(this)), false)
+	Game(true, std::pair<std::string, Scene *>("test", new WAG_TestScene(this)), true)
 {
 }
 

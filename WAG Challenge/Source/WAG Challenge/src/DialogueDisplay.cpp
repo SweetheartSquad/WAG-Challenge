@@ -213,13 +213,27 @@ bool DialogueDisplay::sayNext(){
 					this->addChild(progressButton);
 				};
 			}
+
+			std::string greyOption = WAG_ResourceManager::playthrough->characters["WAG_FOX"]->variables["OPTION"];
+			if(greyOption != "NONE"){
+				WAG_Button * o = new WAG_Button(world, scene, font, textShader, 0.3f);
+				o->setMarginLeft(10);
+				std::wstringstream ss;
+				ss << (options.size()+1) << L". " << std::wstring(greyOption.begin(), greyOption.end());
+				o->setText(ss.str());
+				options.push_back(o);
+				optionslayout->addChild(o);
+				o->mouseEnabled = false;
+				o->setBackgroundColour(-0.2f, -0.2f, -0.2f, 0.5f);
+			}
+
 			optionslayout->layoutChildren();
 		}
 	}
 
 	// if auto-progression is enabled, restart the timer (should also set the duration here based on length of content)
 	if(!waitingForInput){
-		autoProgressTimer->restart();
+ 		autoProgressTimer->restart();
 	}
 
 	return true;

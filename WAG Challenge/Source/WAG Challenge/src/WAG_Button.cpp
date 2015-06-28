@@ -24,19 +24,25 @@ void WAG_Button::update(Step * _step){
 		l->setPaddingBottom(15);
 	}
 	TextArea::update(_step);
-	if(isHovered){
-		if(isDown){
-			for(TextLabel * l : usedLines){
-				l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 0.1f);
+	if(mouseEnabled){
+		if(isHovered){
+			if(isDown){
+				for(TextLabel * l : usedLines){
+					l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 0.1f);
+				}
+			}else{
+				for(TextLabel * l : usedLines){
+					l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 0.5f);
+				}
 			}
 		}else{
 			for(TextLabel * l : usedLines){
-				l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 0.5f);
+				l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 1.f);
 			}
 		}
 	}else{
 		for(TextLabel * l : usedLines){
-			l->setBackgroundColour(27.f/255.f-1, 85.f/255.f-1, 42.f/255.f-1, 1.f);
+			l->setBackgroundColour(-0.8f, -0.8f, -0.8f, 0.5f);
 		}
 	}
 }

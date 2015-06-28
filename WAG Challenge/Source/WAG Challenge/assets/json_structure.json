@@ -59,6 +59,13 @@
             "type": "texture"
         },
         {
+            "id": "BLACK",
+            "type": "texture",
+            "src": "black.png",
+            "width": 1,
+            "height": 1
+        },
+        {
             "id": "Fox",
             "type": "texture",
             "src": "fox_avatar.png",
@@ -131,7 +138,8 @@
                 "GREETING": null,
                 "SAW_MURDER": null,
                 "TELL_MAYOR": null,
-                "ATE": null
+                "ATE": null,
+                "OPTION": "NONE"
             }
         }
     ],
@@ -970,6 +978,14 @@
                     "portrait": "BLACK",
                     "text": [
                         "Your sleep that night is unpleasant."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "???"
+                        }
                     ]
                 },
                 {
@@ -1752,6 +1768,12 @@
                     ],
                     "triggers": [
                         {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "Eat?"
+                        },
+                        {
                             "type": "setConversation",
                             "conversation": "MORNING_TWO"
                         }
@@ -2363,6 +2385,14 @@
                     "portrait": "CAVE",
                     "text": [
                         "Do whatever suits you."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "NONE"
+                        }
                     ]
                 },
                 {
@@ -2373,20 +2403,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_MAYOR"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_MAYOR"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_MAYOR"
                                 }
                             ]
                         }
@@ -2520,20 +2550,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_DORMOUSE"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_DORMOUSE"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_DORMOUSE"
                                 }
                             ]
                         }
@@ -2570,20 +2600,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_DORMOUSE"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_DORMOUSE"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_DORMOUSE"
                                 }
                             ]
                         }
@@ -2891,20 +2921,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_MARTEN"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_MARTEN"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_MARTEN"
                                 }
                             ]
                         }
@@ -2926,20 +2956,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_MARTEN"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_MARTEN"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_MARTEN"
                                 }
                             ]
                         }
@@ -3313,20 +3343,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_CHIPMUNK"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_CHIPMUNK"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_CHIPMUNK"
                                 }
                             ]
                         }
@@ -3378,20 +3408,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_CHIPMUNK"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_CHIPMUNK"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_CHIPMUNK"
                                 }
                             ]
                         }
@@ -3600,20 +3630,20 @@
                     ],
                     "options": [
                         {
-                            "text": "Eat",
-                            "triggers": [
-                                {
-                                    "type": "setConversation",
-                                    "conversation": "EAT_SQUIRREL"
-                                }
-                            ]
-                        },
-                        {
                             "text": "Leave",
                             "triggers": [
                                 {
                                     "type": "setConversation",
                                     "conversation": "LEAVE_SQUIRREL"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Eat",
+                            "triggers": [
+                                {
+                                    "type": "setConversation",
+                                    "conversation": "EAT_SQUIRREL"
                                 }
                             ]
                         }

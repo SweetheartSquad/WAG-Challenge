@@ -20,6 +20,7 @@ int main(void){
 	_CrtMemCheckpoint( &s1 );
 #endif
 
+	vox::fullscreen = true;
 	vox::initialize("WAG Challenge - demo");
 	WAG_ResourceManager::init();
 	WAG_ResourceManager::load();
