@@ -136,7 +136,7 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	dialogueDisplay = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
 	uiLayer.addChild(dialogueDisplay);
 
-	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["EAT_SQUIRREL"];
+	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["MENU"];
 	Step step;
 	dialogueDisplay->update(&step);
 	dialogueDisplay->sayNext();
