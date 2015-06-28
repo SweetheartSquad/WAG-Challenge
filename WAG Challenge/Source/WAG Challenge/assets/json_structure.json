@@ -741,7 +741,8 @@
                     "speaker": "Wolf",
                     "portrait": "FOREST",
                     "text": [
-                        "I... we can't tell anyone, right? That would be too weird.  I... Promise not to tell anyone?"
+                        "I... we can't tell anyone, right? That would be too weird.  I...",
+                        "Promise not to tell anyone?"
                     ],
                     "options": [
                         {
@@ -2144,7 +2145,7 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "I think you know know the answer to that, Fox..."
+                        "I think you know the answer to that, Fox..."
                     ]
                 },
                 {
@@ -2291,7 +2292,7 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE",
                     "text": [
-                        "I had a speech for Wolf but that was when I thought I had this under control."
+                        "A speech was enough for Wolf, but that was when I thought I had this under control."
                     ]
                 },
                 {
@@ -3669,7 +3670,7 @@
                     "speaker": "None",
                     "portrait": "BLACK",
                     "text": [
-                        " Sometimes, you think about your friends."
+                        "Sometimes, you think about your friends."
                     ]
                 },
                 {
