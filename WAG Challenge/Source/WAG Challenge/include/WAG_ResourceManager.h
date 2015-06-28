@@ -12,7 +12,6 @@ class WAG_ResourceManager : public ResourceManager{
 public:
 	static Texture * cursor;
 	static Texture * cheryl;
-	static OpenAL_Sound * stream;
 	static JsonPlaythroughParser * playthrough;
 
 	static std::string speaker;

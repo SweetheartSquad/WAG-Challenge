@@ -45,7 +45,6 @@ public:
 	Shader * screenSurfaceShader;
 	RenderSurface * screenSurface;
 	StandardFrameBuffer * screenFBO;
-	Material * phongMat;
 
 	DialogueDisplay * dialogueDisplay;
 

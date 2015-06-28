@@ -3783,6 +3783,12 @@
                     ],
                     "text": [
                         "You do remember how, on some days, the wind got quiet just like this."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setConversation",
+                            "conversation": "CREDITS"
+                        }
                     ]
                 },
                 {
@@ -3873,7 +3879,23 @@
                     ],
                     "text": [
                         "Then it falls off like dirt."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setConversation",
+                            "conversation": "CREDITS"
+                        }
                     ]
+                }
+            ]
+        },
+        {
+            "id": "CREDITS",
+            "dialogue": [
+                {
+                    "speaker": "None",
+                    "portrait": "CREDITS",
+                    "text": ["The end."]
                 }
             ]
         }

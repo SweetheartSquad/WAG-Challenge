@@ -9,21 +9,10 @@
 #include <MeshFactory.h>
 #include <Resource.h>
 
-#include <DirectionalLight.h>
-#include <PointLight.h>
-#include <Material.h>
-
 #include <shader\ComponentShaderBase.h>
 #include <shader\ShaderComponentTexture.h>
 #include <shader\ShaderComponentDiffuse.h>
-#include <shader\ShaderComponentPhong.h>
-#include <shader\ShaderComponentBlinn.h>
-#include <shader\ShaderComponentShadow.h>
 #include <shader\ShaderComponentHsv.h>
-
-#include <Box2DWorld.h>
-#include <Box2DMeshEntity.h>
-#include <Box2DDebugDrawer.h>
 
 #include <MousePerspectiveCamera.h>
 #include <FollowCamera.h>
@@ -46,7 +35,6 @@
 #include <cpprest/filestream.h>
 #include <NodeBulletBody.h>
 #include <BulletMeshEntity.h>
-#include <Billboard.h>
 
 #include <NodeUI.h>
 #include <WAG_Button.h>
@@ -55,10 +43,10 @@
 #include <sqlite\sqlite3.h>
 #include <DatabaseConnection.h>
 
+#include <Sprite.h>
+
 #include <thread>
 #include <LinearLayout.h>
-#include <sqlite\sqlite3.h>
-#include <DatabaseConnection.h>
 
 #include <TextArea.h>
 #include <shader\ComponentShaderText.h>
@@ -123,7 +111,6 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	screenSurfaceShader(new Shader("../assets/RenderSurface", false, true)),
 	screenSurface(new RenderSurface(screenSurfaceShader)),
 	screenFBO(new StandardFrameBuffer(true)),
-	phongMat(new Material(15.0, glm::vec3(1.f, 1.f, 1.f), true)),
 	sceneHeight(150),
 	sceneWidth(50),
 	joy(new JoystickManager()),
@@ -148,16 +135,11 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	srand(time(NULL));
 	dialogueDisplay = new DialogueDisplay(uiLayer.world, this, font, textShader, 1.f, 1.f);
 	uiLayer.addChild(dialogueDisplay);
-	//childTransform->addChild(dd);
 
-	//dd->stuffToSay = WAG_ResourceManager::playthrough->conversations["WAG_CONVO_1"];
-	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["START"];
+	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["EAT_SQUIRREL"];
 	Step step;
 	dialogueDisplay->update(&step);
 	dialogueDisplay->sayNext();
-	//dd->portraitPanel->mesh->pushTexture2D(WAG_ResourceManager::cheryl);
-	//childTransform->addChild(dd);
-	//dd->parents.at(0)->translate(300, 300, 0);
 	
 	uiLayer.addChild(new FpsDisplay(uiLayer.world, this, font, textShader));
 
@@ -190,7 +172,6 @@ WAG_TestScene::~WAG_TestScene(){
 
 
 void WAG_TestScene::update(Step * _step){
-	WAG_ResourceManager::stream->update(_step);
 	// handle inputs
 	joy->update(_step);
 	
@@ -201,9 +182,6 @@ void WAG_TestScene::update(Step * _step){
 		dialogueDisplay->autoProgress = false;
 	}
 
-	if(keyboard->keyJustUp(GLFW_KEY_P)){	
-		WAG_ResourceManager::stream->play(true);
-	}
 	if(keyboard->keyJustUp(GLFW_KEY_E)){	
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;
 		//RequestJSONValueAsync(label);
