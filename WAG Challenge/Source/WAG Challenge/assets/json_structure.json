@@ -1,5 +1,13 @@
 {
     "assets": [
+		{
+            "id": "MENU",
+            "type": "texture"
+        },
+		{
+            "id": "CREDITS",
+            "type": "texture"
+        },
         {
             "id": "FOREST_BEAVER",
             "type": "texture",
@@ -122,7 +130,7 @@
         {
             "id": "CAVE_RABBIT_MOUSE",
             "type": "texture",
-            "src": "cave.png",
+            "src": "cave_rabbitmouse.png",
             "width": 1920,
             "height": 1080
         },
@@ -389,14 +397,14 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_BEAVER",
                     "text": [
                         "As usual, your morning starts with a visit from your neighbour."
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_BEAVER",
                     "text": [
                         "Morning, Fox!"
                     ],
@@ -440,7 +448,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_BEAVER",
                     "conditions": [
                         {
                             "type": "equality",
@@ -455,7 +463,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_BEAVER",
                     "conditions": [
                         {
                             "type": "equality",
@@ -470,14 +478,14 @@
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_BEAVER",
                     "text": [
                         "Marten's had the idea to take a dip in the river. Want to join?"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_BEAVER",
                     "text": [
                         "Yeah, I might for a bit."
                     ]
@@ -491,70 +499,70 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_WOLF",
                     "text": [
                         "Marten is already in the water. Wolf is standing by the shore."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_WOLF",
                     "text": [
                         "Heyo! Come have a dip with us, yeah?"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_WOLF",
                     "text": [
                         "It's a bit cold..."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_WOLF",
                     "text": [
                         "That's quitter talk, Wolf!"
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Well, I'm coming in. Fox?"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I, uh, might take a walk first."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "That's all you ever want to do. C'mon, take a swim! You'll like it!"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I'll swim when I get back, promise."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Alright, but I'm holding you to that. Hurry back."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "CLEARING",
                     "text": [
                         "You wander a long way into the woods."
                     ],
@@ -586,28 +594,28 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "GROUNDHOG_DEAD",
+                    "portrait": "CLEARING_HAWK",
                     "text": [
                         "Another animal flies down from above and begins to eat the first."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "GROUNDHOG_DEAD",
+                    "portrait": "CLEARING_HAWK",
                     "text": [
                         "The new animal looks up and sees you. He bristles."
                     ]
                 },
                 {
                     "speaker": "Hawk",
-                    "portrait": "CLEARING",
+                    "portrait": "CLEARING_HAWK",
                     "text": [
                         "Piss off, scav! This is my kill!"
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CLEARING",
+                    "portrait": "CLEARING_HAWK",
                     "text": [
                         "Not knowing what to say, you run back to the others."
                     ],
@@ -625,21 +633,21 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Marten and Beaver are still in the river. Wolf seems to have left."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "You okay, Fox? Walk too fast?"
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "You do look pretty ill, Fox. What happened?"
                     ],
@@ -671,14 +679,14 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I saw something. Out there, in a clearing."
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "What did you see?"
                     ],
@@ -722,112 +730,112 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "There was... there was an animal. He fell right out of the sky in front of me."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "As animals are known to do, of course."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "And... there was another animal. Flew down from the sky and..."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "He started... eating... the other one."
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "What?"
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "You're nutty, Fox. This is some bit."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "No, I... I really saw it!"
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Fox, are you sure?"
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Come on now, Fox is just having a laugh! What part of that story sounds true!"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I don't.. I don't know. But I saw it. That flying one was... crazy. He was just..."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Go eat something, Fox. You always get a little loopy when you're hungry."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I'm not... I... "
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Er... maybe you should take a nap, Fox."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Fine."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "You head back to the Hollow, confused by what you saw."
                     ],
@@ -845,35 +853,35 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I... don't know. I think... well... I'm not sure."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Hallucations, I suspect! I bet you forgot to eat breakfast again, didn't you?"
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "You're always a bit loopy when you're hungry."
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Maybe you should take a nap, Fox."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I think I will."
                     ],
@@ -891,35 +899,35 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Nothing, I just... feel a little ill."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Marten sighs dramatically."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I suppose you're not well enough to swim then?"
                     ]
                 },
                 {
                     "speaker": "Beaver",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "Maybe you should take a nap, Fox."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "RIVER_MARTEN_BEAVER",
                     "text": [
                         "I think I will."
                     ],
@@ -937,20 +945,20 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "On your way back to the Hollow, you run into Wolf."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "He is very flustered."
                     ]
                 },
                 {
-                    "speaker": "Wolf",
+                    "speaker": "FOREST_NIGHT_WOLF",
                     "portrait": "FOREST",
                     "text": [
                         "Fox, uh, you were there, right? You saw it too?"
@@ -958,14 +966,14 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "What do you mean?"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Out past the river. You, uh, saw the murder?"
                     ],
@@ -997,28 +1005,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Yeah. I did."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "I... can't believe it. Right? Why did he... and.. well... Wow! You know?"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "I don't know. It seems crazy. It is crazy. I thought I dreamed it."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "I... we can't tell anyone, right? That would be too weird.  I...",
                         "Promise not to tell anyone?"
@@ -1051,28 +1059,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Sure, I guess."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
-                        "I.. I think it's for the best. We don't want to panic anyone..."
+                        "I.. I think it's for the best. We don't want anyone to panic..."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Ok. But if we see that flying guy again, we've got to warn the mayor."
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Yeah, sure, sure... we'll tell him later..."
                     ],
@@ -1096,28 +1104,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "We have to tell everyone! That animal is dangerous!"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "But they... they won't understand! They'll panic! Please... we can't tell. Don't tell!"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Well, we should at least tell the mayor!"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Okay, okay... fine, I'll... I'll go tell him."
                     ],
@@ -1132,7 +1140,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT",
                     "text": [
                         "Wolf wanders off, shaken."
                     ],
@@ -1150,21 +1158,21 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "What are you talking about?"
                     ]
                 },
                 {
                     "speaker": "Wolf",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Oh! I, uh, I thought... well... never mind."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "See you later, Wolf."
                     ],
@@ -1179,7 +1187,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT",
                     "text": [
                         "You walk back to your den and go to bed."
                     ],
@@ -1212,35 +1220,35 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2",
                     "text": [
                         "In the morning, you wake and leave your den."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "text": [
                         "You see Marten. He looks pale."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "text": [
                         "Marten? What's wrong?"
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "text": [
                         "I... He... He's dead..."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1255,7 +1263,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1270,7 +1278,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1285,7 +1293,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1300,7 +1308,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1315,7 +1323,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_MARTEN",
                     "text": [
                         "Marten points off into the distance. You see Beaver laying on the ground."
                     ]
@@ -1336,21 +1344,21 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Make way, make way!"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "What happened here?"
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1365,7 +1373,7 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1380,14 +1388,14 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Oh... oh, no..."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "The mayor stares at Beaver. No one moves or speaks."
                     ],
@@ -1465,35 +1473,35 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Mayor, I..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Not now, Fox."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "But, I think..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Not now."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1508,7 +1516,7 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1523,7 +1531,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1538,7 +1546,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1553,7 +1561,7 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1567,8 +1575,8 @@
                     ]
                 },
                 {
-                    "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1583,7 +1591,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST_DAY2",
                     "text": [
                         "You look over at Beaver and feel sick."
                     ],
@@ -1601,14 +1609,14 @@
             "dialogue": [
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "text": [
                         "Wh-wh-- what happened?"
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1623,7 +1631,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1638,7 +1646,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1653,7 +1661,7 @@
                 },
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1668,7 +1676,7 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1683,7 +1691,7 @@
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1698,7 +1706,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1713,7 +1721,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL2",
                     "conditions": [
                         {
                             "type": "equality",
@@ -1728,42 +1736,42 @@
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "May I have your attention, please!"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "All we know right now is that Beaver is dead."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "We don't know who, or what, did this terrible deed."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "But we will take every effort to find the truth."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Please return to your homes. The Mayor and I will conduct an investigation."
                     ]
                 },
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY2_ALL1",
                     "text": [
                         "Please... find out who did this."
                     ],
@@ -1781,28 +1789,28 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT",
                     "text": [
                         "You walk for hours."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT",
                     "text": [
                         "This doesn't help your restlessness, but it makes you tired."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_NIGHT",
                     "text": [
                         "It is getting late. You return to the Hollow."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "CAVE",
                     "text": [
                         "As you walk to your den, you see a light in the meeting cave."
                     ]
@@ -1816,168 +1824,168 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Inside, you see the mayor and Dormouse."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "I saw Fox coming out of the forest, shaking like a leaf."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "A little later, Wolf came out looking the same."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "I went to see what they saw, and, well..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "This is terrible... it took nothing! It's already falling apart!"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
-                        "It's in the instincts. And they must feel it, right?"
+                        "It's in their instincts. And they must feel it, right?"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "They can't survive on our food. They feel weak."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "We should have prepared for this! Why didn't we think?"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "We failed, Rabbit. But what do we do now? We need a permanent fix. We can't--"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Be quiet, Dor! Let me think!"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Look, this is bad. We thought we could do this but we failed. Give it up!"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "What do we say about Beaver? What about Wolf? What about--"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "I took care of Wolf. I convinced him to leave. He's acres away by now."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "We'll say it was... I don't know. We'll say it was that hawk."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "We'll tell them to stay indoors for a few days until the threat passes."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Well, even if that works, what about Fox?"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Calm down. I will get this situation under control."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "We need to end this, Rabbit. There's no other option!"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Let me try, Dor. I can do this."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "Fine."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "But they're dying, Rabbit. It's only a matter of time."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT_MOUSE",
                     "text": [
                         "I'm leaving tomorrow night. With or without you."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "FOREST_NIGHT",
                     "text": [
                         "You leave before Dormouse catches you."
                     ]
@@ -2008,42 +2016,42 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "You wake up and leave your den. The wind is quiet."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Raccoon appears from her den as well. She comes to greet you."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Hello, Fox."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Hello, Raccoon."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "What did you see, Fox? Out in the woods?"
                     ],
@@ -2075,21 +2083,21 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "There was an animal. He... killed someone. I saw it happen."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Oh..."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Do you... do you think he killed Beaver too?"
                     ],
@@ -2121,49 +2129,49 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "RIVER",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "I... yes. It makes sense, right? He... killed Beaver. Like he killed the other animal."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Yes... I think so too. It must be."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "We'd... better go back inside, I think."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Yes."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Raccoon stares off into the woods for a second, then leaves."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "You need to talk to the mayor."
                     ],
@@ -2181,63 +2189,63 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "I don't... think so."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "What do you mean?"
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "I think it was someone else."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "But..."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Well... I can't say more until I know for sure."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Raccoon stares off into the woods for a moment."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "I think... we should go back inside now."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Raccoon goes back into her den."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "You need to talk to the mayor."
                     ],
@@ -2255,14 +2263,14 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "What are you talking about?"
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2277,7 +2285,7 @@
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2292,7 +2300,7 @@
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2307,42 +2315,42 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "I don't know what you're talking about, Raccoon."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Oh."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Raccoon stares off into the woods for a moment."
                     ]
                 },
                 {
                     "speaker": "Raccoon",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "We... we should go back inside, I think."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "Raccoon goes back into her den."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_RACCOON",
                     "text": [
                         "You need to talk to the mayor."
                     ],
@@ -2360,7 +2368,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "You find the mayor in the meeting cave. He sits in the corner with his back to you."
                     ],
@@ -2392,14 +2400,14 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Hello, mayor."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "The mayor does not respond."
                     ],
@@ -2422,189 +2430,189 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Why did Wolf kill Beaver?"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I think you know the answer to that, Fox..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "A better question would be - \"Why do animals have to eat each other?\""
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Or - \"Why did I keep that a secret from you?\""
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Or \"Why did I think it would work?\""
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "The mayor begins to pace."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Some animals eat each other."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "This is normal."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "It's part of you, it's how your body works, it's what you need to do to survive."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "You're dying, Fox. You should know that."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "You are weak. You can feel it. But I suppose we accept illness we think is normal."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I was tired, I suppose. Of being in fear. Or not being in control."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I was tired of what I needed to do to survive."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I didn't realize that I was trying to create a utopia."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I think I was just scared, and I wanted a solution."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "That's why I stole you. I stole you and I isolated you. As I did with the others."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Maybe it was just a test to see if it would work."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Maybe I thought it would work the first time."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I guess it's presumptuous to assume that I had any idea what I was doing. Or why."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I don't know."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "The mayor stops pacing."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I don't know, I don't know. But it's not working."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "A speech was enough for Wolf, but that was when I thought I had this under control."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Whatever this is, it's over. And I can't clean it up."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "I'm leaving later tonight."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "Do whatever suits you."
                     ],
@@ -2619,7 +2627,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE",
+                    "portrait": "CAVE_RABBIT",
                     "text": [
                         "The mayor sits down."
                     ],
@@ -2682,7 +2690,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "text": [
                         "You leave the cave."
                     ],
@@ -2706,14 +2714,14 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "text": [
                         "As you leave, Dormouse approaches the cave."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2728,7 +2736,7 @@
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2743,7 +2751,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2758,7 +2766,7 @@
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2793,7 +2801,7 @@
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2808,7 +2816,7 @@
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2872,7 +2880,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2887,7 +2895,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2902,7 +2910,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2917,7 +2925,7 @@
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2932,7 +2940,7 @@
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2947,7 +2955,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "conditions": [
                         {
                             "type": "equality",
@@ -2962,7 +2970,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MOUSE",
                     "text": [
                         "You walk past Dormouse."
                     ],
@@ -2980,14 +2988,14 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "As you enter the Hollow, Marten comes out of his den."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3002,14 +3010,14 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "We shouldn't be out here..."
                     ]
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3024,7 +3032,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3039,7 +3047,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3054,7 +3062,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3069,7 +3077,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3084,7 +3092,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3099,7 +3107,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3114,7 +3122,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3129,7 +3137,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3164,7 +3172,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3228,7 +3236,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3243,7 +3251,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3258,7 +3266,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3273,7 +3281,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3288,7 +3296,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3303,7 +3311,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3318,7 +3326,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3333,7 +3341,7 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3348,7 +3356,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3363,35 +3371,35 @@
                 },
                 {
                     "speaker": "Marten",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "B-but--"
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "Let me go, Marten."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "Marten looks confused and hurt."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "After a moment, he steps aside."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
                         "You walk past Marten."
                     ],
@@ -3409,14 +3417,14 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "text": [
                         "You continue on. You see Chipmunk ahead, blocking your path."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3431,7 +3439,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3446,7 +3454,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3461,7 +3469,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3476,7 +3484,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3491,7 +3499,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3506,7 +3514,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3521,7 +3529,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3536,7 +3544,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3551,7 +3559,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3586,7 +3594,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3601,7 +3609,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3616,7 +3624,7 @@
                 },
                 {
                     "speaker": "Chipmunk",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3680,7 +3688,7 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3695,7 +3703,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3710,7 +3718,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3725,7 +3733,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3740,7 +3748,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3755,7 +3763,7 @@
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3770,7 +3778,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3785,7 +3793,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "conditions": [
                         {
                             "type": "equality",
@@ -3800,7 +3808,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_CHIPMUNK",
                     "text": [
                         "You leave her standing there."
                     ],
@@ -3818,35 +3826,35 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "The night around you gets darker as you reach the edge of the Hollow."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "You see Squirrel's tree to the right. He emerges from it."
                     ]
                 },
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "Fox!"
                     ]
                 },
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "Shouldn't you be inside? It's dangerous out there!"
                     ]
                 },
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "Come in here! You'll be safer."
                     ],
@@ -3902,28 +3910,28 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "It's okay, Squirrel."
                     ]
                 },
                 {
                     "speaker": "Fox",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "Don't worry."
                     ]
                 },
                 {
                     "speaker": "Squirrel",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "Well... okay, Fox. But please be safe..."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "He goes back inside."
                     ],
