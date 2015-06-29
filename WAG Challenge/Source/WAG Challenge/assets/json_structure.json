@@ -291,7 +291,7 @@
         {
             "id": "Fox",
             "type": "audio",
-            "src": "foxSound.wav",
+            "src": "newfoxSound.wav",
             "stream": false
         },
         {
@@ -310,6 +310,12 @@
             "id": "Chipmunk",
             "type": "audio",
             "src": "chipmunkSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Dormouse",
+            "type": "audio",
+            "src": "dormouseSound.wav",
             "stream": false
         },
 		{
