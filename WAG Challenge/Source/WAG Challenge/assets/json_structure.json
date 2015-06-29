@@ -129,6 +129,12 @@
             "type": "audio",
             "src": "rabbit.wav",
             "stream": false
+        },
+        {
+            "id": "bgm",
+            "type": "audio",
+            "src": "WAGimprovHQ.ogg",
+            "stream": false
         }
     ],
     "characters": [

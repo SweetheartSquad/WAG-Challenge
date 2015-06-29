@@ -155,6 +155,10 @@ WAG_TestScene::WAG_TestScene(Game * _game) :
 	mouseIndicator->setShader(uiLayer->shader, true);
 
 	childTransform->addChild(uiLayer, false);
+	
+
+	alSourcef(WAG_ResourceManager::playthrough->getAudio("bgm")->sound->source->sourceId, AL_GAIN, 2.5f);
+	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
 }
 
 WAG_TestScene::~WAG_TestScene(){
@@ -173,6 +177,8 @@ WAG_TestScene::~WAG_TestScene(){
 void WAG_TestScene::update(Step * _step){
 	// handle inputs
 	joy->update(_step);
+	
+	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->update(_step);
 	
 	if(keyboard->keyDown(GLFW_KEY_SPACE)){
 		dialogueDisplay->dialogue->finishTicking();
