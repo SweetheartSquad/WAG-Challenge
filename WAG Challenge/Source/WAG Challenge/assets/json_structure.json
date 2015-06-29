@@ -291,7 +291,7 @@
         {
             "id": "Fox",
             "type": "audio",
-            "src": "newfoxSound.wav",
+            "src": "secondFoxSound.wav",
             "stream": false
         },
         {
@@ -358,6 +358,12 @@
             "id": "Wolf",
             "type": "audio",
             "src": "wolfSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Narrator",
+            "type": "audio",
+            "src": "narratorSound.wav",
             "stream": false
         },
         {
