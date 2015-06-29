@@ -1,6 +1,7 @@
 #pragma once
 
 #include <WAG_Button.h>
+#include <WAG_ResourceManager.h>
 #include <Font.h>
 #include <shader\ComponentShaderBase.h>
 #include <shader\ShaderComponentText.h>
@@ -45,4 +46,12 @@ void WAG_Button::update(Step * _step){
 			l->setBackgroundColour(-0.8f, -0.8f, -0.8f, 0.5f);
 		}
 	}
+}
+
+void WAG_Button::up(){
+	if(isHovered){
+		WAG_ResourceManager::playthrough->getAudio("None")->sound->setGain(WAG_ResourceManager::getSfxVolume());
+		WAG_ResourceManager::playthrough->getAudio("None")->sound->play();
+	}
+	TextArea::up();
 }

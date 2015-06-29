@@ -69,6 +69,13 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	HorizontalLinearLayout * musicvolume = new HorizontalLinearLayout(uiLayer->world, this);
 	HorizontalLinearLayout * sfxvolume = new HorizontalLinearLayout(uiLayer->world, this);
 	
+	
+	backButt->setText(L"Back");
+	backButt->onClickFunction = [this](NodeUI * _this){
+		uiLayer->removeChild(optionsLayout);
+		uiLayer->addChild(mainLayout);
+	};
+
 	skipButt->setText(L"Space to Skip - Disabled");
 	skipButt->onClickFunction = [skipButt](NodeUI * _this){
 		WAG_ResourceManager::skipEnabled = !WAG_ResourceManager::skipEnabled;
@@ -82,17 +89,41 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	musicVolumeText->setText(L"Music Volume: 5");
 	musicVolumeDown->setText(L"-");
 	musicVolumeUp->setText(L"+");
-	sfxVolumeText->setText(L"Sound Volume: 5");
+	sfxVolumeText->setText(L"Sound Volume: 3");
 	sfxVolumeDown->setText(L"-");
 	sfxVolumeUp->setText(L"+");
 	musicVolumeText->mouseEnabled = false;
 	sfxVolumeText->mouseEnabled = false;
 	
-	backButt->setText(L"Back");
-	backButt->onClickFunction = [this](NodeUI * _this){
-		uiLayer->removeChild(optionsLayout);
-		uiLayer->addChild(mainLayout);
+	musicVolumeDown->onClickFunction = [musicVolumeText](NodeUI * _this){
+		WAG_ResourceManager::musicVolume = std::max(0, WAG_ResourceManager::musicVolume-1);
+		std::wstringstream ss;
+		ss << L"Music Volume: " << WAG_ResourceManager::musicVolume;
+		musicVolumeText->setText(ss.str());
+
+		WAG_ResourceManager::playthrough->getAudio("bgm")->sound->setGain(WAG_ResourceManager::getMusicVolume());
 	};
+	musicVolumeUp->onClickFunction = [musicVolumeText](NodeUI * _this){
+		WAG_ResourceManager::musicVolume = std::min(9, WAG_ResourceManager::musicVolume+1);
+		std::wstringstream ss;
+		ss << L"Music Volume: " << WAG_ResourceManager::musicVolume;
+		musicVolumeText->setText(ss.str());
+
+		WAG_ResourceManager::playthrough->getAudio("bgm")->sound->setGain(WAG_ResourceManager::getMusicVolume());
+	};
+	sfxVolumeDown->onClickFunction = [sfxVolumeText](NodeUI * _this){
+		WAG_ResourceManager::sfxVolume = std::max(0, WAG_ResourceManager::sfxVolume-1);
+		std::wstringstream ss;
+		ss << L"Sound Volume: " << WAG_ResourceManager::sfxVolume;
+		sfxVolumeText->setText(ss.str());
+	};
+	sfxVolumeUp->onClickFunction = [sfxVolumeText](NodeUI * _this){
+		WAG_ResourceManager::sfxVolume = std::min(9, WAG_ResourceManager::sfxVolume+1);
+		std::wstringstream ss;
+		ss << L"Sound Volume: " << WAG_ResourceManager::sfxVolume;
+		sfxVolumeText->setText(ss.str());
+	};
+	
 	skipButt->setMarginBottom(10);
 	
 	musicvolume->addChild(musicVolumeDown);

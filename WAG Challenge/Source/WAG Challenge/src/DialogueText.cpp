@@ -33,7 +33,8 @@ void DialogueTextLabel::tickerIn(float _delay){
 			g->setVisible(true);
 			//std::cout << g->character/128.f+0.5f << std::endl;
 			if(i % 2 == 0 && iswalpha(g->character)){
-				checkForAlError(alSourcef(voice->source->sourceId, AL_PITCH, g->character/178.f+0.75f));
+				voice->setPitch(g->character/178.f+0.75f);
+				voice->setGain(WAG_ResourceManager::getSfxVolume());
 				voice->play();
 			}
 		};

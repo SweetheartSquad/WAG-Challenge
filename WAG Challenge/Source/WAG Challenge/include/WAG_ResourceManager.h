@@ -16,6 +16,13 @@ public:
 
 	static std::string speaker;
 	static bool skipEnabled;
+	static int musicVolume;
+	static int sfxVolume;
 
 	static void init();
+
+	// returns musicVolume, adjusted for use with setGain
+	static float getMusicVolume();
+	// returns musicVolume, adjusted for use with setGain
+	static float getSfxVolume();
 };
