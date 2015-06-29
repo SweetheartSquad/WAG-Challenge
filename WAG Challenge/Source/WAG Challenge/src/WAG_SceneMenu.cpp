@@ -6,8 +6,35 @@
 WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	WAG_Scene(_game),
 	mainLayout(new VerticalLinearLayout(uiLayer->world, this)),
-	optionsLayout(new VerticalLinearLayout(uiLayer->world, this))
+	optionsLayout(new VerticalLinearLayout(uiLayer->world, this)),
+	warningLayout(new VerticalLinearLayout(uiLayer->world, this))
 {
+	bg = new NodeUI(uiLayer->world, this);
+	bg->setRationalHeight(1.f);
+	bg->setRationalWidth(1.f);
+	uiLayer->addChild(bg);
+
+	// warning
+	warningLayout->setRationalWidth(1.f);
+	warningLayout->setAutoresizeHeight();
+	warningLayout->horizontalAlignment = kCENTER;
+
+	WAG_Button * warning = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
+	WAG_Button * okay = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
+	warning->mouseEnabled = false;
+	warning->setText(L"This work of fiction containes graphic scenes. Reader discretion advised.");
+	
+	okay->setText(L"Okay");
+	okay->onClickFunction = [this](NodeUI * _this){
+		uiLayer->removeChild(warningLayout);
+		uiLayer->addChild(mainLayout);
+		bg->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("DEFAULT")->texture);
+	};
+	okay->setMarginBottom(0.4f);
+
+	warningLayout->addChild(warning);
+	warningLayout->addChild(okay);
+
 	// main
 	mainLayout->setRationalWidth(1.f);
 	mainLayout->setAutoresizeHeight();
@@ -50,7 +77,6 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	mainLayout->addChild(continueGameButt);
 	mainLayout->addChild(optionsButt);
 	mainLayout->addChild(exitButt);
-	uiLayer->addChild(mainLayout);
 	
 	// options
 	optionsLayout->setRationalWidth(1.f);
@@ -138,6 +164,10 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	optionsLayout->addChild(musicvolume);
 	optionsLayout->addChild(sfxvolume);
 	optionsLayout->addChild(skipButt);
+
+
+	
+	uiLayer->addChild(warningLayout);
 }
 
 void WAG_SceneMenu::update(Step * _step){
