@@ -83,7 +83,6 @@ WAG_SceneMain::WAG_SceneMain(Game * _game) :
 	dialogueDisplay->sayNext();
 	
 	// background music
-	alSourcef(WAG_ResourceManager::playthrough->getAudio("bgm")->sound->source->sourceId, AL_GAIN, 2.5f);
 	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
 }
 

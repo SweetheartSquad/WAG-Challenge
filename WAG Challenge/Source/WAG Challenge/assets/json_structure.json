@@ -99,7 +99,7 @@
             "height": 1080
         },
         {
-            "id": "RIVER_MARTEN_WOLF,
+            "id": "RIVER_MARTEN_WOLF",
             "type": "texture",
             "src": "forest_river_martenwolf.png",
             "width": 1920,
