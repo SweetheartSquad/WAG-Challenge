@@ -970,8 +970,8 @@
                     ]
                 },
                 {
-                    "speaker": "FOREST_NIGHT_WOLF",
-                    "portrait": "FOREST",
+                    "speaker": "Wolf",
+                    "portrait": "FOREST_NIGHT_WOLF",
                     "text": [
                         "Fox, uh, you were there, right? You saw it too?"
                     ]
