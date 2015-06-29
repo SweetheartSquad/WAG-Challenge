@@ -28,7 +28,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	okay->onClickFunction = [this](NodeUI * _this){
 		uiLayer->removeChild(warningLayout);
 		uiLayer->addChild(mainLayout);
-		bg->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("DEFAULT")->texture);
+		bg->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("MENU")->texture);
 	};
 	okay->setMarginBottom(0.4f);
 
@@ -71,7 +71,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	exitButt->onClickFunction = [_game](NodeUI * _this){
 		_game->exit();
 	};
-	exitButt->setMarginBottom(10);
+	exitButt->setMarginBottom(0.25f);
 	
 	mainLayout->addChild(newGameButt);
 	mainLayout->addChild(continueGameButt);
@@ -150,7 +150,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 		sfxVolumeText->setText(ss.str());
 	};
 	
-	skipButt->setMarginBottom(10);
+	skipButt->setMarginBottom(0.25f);
 	
 	musicvolume->addChild(musicVolumeDown);
 	musicvolume->addChild(musicVolumeText);
