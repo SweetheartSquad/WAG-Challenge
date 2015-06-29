@@ -1,10 +1,10 @@
 #pragma once
 
 #include <WAG_Game.h>
-#include <WAG_SceneMain.h>
+#include <WAG_SceneMenu.h>
 
 WAG_Game::WAG_Game() :
-	Game(true, std::pair<std::string, Scene *>("test", new WAG_SceneMain(this)), true)
+	Game(true, std::pair<std::string, Scene *>("MENU", new WAG_SceneMenu(this)), true)
 {
 }
 

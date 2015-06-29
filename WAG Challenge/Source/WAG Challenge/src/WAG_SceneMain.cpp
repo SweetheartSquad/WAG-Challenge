@@ -15,8 +15,6 @@
 #include <shader\ShaderComponentHsv.h>
 
 #include <System.h>
-#include <Mouse.h>
-#include <Keyboard.h>
 #include <GLFW\glfw3.h>
 
 #include <cpprest/http_client.h>
@@ -84,6 +82,8 @@ WAG_SceneMain::WAG_SceneMain(Game * _game) :
 	
 	// background music
 	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
+
+	addMouse();
 }
 
 void WAG_SceneMain::update(Step * _step){
@@ -102,23 +102,9 @@ void WAG_SceneMain::update(Step * _step){
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;
 		//RequestJSONValueAsync(label);
 	}
-	
-	if(keyboard->keyJustUp(GLFW_KEY_2)){
-		if(Transform::drawTransforms){
-			uiLayer->bulletDebugDrawer->setDebugMode(btIDebugDraw::DBG_NoDebug);
-		}else{
-			uiLayer->bulletDebugDrawer->setDebugMode(btIDebugDraw::DBG_MAX_DEBUG_DRAW_MODE);
-		}
-		Transform::drawTransforms = !Transform::drawTransforms;
+	if(keyboard->keyJustUp(GLFW_KEY_ESCAPE)){	
+		game->switchScene("MENU", false);
 	}
-	
-	// update scene and physics
-	Scene::update(_step);
 
-	// update ui stuff
-	glm::uvec2 sd = vox::getScreenDimensions();
-	uiLayer->resize(0, sd.x, 0, sd.y);
-	//uiLayer->update(_step);
-
-	mouseIndicator->parents.at(0)->translate(mouse->mouseX(), mouse->mouseY(), 0, false);
+	WAG_Scene::update(_step);
 }

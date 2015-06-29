@@ -22,6 +22,8 @@
 
 #include <RenderSurface.h>
 #include <StandardFrameBuffer.h>
+#include <Mouse.h>
+#include <Keyboard.h>
 
 #include <Sprite.h>
 
@@ -37,7 +39,12 @@ public:
 	Font * font;
 
 	virtual void render(vox::MatrixStack * _matrixStack, RenderOptions * _renderOptions) override;
-	
+	virtual void update(Step * _step);
+
 	WAG_Scene(Game * _game);
 	~WAG_Scene();
+
+protected:
+	// call this after you've added everything to the scene so that the mouse is on top
+	void addMouse();
 };
