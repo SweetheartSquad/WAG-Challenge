@@ -2,6 +2,7 @@
 
 #include <DialogueText.h>
 #include <WAG_ResourceManager.h>
+#include <CharacterUtils.h>
 
 DialogueTextLabel::DialogueTextLabel(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader) :
 	TextLabel(_world, _scene, _font, _textShader, 1.f),
@@ -31,7 +32,7 @@ void DialogueTextLabel::tickerIn(float _delay){
 			OpenAL_Sound * voice = WAG_ResourceManager::playthrough->getAudio(WAG_ResourceManager::speaker)->sound;
 			g->setVisible(true);
 			//std::cout << g->character/128.f+0.5f << std::endl;
-			if(i % 2 == 0){
+			if(i % 2 == 0 && iswalpha(g->character)){
 				checkForAlError(alSourcef(voice->source->sourceId, AL_PITCH, g->character/178.f+0.75f));
 				voice->play();
 			}
