@@ -361,9 +361,9 @@
             "stream": false
         },
 		{
-            "id": "Narrator",
+            "id": "None",
             "type": "audio",
-            "src": "narratorSound.wav",
+            "src": "blip.ogg",
             "stream": false
         },
         {
