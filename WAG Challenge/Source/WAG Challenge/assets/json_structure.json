@@ -360,7 +360,7 @@
         {
             "id": "Fox",
             "type": "audio",
-            "src": "secondFoxSound.wav",
+            "src": "thirdFoxSound.wav",
             "stream": false
         },
         {
