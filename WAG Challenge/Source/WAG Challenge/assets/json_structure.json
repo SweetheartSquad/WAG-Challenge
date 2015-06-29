@@ -1254,7 +1254,7 @@
                     ]
                 },
                 {
-                    "speaker": "FOX",
+                    "speaker": "Fox",
                     "portrait": "FOREST",
                     "conditions": [
                         {
@@ -1652,7 +1652,7 @@
                     ]
                 },
                 {
-                    "speaker": "Badger",
+                    "speaker": "Squirrel",
                     "portrait": "FOREST",
                     "conditions": [
                         {
@@ -3878,7 +3878,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "CHIPMUNK_DEAD",
+                    "portrait": "SQUIRREL_DEAD",
                     "text": [
                         "You eat Squirrel."
                     ],
