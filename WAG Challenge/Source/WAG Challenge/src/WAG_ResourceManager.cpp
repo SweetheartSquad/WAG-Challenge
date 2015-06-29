@@ -13,6 +13,7 @@ JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
 
 
 std::string WAG_ResourceManager::speaker = "blip";
+bool WAG_ResourceManager::skipEnabled = false;
 
 void WAG_ResourceManager::init(){
 	playthrough = new JsonPlaythroughParser("../assets/json_structure.json");

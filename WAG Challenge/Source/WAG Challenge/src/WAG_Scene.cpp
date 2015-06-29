@@ -22,6 +22,8 @@ WAG_Scene::WAG_Scene(Game * _game) :
 
 	// add the uiLayer to the scene
 	childTransform->addChild(uiLayer, false);
+
+	addMouse();
 }
 
 WAG_Scene::~WAG_Scene(){

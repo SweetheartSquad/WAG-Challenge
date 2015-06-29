@@ -82,15 +82,13 @@ WAG_SceneMain::WAG_SceneMain(Game * _game) :
 	
 	// background music
 	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
-
-	addMouse();
 }
 
 void WAG_SceneMain::update(Step * _step){
 	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->update(_step);
 	
 	// skip button
-	if(keyboard->keyDown(GLFW_KEY_SPACE)){
+	if(keyboard->keyDown(GLFW_KEY_SPACE) && WAG_ResourceManager::skipEnabled){
 		dialogueDisplay->dialogue->finishTicking();
 		dialogueDisplay->autoProgress = true;
 		dialogueDisplay->autoProgressTimer->targetSeconds = 0.01f;

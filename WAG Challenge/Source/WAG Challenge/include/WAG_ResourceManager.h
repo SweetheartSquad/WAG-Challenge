@@ -15,6 +15,7 @@ public:
 	static JsonPlaythroughParser * playthrough;
 
 	static std::string speaker;
+	static bool skipEnabled;
 
 	static void init();
 };
