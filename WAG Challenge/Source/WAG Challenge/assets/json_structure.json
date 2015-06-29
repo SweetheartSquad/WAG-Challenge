@@ -7,7 +7,7 @@
         {
             "id": "RIVER",
             "type": "texture",
-            "src": "river.png",
+            "src": "forest_river.png",
             "width": 1920,
             "height": 1080
         },
@@ -20,43 +20,66 @@
         },
         {
             "id": "CLEARING",
-            "type": "texture"
+            "type": "texture",
+            "src": "forest_clearing.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "GROUNDHOG_FALL",
-            "type": "texture"
+            "type": "texture",
+            "src": "forest_clearing_ghfalling.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "GROUNDHOG_DEAD",
-            "type": "texture"
-        },
-        {
-            "id": "BLACK",
-            "type": "texture"
+            "type": "texture",
+            "src": "forest_clearing_ghdead.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "BEAVER_DEAD",
-            "type": "texture"
+            "type": "texture",
+            "src": "dead_beaver.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "MAYOR_DEAD",
-            "type": "texture"
+            "type": "texture",
+            "src": "dead_rabbit.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "DORMOUSE_DEAD",
-            "type": "texture"
+            "type": "texture",
+            "src": "dead_mouse.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "MARTEN_DEAD",
-            "type": "texture"
+            "type": "texture",
+            "src": "dead_marten.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "CHIPMUNK_DEAD",
-            "type": "texture"
+            "type": "texture",
+            "src": "dead_chipmunk.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "SQUIRREL_DEAD",
-            "type": "texture"
+            "type": "texture",
+            "src": "dead_squirrel.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "BLACK",
@@ -68,55 +91,79 @@
         {
             "id": "Fox",
             "type": "texture",
-            "src": "fox_avatar.png",
-            "width": 120,
-            "height": 120
+            "src": "fox.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Beaver",
-            "type": "texture"
+            "type": "texture",
+            "src": "beaver.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Marten",
-            "type": "texture"
+            "type": "texture",
+            "src": "marten.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Chipmunk",
-            "type": "texture"
+            "type": "texture",
+            "src": "chipmunk.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Squirrel",
-            "type": "texture"
+            "type": "texture",
+            "src": "squirrel.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Raccoon",
-            "type": "texture"
+            "type": "texture",
+            "src": "raccoon.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Wolf",
-            "type": "texture"
+            "type": "texture",
+            "src": "wolf.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Mayor",
             "type": "texture",
-            "src": "rabbit_avatar.png",
-            "width": 128,
-            "height": 128
+            "src": "rabbit.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Dormouse",
-            "type": "texture"
+            "type": "texture",
+            "src": "mouse.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Hawk",
-            "type": "texture"
+            "type": "texture",
+            "src": "hawk.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "None",
             "type": "texture",
-            "src": "narration_avatar.png",
-            "width": 128,
-            "height": 128
+            "src": "narrator.png",
+            "width": 107,
+            "height": 107
         },
         {
             "id": "Fox",
