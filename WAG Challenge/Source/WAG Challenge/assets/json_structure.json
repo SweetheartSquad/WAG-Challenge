@@ -1,8 +1,88 @@
 {
     "assets": [
         {
-            "id": "FOREST",
-            "type": "texture"
+            "id": "FOREST_BEAVER",
+            "type": "texture",
+            "src": "forest_forest_beaver.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY2",
+            "type": "texture",
+            "src": "forest_forest2.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY2_ALL1",
+            "type": "texture",
+            "src": "forest_forest2_all1.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY2_ALL2",
+            "type": "texture",
+            "src": "forest_forest2_all2.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY2_MARTEN",
+            "type": "texture",
+            "src": "forest_forest2_marten.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY3_CHIPMUNK",
+            "type": "texture",
+            "src": "forest_forest3_chipmunk.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY3_MARTEN",
+            "type": "texture",
+            "src": "forest_forest3_marten.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY3_MOUSE",
+            "type": "texture",
+            "src": "forest_forest3_mouse.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY3_RACCOON",
+            "type": "texture",
+            "src": "forest_forest3_raccoon.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY3_SQUIRREL",
+            "type": "texture",
+            "src": "forest_forest3_squirrel.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_NIGHT",
+            "type": "texture",
+            "src": "forest_dark.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_NIGHT_WOLF",
+            "type": "texture",
+            "src": "forest_dark_wolf.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "RIVER",
@@ -12,7 +92,35 @@
             "height": 1080
         },
         {
+            "id": "RIVER_MARTEN_BEAVER",
+            "type": "texture",
+            "src": "forest_river_martenbeaver.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "RIVER_MARTEN_WOLF,
+            "type": "texture",
+            "src": "forest_river_martenwolf.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
             "id": "CAVE",
+            "type": "texture",
+            "src": "cave.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "CAVE_RABBIT",
+            "type": "texture",
+            "src": "cave_rabbit.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "CAVE_RABBIT_MOUSE",
             "type": "texture",
             "src": "cave.png",
             "width": 1920,
@@ -36,6 +144,13 @@
             "id": "GROUNDHOG_DEAD",
             "type": "texture",
             "src": "forest_clearing_ghdead.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "CLEARING_HAWK",
+            "type": "texture",
+            "src": "forest_clearing_ghhawk.png",
             "width": 1920,
             "height": 1080
         },
