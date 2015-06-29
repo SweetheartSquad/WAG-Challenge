@@ -1,6 +1,6 @@
 #pragma once
 
-#include <WAG_TestScene.h>
+#include <WAG_SceneMain.h>
 #include <WAG_Game.h>
 #include <WAG_ResourceManager.h>
 
@@ -14,45 +14,21 @@
 #include <shader\ShaderComponentDiffuse.h>
 #include <shader\ShaderComponentHsv.h>
 
-#include <MousePerspectiveCamera.h>
-#include <FollowCamera.h>
-
 #include <System.h>
 #include <Mouse.h>
 #include <Keyboard.h>
 #include <GLFW\glfw3.h>
-#include <MatrixStack.h>
-
-#include <RenderSurface.h>
-#include <StandardFrameBuffer.h>
-#include <NumberUtils.h>
-#include <RenderOptions.h>
-#include <shader\ShaderComponentText.h>
-#include <StringUtils.h>
-#include <CharacterUtils.h>
 
 #include <cpprest/http_client.h>
 #include <cpprest/filestream.h>
 #include <NodeBulletBody.h>
 #include <BulletMeshEntity.h>
 
-#include <NodeUI.h>
-#include <WAG_Button.h>
-
 #include <OpenALSound.h>
-#include <sqlite\sqlite3.h>
-#include <DatabaseConnection.h>
-
-#include <Sprite.h>
 
 #include <thread>
-#include <LinearLayout.h>
 
-#include <TextArea.h>
-#include <shader\ComponentShaderText.h>
 #include <DialogueDisplay.h>
-#include <HorizontalLinearLayout.h>
-#include <JsonPlaythroughParser.h>
 
 // Retrieves a JSON value from an HTTP request.
 pplx::task<void> RequestJSONValueAsync(TextLabel * _label){
@@ -94,92 +70,27 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName){
 	return 0;
 }
 
-DatabaseConnection db("../assets/test.db");
-void testSql(std::string _sql, bool _async){
-	if(_async){
-		db.queryDbAsync(_sql, callback);
-	}else{
-		db.queryDb(_sql, callback);
-	}
-}
-
-WAG_TestScene::WAG_TestScene(Game * _game) :
-	Scene(_game),
-	shader(new ComponentShaderBase(true)),
-	textShader(new ComponentShaderText(true)),
-	screenSurfaceShader(new Shader("../assets/RenderSurface", false, true)),
-	screenSurface(new RenderSurface(screenSurfaceShader)),
-	screenFBO(new StandardFrameBuffer(true)),
-	sceneHeight(150),
-	sceneWidth(50),
-	joy(new JoystickManager()),
-	uiLayer(new UILayer(this, 0,0,0,0))
+WAG_SceneMain::WAG_SceneMain(Game * _game) :
+	WAG_Scene(_game),
+	dialogueDisplay(new DialogueDisplay(uiLayer->world, this, font, textShader, 1.f, 1.f))
 {
-
-	shader->addComponent(new ShaderComponentTexture(shader));
-	shader->compileShader();
-
-	//Set up cameras
-	screenSurface->scaleModeMag = GL_NEAREST;
-	screenSurface->scaleModeMin = GL_NEAREST;
-	
-	glm::uvec2 sd = vox::getScreenDimensions();
-
-	font = new Font("../assets/fonts/Mathlete-Skinny.otf", sd.x/40, false);
-	
-	textShader->textComponent->setColor(glm::vec3(1.f, 1.f, 1.f));
-	
-	uiLayer->resize(0, sd.x, 0, sd.y);
-
-	srand(time(NULL));
-	dialogueDisplay = new DialogueDisplay(uiLayer->world, this, font, textShader, 1.f, 1.f);
 	uiLayer->addChild(dialogueDisplay);
 
+	// start the game proper
 	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["MENU"];
 	Step step;
 	dialogueDisplay->update(&step);
 	dialogueDisplay->sayNext();
 	
-	mouseIndicator = new Sprite();
-	uiLayer->childTransform->addChild(mouseIndicator);
-	mouseIndicator->mesh->pushTexture2D(WAG_ResourceManager::cursor);
-	mouseIndicator->parents.at(0)->scale(32, 32, 1);
-	mouseIndicator->mesh->scaleModeMag = GL_NEAREST;
-	mouseIndicator->mesh->scaleModeMin = GL_NEAREST;
-
-	for(unsigned long int i = 0; i < mouseIndicator->mesh->vertices.size(); ++i){
-		mouseIndicator->mesh->vertices[i].x += 0.5f;
-		mouseIndicator->mesh->vertices[i].y -= 0.5f;
-	}
-	mouseIndicator->mesh->dirty = true;
-	mouseIndicator->setShader(uiLayer->shader, true);
-
-	childTransform->addChild(uiLayer, false);
-	
-
+	// background music
 	alSourcef(WAG_ResourceManager::playthrough->getAudio("bgm")->sound->source->sourceId, AL_GAIN, 2.5f);
 	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
 }
 
-WAG_TestScene::~WAG_TestScene(){
-	deleteChildTransform();
-	shader->safeDelete();
-	//delete phongMat;
-
-	screenSurface->safeDelete();
-	//screenSurfaceShader->safeDelete();
-	screenFBO->safeDelete();
-	delete joy;
-	delete font;
-}
-
-
-void WAG_TestScene::update(Step * _step){
-	// handle inputs
-	joy->update(_step);
-	
+void WAG_SceneMain::update(Step * _step){
 	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->update(_step);
 	
+	// skip button
 	if(keyboard->keyDown(GLFW_KEY_SPACE)){
 		dialogueDisplay->dialogue->finishTicking();
 		dialogueDisplay->autoProgress = true;
@@ -191,16 +102,6 @@ void WAG_TestScene::update(Step * _step){
 	if(keyboard->keyJustUp(GLFW_KEY_E)){	
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;
 		//RequestJSONValueAsync(label);
-	}
-	if(keyboard->keyJustUp(GLFW_KEY_R)){	
-		std::stringstream sql;
-		sql << "DROP TABLE TestTable;";
-		sql << "CREATE TABLE TestTable(id INTEGER PRIMARY KEY, TestColumn1, TestColumn2);";
-		for(unsigned long int i = 0; i < 1000; ++i){
-			sql << "INSERT INTO TestTable VALUES(" << i << ", 'test1', 'test2');";
-		}
-		sql << "SELECT * FROM TestTable;";
-		testSql(sql.str(), true);
 	}
 	
 	if(keyboard->keyJustUp(GLFW_KEY_2)){
@@ -221,25 +122,4 @@ void WAG_TestScene::update(Step * _step){
 	//uiLayer->update(_step);
 
 	mouseIndicator->parents.at(0)->translate(mouse->mouseX(), mouse->mouseY(), 0, false);
-}
-
-void WAG_TestScene::render(vox::MatrixStack * _matrixStack, RenderOptions * _renderOptions){
-	clear();
-	uiLayer->render(_matrixStack, _renderOptions);
-}
-
-void WAG_TestScene::load(){
-	Scene::load();	
-
-	screenSurface->load();
-	screenFBO->load();
-	//uiLayer->load();
-}
-
-void WAG_TestScene::unload(){
-	//uiLayer->unload();
-	screenFBO->unload();
-	screenSurface->unload();
-
-	Scene::unload();	
 }
