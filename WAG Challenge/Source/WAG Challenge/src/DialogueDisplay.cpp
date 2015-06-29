@@ -33,10 +33,12 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	framePanel = new NodeUI(_world, _scene);
 	framePanel->setHeight(1.f);
 	framePanel->setWidth(1.f);
+	framePanel->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("TRANSPARENT")->texture);
 	framePanelOverlay = new NodeUI(_world, _scene);
 	framePanelOverlay->setHeight(1.f);
 	framePanelOverlay->setWidth(1.f);
 	framePanelOverlay->setBackgroundColour(0,0,0,0);
+	framePanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("TRANSPARENT")->texture);
 
 
 	portraitPanel = new NodeUI(_world, _scene);
@@ -45,6 +47,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	portraitPanel->setWidth(0.05417f);
 	portraitPanel->setMarginBottom(0.1662f);
 	portraitPanel->setMarginLeft(0.5f - 0.05417f/2.f);
+	portraitPanel->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("TRANSPARENT")->texture);
 
 	portraitPanelOverlay = new NodeUI(_world, _scene);
 	portraitPanelOverlay->boxSizing = kCONTENT_BOX;
@@ -53,6 +56,7 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	portraitPanelOverlay->setMarginBottom(0.1662f);
 	portraitPanelOverlay->setMarginLeft(0.5f - 0.05417f/2.f);
 	portraitPanelOverlay->setBackgroundColour(0,0,0,0);
+	portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("TRANSPARENT")->texture);
 
 	dialogue = new DialogueTextArea(_world, _scene, _font, _textShader);
 	dialogue->setRationalWidth(0.8f, vlayout);

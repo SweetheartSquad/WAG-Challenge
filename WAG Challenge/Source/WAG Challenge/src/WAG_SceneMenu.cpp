@@ -9,7 +9,6 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	VerticalLinearLayout * vl = new VerticalLinearLayout(uiLayer->world, this);
 	vl->setRationalWidth(1.f);
 	vl->setAutoresizeHeight();
-	vl->setMarginBottom(10);
 	vl->horizontalAlignment = kCENTER;
 	
 	WAG_Button * newGameButt = new WAG_Button(uiLayer->world, this, font, textShader, 0.5f);
@@ -22,6 +21,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 
 		// overwrite existing game
 		if(game->scenes.count("MAIN") > 0){
+			
 			delete game->scenes["MAIN"];
 		}
 		game->scenes["MAIN"] = new WAG_SceneMain(game);
@@ -36,6 +36,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	optionsButt->onClickFunction = [_game](NodeUI * _this){
 
 	};
+	optionsButt->setMarginBottom(10);
 	
 	vl->addChild(newGameButt);
 	vl->addChild(continueGameButt);

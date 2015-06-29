@@ -289,6 +289,13 @@
             "height": 107
         },
         {
+            "id": "TRANSPARENT",
+            "type": "texture",
+            "src": "transparent.png",
+            "width": 32,
+            "height": 32
+        },
+        {
             "id": "Fox",
             "type": "audio",
             "src": "secondFoxSound.wav",
@@ -391,9 +398,9 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "MENU",
+                    "portrait": "BLACK",
                     "text": [
-                        "Click to Start"
+                        "Instructions: Click to progress through text."
                     ],
                     "triggers": [
                         {
