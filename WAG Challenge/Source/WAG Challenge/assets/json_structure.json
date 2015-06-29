@@ -107,7 +107,7 @@
             "height": 1080
         },
         {
-            "id": "RIVER_MARTEN_WOLF,
+            "id": "RIVER_MARTEN_WOLF",
             "type": "texture",
             "src": "forest_river_martenwolf.png",
             "width": 1920,
@@ -291,13 +291,67 @@
         {
             "id": "Fox",
             "type": "audio",
-            "src": "fox.wav",
+            "src": "foxSound.wav",
             "stream": false
         },
         {
             "id": "Mayor",
             "type": "audio",
-            "src": "rabbit.wav",
+            "src": "rabbitSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Beaver",
+            "type": "audio",
+            "src": "beaverSound.wav",
+            "stream": false
+        },
+        {
+            "id": "Chipmunk",
+            "type": "audio",
+            "src": "chipmunkSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Hawk",
+            "type": "audio",
+            "src": "hawkSound.wav",
+            "stream": false
+        },
+        {
+            "id": "Marten",
+            "type": "audio",
+            "src": "martenSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Rabbit",
+            "type": "audio",
+            "src": "rabbitSound.wav",
+            "stream": false
+        },
+        {
+            "id": "Rat",
+            "type": "audio",
+            "src": "ratSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Raccoon",
+            "type": "audio",
+            "src": "raccoonSound.wav",
+            "stream": false
+        },
+        {
+            "id": "Squirrel",
+            "type": "audio",
+            "src": "squirrelSound.wav",
+            "stream": false
+        },
+		{
+            "id": "Wolf",
+            "type": "audio",
+            "src": "wolfSound.wav",
             "stream": false
         },
         {
