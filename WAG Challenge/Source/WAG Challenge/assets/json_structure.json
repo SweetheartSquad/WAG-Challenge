@@ -124,16 +124,16 @@
             "height": 1080
         },
         {
-            "id": "CAVE_RABBIT",
+            "id": "CAVE_HARE",
             "type": "texture",
-            "src": "cave_rabbit.png",
+            "src": "cave_hare.png",
             "width": 1920,
             "height": 1080
         },
         {
-            "id": "CAVE_RABBIT_MOUSE",
+            "id": "CAVE_HARE_MOUSE",
             "type": "texture",
-            "src": "cave_rabbitmouse.png",
+            "src": "cave_haremouse.png",
             "width": 1920,
             "height": 1080
         },
@@ -175,7 +175,7 @@
         {
             "id": "MAYOR_DEAD",
             "type": "texture",
-            "src": "dead_rabbit.png",
+            "src": "dead_hare.png",
             "width": 1920,
             "height": 1080
         },
@@ -266,7 +266,7 @@
         {
             "id": "Mayor",
             "type": "texture",
-            "src": "rabbit.png",
+            "src": "hare.png",
             "width": 107,
             "height": 107
         },
@@ -307,7 +307,7 @@
         {
             "id": "Mayor",
             "type": "audio",
-            "src": "rabbitSound.wav",
+            "src": "hareSound.wav",
             "stream": false
         },
 		{
@@ -341,9 +341,9 @@
             "stream": false
         },
 		{
-            "id": "Rabbit",
+            "id": "Hare",
             "type": "audio",
-            "src": "rabbitSound.wav",
+            "src": "hareSound.wav",
             "stream": false
         },
         {
@@ -1846,161 +1846,161 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Inside, you see the mayor and Dormouse."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "I saw Fox coming out of the forest, shaking like a leaf."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "A little later, Wolf came out looking the same."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "I went to see what they saw, and, well..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "This is terrible... it took nothing! It's already falling apart!"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "It's in their instincts. And they must feel it, right?"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "They can't survive on our food. They feel weak."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "We should have prepared for this! Why didn't we think?"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
-                        "We failed, Rabbit. But what do we do now? We need a permanent fix. We can't--"
+                        "We failed, Hare. But what do we do now? We need a permanent fix. We can't--"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Be quiet, Dor! Let me think!"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Look, this is bad. We thought we could do this but we failed. Give it up!"
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "What do we say about Beaver? What about Wolf? What about--"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "I took care of Wolf. I convinced him to leave. He's acres away by now."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "We'll say it was... I don't know. We'll say it was that hawk."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "We'll tell them to stay indoors for a few days until the threat passes."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Well, even if that works, what about Fox?"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Calm down. I will get this situation under control."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
-                        "We need to end this, Rabbit. There's no other option!"
+                        "We need to end this, Hare. There's no other option!"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Let me try, Dor. I can do this."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Fine."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
-                        "But they're dying, Rabbit. It's only a matter of time."
+                        "But they're dying, Hare. It's only a matter of time."
                     ]
                 },
                 {
                     "speaker": "Dormouse",
-                    "portrait": "CAVE_RABBIT_MOUSE",
+                    "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "I'm leaving tomorrow night. With or without you."
                     ]
@@ -2390,7 +2390,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "You find the mayor in the meeting cave. He sits in the corner with his back to you."
                     ],
@@ -2422,14 +2422,14 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Hello, mayor."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "The mayor does not respond."
                     ],
@@ -2452,189 +2452,189 @@
             "dialogue": [
                 {
                     "speaker": "Fox",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Why did Wolf kill Beaver?"
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I think you know the answer to that, Fox..."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "A better question would be - \"Why do animals have to eat each other?\""
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Or - \"Why did I keep that a secret from you?\""
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Or \"Why did I think it would work?\""
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "The mayor begins to pace."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Some animals eat each other."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "This is normal."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "It's part of you, it's how your body works, it's what you need to do to survive."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "You're dying, Fox. You should know that."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "You are weak. You can feel it. But I suppose we accept illness we think is normal."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I was tired, I suppose. Of being in fear. Or not being in control."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I was tired of what I needed to do to survive."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I didn't realize that I was trying to create a utopia."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I think I was just scared, and I wanted a solution."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "That's why I stole you. I stole you and I isolated you. As I did with the others."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Maybe it was just a test to see if it would work."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Maybe I thought it would work the first time."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I guess it's presumptuous to assume that I had any idea what I was doing. Or why."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I don't know."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "The mayor stops pacing."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I don't know, I don't know. But it's not working."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "A speech was enough for Wolf, but that was when I thought I had this under control."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Whatever this is, it's over. And I can't clean it up."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "I'm leaving later tonight."
                     ]
                 },
                 {
                     "speaker": "Mayor",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "Do whatever suits you."
                     ],
@@ -2649,7 +2649,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "CAVE_RABBIT",
+                    "portrait": "CAVE_HARE",
                     "text": [
                         "The mayor sits down."
                     ],
