@@ -31,7 +31,7 @@ WAG_SceneMain::WAG_SceneMain(Game * _game) :
 	uiLayer->addChild(dialogueDisplay);
 
 	// start the game proper
-	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["ENDING"];
+	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations["MENU"];
 	WAG_ResourceManager::playthrough->currentConversation->reset();
 	Step step;
 	dialogueDisplay->update(&step);
