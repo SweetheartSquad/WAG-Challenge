@@ -14,6 +14,8 @@ Trigger * Trigger::getTrigger(Json::Value _json){
 		res = new TriggerSetConversation(_json);
 	}else if(type == "addVar"){
 		res = new TriggerAddVar(_json);
+	}else if(type == "postData"){
+		res = new TriggerPostData(_json);
 	}else{
 		throw "invalid trigger type";
 	}
@@ -54,3 +56,82 @@ void TriggerSetConversation::trigger(){
 	WAG_ResourceManager::playthrough->currentConversation = WAG_ResourceManager::playthrough->conversations[newConversation];
 	WAG_ResourceManager::playthrough->currentConversation->reset();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <thread>
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
+#include <cpprest/json.h>
+// Retrieves a JSON value from an HTTP request.
+pplx::task<void> RequestJSONValueAsync(std::wstring & _url){
+	// TODO: To successfully use this example, you must perform the request  
+	// against a server that provides JSON data.
+	web::http::client::http_client client(_url);
+	return client.request(web::http::methods::POST).then([](web::http::http_response response) -> pplx::task<web::json::value>{
+		std::wcout << L"Response recieved" << std::endl << L"Status: " << response.status_code() << std::endl;
+		if(response.status_code() == web::http::status_codes::OK){
+			auto json = response.extract_json();
+			return json;
+		}else{
+			std::wcout << L"No response because the code wasn't ok." << std::endl;
+		}
+
+		// Handle error cases, for now return empty json value... 
+		return pplx::task_from_result(web::json::value());
+	}).then([](pplx::task<web::json::value> previousTask){
+		try{
+			// Perform actions here to process the JSON value...
+			const web::json::value & v = previousTask.get();
+			std::wcout << L"Test: " << v << std::endl;
+			std::wcout << v.get(L"eat").as_string() << std::endl;
+			std::wcout << v.get(L"noEat").as_string() << std::endl;
+			//std::wcout << v.as_string();
+			/*WAG_ResourceManager::eatCount = v.as_object().at(L"eat").as_integer();
+			WAG_ResourceManager::noEatCount = v.as_object().at(L"noEat").as_integer();
+			
+			std::cout << WAG_ResourceManager::eatCount << std::endl;
+			std::cout << WAG_ResourceManager::noEatCount << std::endl;*/
+		}catch (const web::http::http_exception& e){
+			// Print error.
+			std::wostringstream ss;
+			ss << e.what() << std::endl;
+			std::wcout << ss.str();
+		}
+	});
+}
+
+TriggerPostData::TriggerPostData(Json::Value _json) :
+	url(_json.get("url", "NO_URL").asString())
+{
+	
+	const Json::Value vObj = _json["variables"];
+	const Json::Value::Members vMembers = vObj.getMemberNames();
+	for(auto v : vMembers){
+		variables[v] = vObj[v].asString();
+	}
+}
+
+void TriggerPostData::trigger(){
+
+	std::wstringstream ss;
+	ss << std::wstring(url.begin(), url.end()) << L"?";
+	for(auto i : variables){
+		ss << std::wstring(i.first.begin(), i.first.end()) << L"=" << std::wstring(i.second.begin(), i.second.end()) << L"&";
+	}
+	ss << L"&source=WAG";
+	Log::info("POSTing data to: " + url);
+
+	RequestJSONValueAsync(ss.str()).wait();
+}
+

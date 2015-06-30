@@ -4075,6 +4075,15 @@
                     "portrait": "BLACK",
                     "text": [
                         "You leave your old home."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "postData",
+                            "url": "http://seansleblanc.com/test/test.php",
+                            "variables": {
+                                "eat": "1"
+                            }
+                        }
                     ]
                 },
                 {
