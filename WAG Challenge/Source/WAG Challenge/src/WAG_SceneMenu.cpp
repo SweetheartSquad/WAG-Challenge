@@ -85,6 +85,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	
 	WAG_Button * skipButt = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
 	WAG_Button * backButt = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
+	WAG_Button * censorButt = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
 	WAG_Button * musicVolumeDown = new WAG_Button(uiLayer->world, this, font, textShader, 0.1f);
 	WAG_Button * musicVolumeUp = new WAG_Button(uiLayer->world, this, font, textShader, 0.1f);
 	WAG_Button * sfxVolumeDown = new WAG_Button(uiLayer->world, this, font, textShader, 0.1f);
@@ -109,6 +110,16 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 			skipButt->setText(L"Space to Skip - Enabled");
 		}else{
 			skipButt->setText(L"Space to Skip - Disabled");
+		}
+	};
+
+	censorButt->setText(L"Graphic Images - Enabled");
+	censorButt->onClickFunction = [censorButt](NodeUI * _this){
+		WAG_ResourceManager::censored = !WAG_ResourceManager::censored;
+		if(WAG_ResourceManager::censored){
+			censorButt->setText(L"Graphic Images - Disabled");
+		}else{
+			censorButt->setText(L"Graphic Images - Enabled");
 		}
 	};
 	
@@ -163,6 +174,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	optionsLayout->addChild(backButt);
 	optionsLayout->addChild(musicvolume);
 	optionsLayout->addChild(sfxvolume);
+	optionsLayout->addChild(censorButt);
 	optionsLayout->addChild(skipButt);
 
 

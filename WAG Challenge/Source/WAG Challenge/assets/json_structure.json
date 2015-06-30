@@ -166,6 +166,13 @@
             "height": 1080
         },
         {
+            "id": "CENSORED-CLEARING_HAWK",
+            "type": "texture",
+            "src": "CENSORED-forest_clearing_ghhawk.png",
+            "width": 10,
+            "height": 10
+        },
+        {
             "id": "BEAVER_DEAD",
             "type": "texture",
             "src": "dead_beaver.png",

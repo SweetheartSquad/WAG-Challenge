@@ -14,6 +14,7 @@ JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
 
 std::string WAG_ResourceManager::speaker = "blip";
 bool WAG_ResourceManager::skipEnabled = false;
+bool WAG_ResourceManager::censored = false;
 int WAG_ResourceManager::musicVolume = 5;
 int WAG_ResourceManager::sfxVolume = 3;
 
@@ -29,4 +30,14 @@ float WAG_ResourceManager::getMusicVolume(){
 
 float WAG_ResourceManager::getSfxVolume(){
 	return sfxVolume*0.1f;
+}
+
+Texture * WAG_ResourceManager::getTexture(std::string _id){
+	AssetTexture * res = playthrough->getTexture(censored ? "CENSORED-"+_id : _id);
+	std::cout << "CENSORED-"+_id << std::endl;
+	std::cout << res->id << std::endl << std::endl;
+	if(censored && res->id == "DEFAULT"){
+		res = playthrough->getTexture(_id);
+	}
+	return res->texture;
 }

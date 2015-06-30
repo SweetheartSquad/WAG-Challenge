@@ -271,7 +271,7 @@ void DialogueDisplay::loadFrame(std::string _portrait){
 		framePanelOverlay->background->mesh->popTexture2D();
 	}
 
-	framePanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture(_portrait)->texture);
+	framePanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::getTexture(_portrait));
 	
 	fadeTimeoutFrame->restart();
 }
@@ -287,7 +287,7 @@ void DialogueDisplay::loadPortrait(std::string _speaker){
 	Texture * tex = nullptr;
 	std::string speaker = (*stuffToSay)->getCurrentDialogue()->portrait;
 
-	portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture(_speaker)->texture);
+	portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::getTexture(_speaker));
 
 	fadeTimeoutPortrait->restart();
 }

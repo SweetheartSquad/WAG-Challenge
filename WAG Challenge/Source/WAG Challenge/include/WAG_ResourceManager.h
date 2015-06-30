@@ -16,6 +16,7 @@ public:
 
 	static std::string speaker;
 	static bool skipEnabled;
+	static bool censored;
 	static int musicVolume;
 	static int sfxVolume;
 
@@ -25,4 +26,8 @@ public:
 	static float getMusicVolume();
 	// returns musicVolume, adjusted for use with setGain
 	static float getSfxVolume();
+
+	// returns playthrough->getTexture(_id)->texture
+	// if censored, checks for "_id.censored" first
+	static Texture * getTexture(std::string _id);
 };
