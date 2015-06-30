@@ -19,6 +19,9 @@ public:
 	static bool censored;
 	static int musicVolume;
 	static int sfxVolume;
+	
+	static int eatCount;
+	static int noEatCount;
 
 	static void init();
 

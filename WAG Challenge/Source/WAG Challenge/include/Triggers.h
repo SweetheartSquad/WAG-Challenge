@@ -40,3 +40,12 @@ public:
 	TriggerSetConversation(Json::Value _json);
 	virtual void trigger() override;
 };
+
+class TriggerPostData : public Trigger{
+public:
+	std::string url;
+	std::map<std::string, std::string> variables;
+
+	TriggerPostData(Json::Value _json);
+	virtual void trigger() override;
+};
