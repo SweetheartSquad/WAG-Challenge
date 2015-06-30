@@ -94,8 +94,8 @@ pplx::task<void> RequestJSONValueAsync(std::wstring & _url){
 			// Perform actions here to process the JSON value...
 			const web::json::value & v = previousTask.get();
 			std::wcout << L"Test: " << v << std::endl;
-			std::wcout << v.get(L"eat").as_string() << std::endl;
-			std::wcout << v.get(L"noEat").as_string() << std::endl;
+			std::wcout << v.as_object().at(L"eat").as_string() << std::endl;
+			std::wcout << v.as_object().at(L"noEat").as_string() << std::endl;
 			//std::wcout << v.as_string();
 			/*WAG_ResourceManager::eatCount = v.as_object().at(L"eat").as_integer();
 			WAG_ResourceManager::noEatCount = v.as_object().at(L"noEat").as_integer();
