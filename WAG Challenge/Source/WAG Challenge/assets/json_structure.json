@@ -9,7 +9,10 @@
         },
 		{
             "id": "CREDITS",
-            "type": "texture"
+            "type": "texture",
+            "src": "credits.png",
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "FOREST_BEAVER",
@@ -2079,7 +2082,7 @@
                             "type": "setVar",
                             "target": "WAG_FOX",
                             "variable": "OPTION",
-                            "value": "Eat?"
+                            "value": "Eat Beaver?"
                         },
                         {
                             "type": "setConversation",
@@ -2720,7 +2723,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat the mayor",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -2867,7 +2870,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Dormouse",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -2917,7 +2920,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Dormouse",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -3238,7 +3241,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Marten",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -3273,7 +3276,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Marten",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -3660,7 +3663,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Chipmunk",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -3725,7 +3728,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Chipmunk",
                             "triggers": [
                                 {
                                     "type": "setConversation",
@@ -3947,7 +3950,7 @@
                             ]
                         },
                         {
-                            "text": "Eat",
+                            "text": "Eat Squirrel",
                             "triggers": [
                                 {
                                     "type": "setConversation",
