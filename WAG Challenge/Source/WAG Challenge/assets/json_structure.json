@@ -2082,7 +2082,7 @@
                             "type": "setVar",
                             "target": "WAG_FOX",
                             "variable": "OPTION",
-                            "value": "Eat Beaver?"
+                            "value": "Eat Raccoon?"
                         },
                         {
                             "type": "setConversation",
