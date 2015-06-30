@@ -50,6 +50,20 @@
             "height": 1080
         },
         {
+            "id": "FOREST_DAY3",
+            "type": "texture",
+            "src": "forest_forest3.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "id": "FOREST_DAY3_NIGHT",
+            "type": "texture",
+            "src": "forest_forest3_dark.png",
+            "width": 1920,
+            "height": 1080
+        },
+        {
             "id": "FOREST_DAY3_CHIPMUNK",
             "type": "texture",
             "src": "forest_forest3_chipmunk.png",
@@ -2097,7 +2111,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_RACCOON",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You wake up and leave your den. The wind is quiet."
                     ]
@@ -2252,7 +2266,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_RACCOON",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You need to talk to the mayor."
                     ],
@@ -2319,14 +2333,14 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_RACCOON",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "Raccoon goes back into her den."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_RACCOON",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You need to talk to the mayor."
                     ],
@@ -2424,14 +2438,14 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_RACCOON",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "Raccoon goes back into her den."
                     ]
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_RACCOON",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You need to talk to the mayor."
                     ],
@@ -2771,7 +2785,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_MOUSE",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You leave the cave."
                     ],
@@ -3051,7 +3065,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_MOUSE",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You walk past Dormouse."
                     ],
@@ -3071,7 +3085,7 @@
                     "speaker": "None",
                     "portrait": "FOREST_DAY3_MARTEN",
                     "text": [
-                        "As you enter the Hollow, Marten comes out of his den."
+                        "As you make your way through the Hollow, Marten comes out of his den."
                     ]
                 },
                 {
@@ -3480,7 +3494,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_MARTEN",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "You walk past Marten."
                     ],
@@ -3907,7 +3921,7 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_NIGHT",
+                    "portrait": "FOREST_DAY3_NIGHT",
                     "text": [
                         "The night around you gets darker as you reach the edge of the Hollow."
                     ]
@@ -4012,7 +4026,7 @@
                 },
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_SQUIRREL",
+                    "portrait": "FOREST_DAY3_NIGHT",
                     "text": [
                         "He goes back inside."
                     ],
