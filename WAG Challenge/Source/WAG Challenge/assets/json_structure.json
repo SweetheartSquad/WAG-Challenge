@@ -169,20 +169,6 @@
             "height": 1080
         },
         {
-            "id": "GROUNDHOG_DEAD",
-            "type": "texture",
-            "src": "forest_clearing_ghdead.png",
-            "width": 1920,
-            "height": 1080
-        },
-        {
-            "id": "CENSORED-GROUNDHOG_DEAD",
-            "type": "texture",
-            "src": "CENSORED-forest_clearing_ghdead.png",
-            "width": 10,
-            "height": 10
-        },
-        {
             "id": "CLEARING_HAWK",
             "type": "texture",
             "src": "forest_clearing_ghhawk.png",
@@ -193,8 +179,8 @@
             "id": "CENSORED-CLEARING_HAWK",
             "type": "texture",
             "src": "CENSORED-forest_clearing_ghhawk.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "BEAVER_DEAD",
@@ -207,8 +193,8 @@
             "id": "CENSORED-BEAVER_DEAD",
             "type": "texture",
             "src": "CENSORED-dead_beaver.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "MAYOR_DEAD",
@@ -221,8 +207,8 @@
             "id": "CENSORED-MAYOR_DEAD",
             "type": "texture",
             "src": "CENSORED-dead_hare.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "DORMOUSE_DEAD",
@@ -235,8 +221,8 @@
             "id": "CENSORED-DORMOUSE_DEAD",
             "type": "texture",
             "src": "CENSORED-dead_mouse.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "MARTEN_DEAD",
@@ -249,8 +235,8 @@
             "id": "CENSORED-MARTEN_DEAD",
             "type": "texture",
             "src": "CENSORED-dead_marten.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "CHIPMUNK_DEAD",
@@ -263,8 +249,8 @@
             "id": "CENSORED-CHIPMUNK_DEAD",
             "type": "texture",
             "src": "CENSORED-dead_chipmunk.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "SQUIRREL_DEAD",
@@ -277,8 +263,8 @@
             "id": "CENSORED-SQUIRREL_DEAD",
             "type": "texture",
             "src": "CENSORED-dead_squirrel.png",
-            "width": 10,
-            "height": 10
+            "width": 1920,
+            "height": 1080
         },
         {
             "id": "BLACK",
@@ -374,7 +360,7 @@
         {
             "id": "Fox",
             "type": "audio",
-            "src": "thirdFoxSound.wav",
+            "src": "secondFoxSound.wav",
             "stream": false
         },
         {
