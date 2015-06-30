@@ -12,6 +12,8 @@ Trigger * Trigger::getTrigger(Json::Value _json){
 		res = new TriggerSetVar(_json);
 	}else if(type == "setConversation"){
 		res = new TriggerSetConversation(_json);
+	}else if(type == "addVar"){
+		res = new TriggerAddVar(_json);
 	}else{
 		throw "invalid trigger type";
 	}
@@ -22,6 +24,18 @@ TriggerSetVar::TriggerSetVar(Json::Value _json) :
 	target(_json.get("target", "NO_TARGET").asString()),
 	variable(_json.get("variable", "NO_VARIABLE").asString()),
 	newValue(_json.get("value", "NO_NEW_VALUE").asString())
+{
+}
+
+void TriggerAddVar::trigger(){
+	WAG_ResourceManager::playthrough->characters.at(target)->variables.at(variable) += num;
+	Log::info("Add " + num + " to var: " + target + "->" + variable + " = " + WAG_ResourceManager::playthrough->characters.at(target)->variables.at(variable));
+}
+
+TriggerAddVar::TriggerAddVar(Json::Value _json) :
+	target(_json.get("target", "NO_TARGET").asString()),
+	variable(_json.get("variable", "NO_VARIABLE").asString()),
+	num(_json.get("num", "NO_NUM").asString())
 {
 }
 

@@ -23,6 +23,16 @@ public:
 	virtual void trigger() override;
 };
 
+class TriggerAddVar : public Trigger{
+public:
+	std::string target;
+	std::string variable;
+	std::string num;
+
+	TriggerAddVar(Json::Value _json);
+	virtual void trigger() override;
+};
+
 class TriggerSetConversation : public Trigger{
 public:
 	std::string newConversation;
