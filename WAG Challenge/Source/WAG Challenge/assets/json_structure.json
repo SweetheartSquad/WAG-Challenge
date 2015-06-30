@@ -698,7 +698,35 @@
                     "speaker": "None",
                     "portrait": "CLEARING_HAWK",
                     "text": [
-                        "The new animal looks up and sees you. He bristles."
+                        "You feel sick."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "CLEARING_HAWK",
+                    "text": [
+                        "You've never seen an animal do this before."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "CLEARING_HAWK",
+                    "text": [
+                        "You feel a strange, uncomfortable chill over your whole body."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "CLEARING_HAWK",
+                    "text": [
+                        "You can barely stand to watch. You make a retching noise."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "CLEARING_HAWK",
+                    "text": [
+                        "The new animal hears you and looks up. He bristles."
                     ]
                 },
                 {
