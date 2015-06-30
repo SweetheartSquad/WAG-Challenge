@@ -159,6 +159,13 @@
             "height": 1080
         },
         {
+            "id": "CENSORED-GROUNDHOG_DEAD",
+            "type": "texture",
+            "src": "CENSORED-forest_clearing_ghdead.png",
+            "width": 10,
+            "height": 10
+        },
+        {
             "id": "CLEARING_HAWK",
             "type": "texture",
             "src": "forest_clearing_ghhawk.png",
@@ -180,11 +187,25 @@
             "height": 1080
         },
         {
+            "id": "CENSORED-BEAVER_DEAD",
+            "type": "texture",
+            "src": "CENSORED-dead_beaver.png",
+            "width": 10,
+            "height": 10
+        },
+        {
             "id": "MAYOR_DEAD",
             "type": "texture",
             "src": "dead_hare.png",
             "width": 1920,
             "height": 1080
+        },
+        {
+            "id": "CENSORED-MAYOR_DEAD",
+            "type": "texture",
+            "src": "CENSORED-dead_hare.png",
+            "width": 10,
+            "height": 10
         },
         {
             "id": "DORMOUSE_DEAD",
@@ -194,11 +215,25 @@
             "height": 1080
         },
         {
+            "id": "CENSORED-DORMOUSE_DEAD",
+            "type": "texture",
+            "src": "CENSORED-dead_mouse.png",
+            "width": 10,
+            "height": 10
+        },
+        {
             "id": "MARTEN_DEAD",
             "type": "texture",
             "src": "dead_marten.png",
             "width": 1920,
             "height": 1080
+        },
+        {
+            "id": "CENSORED-MARTEN_DEAD",
+            "type": "texture",
+            "src": "CENSORED-dead_marten.png",
+            "width": 10,
+            "height": 10
         },
         {
             "id": "CHIPMUNK_DEAD",
@@ -208,11 +243,25 @@
             "height": 1080
         },
         {
+            "id": "CENSORED-CHIPMUNK_DEAD",
+            "type": "texture",
+            "src": "CENSORED-dead_chipmunk.png",
+            "width": 10,
+            "height": 10
+        },
+        {
             "id": "SQUIRREL_DEAD",
             "type": "texture",
             "src": "dead_squirrel.png",
             "width": 1920,
             "height": 1080
+        },
+        {
+            "id": "CENSORED-SQUIRREL_DEAD",
+            "type": "texture",
+            "src": "CENSORED-dead_squirrel.png",
+            "width": 10,
+            "height": 10
         },
         {
             "id": "BLACK",
