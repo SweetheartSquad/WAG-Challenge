@@ -1901,6 +1901,14 @@
                     "portrait": "FOREST_NIGHT",
                     "text": [
                         "You walk for hours."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "???"
+                        }
                     ]
                 },
                 {
@@ -1964,6 +1972,11 @@
                     "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "This is terrible... it took nothing! It's already falling apart!"
+                    ],
+                    "options": [
+                        {
+                            "text": "Keep listening"
+                        }
                     ]
                 },
                 {
@@ -2020,6 +2033,11 @@
                     "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "I took care of Wolf. I convinced him to leave. He's acres away by now."
+                    ],
+                    "options": [
+                        {
+                            "text": "Keep listening"
+                        }
                     ]
                 },
                 {
@@ -2040,7 +2058,14 @@
                     "speaker": "Dormouse",
                     "portrait": "CAVE_HARE_MOUSE",
                     "text": [
-                        "Well, even if that works, what about Fox?"
+                        "Well, even if that works... if Fox finds out that Wolf killed Beaver..."
+                    ]
+                },
+                {
+                    "speaker": "Dormouse",
+                    "portrait": "CAVE_HARE_MOUSE",
+                    "text": [
+                        "that he ate him..."
                     ]
                 },
                 {
@@ -2048,6 +2073,14 @@
                     "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "Calm down. I will get this situation under control."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "Eat Dormouse?"
+                        }
                     ]
                 },
                 {
@@ -2055,6 +2088,11 @@
                     "portrait": "CAVE_HARE_MOUSE",
                     "text": [
                         "We need to end this, Hare. There's no other option!"
+                    ],
+                    "options": [
+                        {
+                            "text": "Keep listening"
+                        }
                     ]
                 },
                 {
@@ -2702,7 +2740,7 @@
                     "speaker": "Mayor",
                     "portrait": "CAVE_HARE",
                     "text": [
-                        "A speech was enough for Wolf, but that was when I thought I had this under control."
+                        "A speech was good enough for Wolf... but I can't save everything with a speech."
                     ]
                 },
                 {
@@ -3097,7 +3135,82 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_MARTEN",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "You are suddenly hungry."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Or, you were always hungry, and you just noticed."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Or, rather, you noticed it, but assumed it was a part of being alive."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "You're not sure what being alive entails, right now."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Although... you're sure that you're hungry."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
                     "text": [
                         "As you make your way through the Hollow, Marten comes out of his den."
                     ]
@@ -3185,6 +3298,21 @@
                     ]
                 },
                 {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_MARTEN",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "1"
+                        }
+                    ],
+                    "text": [
+                        "Your stomach growls."
+                    ]
+                },
+                {
                     "speaker": "Marten",
                     "portrait": "FOREST_DAY3_MARTEN",
                     "conditions": [
@@ -3227,6 +3355,21 @@
                     ],
                     "text": [
                         "I hate this..."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_MARTEN",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Your stomach growls."
                     ]
                 },
                 {
@@ -3526,9 +3669,46 @@
             "dialogue": [
                 {
                     "speaker": "None",
-                    "portrait": "FOREST_DAY3_CHIPMUNK",
+                    "portrait": "FOREST_DAY3",
                     "text": [
-                        "You continue on. You see Chipmunk ahead, blocking your path."
+                        "You continue on."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Your legs feel shakier with each step."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Your hunger is heavy inside you and hard to drag around."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3",
+                    "text": [
+                        "You see Chipmunk ahead, blocking your path."
                     ]
                 },
                 {
@@ -3852,7 +4032,7 @@
                         }
                     ],
                     "text": [
-                        "But... Who's to say I wouldn't have?"
+                        "But... who's to say I wouldn't have?"
                     ]
                 },
                 {
@@ -3912,7 +4092,7 @@
                         }
                     ],
                     "text": [
-                        "She nods, slightly."
+                        "Then, she nods slightly."
                     ]
                 },
                 {
@@ -3942,6 +4122,66 @@
                 },
                 {
                     "speaker": "None",
+                    "portrait": "FOREST_DAY3_NIGHT",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "You need to eat something."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_NIGHT",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "You need to eat something that will snap and squish between your teeth."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_NIGHT",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Something that will drip down your throat and soothe this swollen hunger."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_NIGHT",
+                    "conditions": [
+                        {
+                            "type": "equality",
+                            "target": "WAG_FOX",
+                            "variable": "ATE",
+                            "value": "0"
+                        }
+                    ],
+                    "text": [
+                        "Something alive, and soon to be dead."
+                    ]
+                },
+                {
+                    "speaker": "None",
                     "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "You see Squirrel's tree to the right. He emerges from it."
@@ -3966,6 +4206,27 @@
                     "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "Come in here! You'll be safer."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
+                    "text": [
+                        "You can barely see Squirrel's face in the dark."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
+                    "text": [
+                        "All you can process is your hunger."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_SQUIRREL",
+                    "text": [
+                        "A hunger that will burst inside you if you let it."
                     ],
                     "options": [
                         {
@@ -4043,6 +4304,13 @@
                     "portrait": "FOREST_DAY3_NIGHT",
                     "text": [
                         "He goes back inside."
+                    ]
+                },
+                {
+                    "speaker": "None",
+                    "portrait": "FOREST_DAY3_NIGHT",
+                    "text": [
+                        "You force yourself to drag the hunger on a little further."
                     ],
                     "triggers": [
                         {
