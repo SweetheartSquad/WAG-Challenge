@@ -48,6 +48,22 @@ void WAG_SceneMain::update(Step * _step){
 	}else{
 		dialogueDisplay->autoProgress = false;
 	}
+	
+	if(dialogueDisplay->options.size() > 0){
+		if(/*WAG_ResourceManager::playthrough->characters.at("WAG_FOX")->variables.at("OPTION") != "NONE"
+			||*/
+			dialogueDisplay->options.back()->getText().substr(3,3) == L"Eat"){
+			glm::vec3 p = dialogueDisplay->options.back()->getWorldPos();
+			p.x += dialogueDisplay->options.back()->getWidth()*0.5f;
+			p.y += dialogueDisplay->options.back()->getHeight()*0.5f;
+			glm::vec3 m = mouseIndicator->getWorldPos();
+			glm::vec3 d = p - m;
+			float dist = glm::length(d);
+			d = glm::normalize(d);
+			float mult = stof(WAG_ResourceManager::playthrough->characters.at("WAG_FOX")->variables.at("HUNGER"));
+			mouse->translate(glm::vec2(d.x, d.y)*1.5f*(std::max(50.f, dist)/50.f)*mult);
+		}
+	}
 
 	if(keyboard->keyJustUp(GLFW_KEY_E)){	
 		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;

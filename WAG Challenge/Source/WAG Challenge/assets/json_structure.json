@@ -450,7 +450,8 @@
                 "SAW_MURDER": null,
                 "TELL_MAYOR": null,
                 "ATE": null,
-                "OPTION": "NONE"
+                "OPTION": "NONE",
+                "HUNGER": "0.01"
             }
         }
     ],
