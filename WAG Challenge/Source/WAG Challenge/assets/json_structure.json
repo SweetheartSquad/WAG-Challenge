@@ -3089,16 +3089,6 @@
                     ],
                     "text": [
                         "I'm sorry."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "dormouse",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
@@ -3114,6 +3104,16 @@
                     ],
                     "text": [
                         "I... need to leave."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "postData",
+                            "url": "http://ryanbluth.com/wag/choice.php",
+                            "variables": {
+                                "name": "dormouse",
+                                "eat": "false"
+                            }
+                        }
                     ]
                 },
                 {
@@ -3576,16 +3576,6 @@
                     ],
                     "text": [
                         "Marten, I didn't kill Beaver."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "marten",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
@@ -3601,6 +3591,16 @@
                     ],
                     "text": [
                         "But I... I did kill."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "postData",
+                            "url": "http://ryanbluth.com/wag/choice.php",
+                            "variables": {
+                                "name": "marten",
+                                "eat": "false"
+                            }
+                        }
                     ]
                 },
                 {
@@ -4091,16 +4091,6 @@
                     ],
                     "text": [
                         "I'm sorry, Chipmunk."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "chipmunk",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
@@ -4116,6 +4106,16 @@
                     ],
                     "text": [
                         "Chipmunk closes her eyes and doesn't speak."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "postData",
+                            "url": "http://ryanbluth.com/wag/choice.php",
+                            "variables": {
+                                "name": "chipmunk",
+                                "eat": "false"
+                            }
+                        }
                     ]
                 },
                 {
