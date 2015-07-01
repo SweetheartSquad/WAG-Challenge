@@ -45,8 +45,10 @@ public:
 	bool sayNext();
 
 	
-	Fadein * fadeTimeoutFrame;
-	Fadein * fadeTimeoutPortrait;
+	Fadein * fadeInTimeoutFrame;
+	Fadein * fadeInTimeoutPortrait;
+	Fadeout * fadeOutTimeoutFrame;
+	Fadeout * fadeOutTimeoutPortrait;
 	// load a background frame (uses the portrait attribute of the dialogue object)
 	void loadFrame(std::string _portrait);
 	// load a character portrait (uses the speaker attribute of the dialogue object)

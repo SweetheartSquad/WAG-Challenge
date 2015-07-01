@@ -35,9 +35,6 @@ WAG_SceneMain::WAG_SceneMain(Game * _game) :
 	WAG_ResourceManager::playthrough->currentConversation->reset();
 	Step step;
 	dialogueDisplay->update(&step);
-	
-	// background music
-	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
 }
 
 void WAG_SceneMain::update(Step * _step){

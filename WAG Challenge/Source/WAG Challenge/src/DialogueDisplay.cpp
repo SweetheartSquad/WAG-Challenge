@@ -90,10 +90,10 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	hlayout->setRationalWidth(1.f);
 	hlayout->addChild(dialogue);
 	
-	addChild(framePanel);
 	addChild(framePanelOverlay);
-	addChild(portraitPanel);
+	addChild(framePanel);
 	addChild(portraitPanelOverlay);
+	addChild(portraitPanel);
 	addChild(vlayout);
 	vlayout->addChild(speaker);
 	vlayout->addChild(hlayout);
@@ -111,8 +111,13 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	};
 	autoProgressTimer->start();
 
-	fadeTimeoutFrame = new Fadein(1.f, framePanelOverlay);
-	fadeTimeoutFrame->onCompleteFunction = [this](Timeout * _this){
+	fadeInTimeoutFrame = new Fadein(1.f, framePanel);
+	fadeInTimeoutFrame->start();
+	fadeOutTimeoutFrame = new Fadeout(1.f, framePanelOverlay);
+	fadeOutTimeoutFrame->start();
+
+	
+	/*fadeInTimeoutFrame->onCompleteFunction = [this](Timeout * _this){
 		while(framePanel->background->mesh->textures.size() > 0){
 			framePanel->background->mesh->popTexture2D();
 		}
@@ -120,13 +125,17 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 			framePanel->background->mesh->pushTexture2D(framePanelOverlay->background->mesh->popTexture2D());
 		}
 		framePanelOverlay->setBackgroundColour(0,0,0,0);
-	};
-	fadeTimeoutFrame->start();
+		framePanelOverlay->setVisible(false);
+		framePanel->setVisible(true);
+	};*/
+
+	fadeInTimeoutPortrait = new Fadein(1.f, portraitPanel);
+	fadeInTimeoutPortrait->start();
+	fadeOutTimeoutPortrait = new Fadeout(1.f, portraitPanelOverlay);
+	fadeOutTimeoutPortrait->start();
 
 	
-
-	fadeTimeoutPortrait = new Fadein(1.f, portraitPanelOverlay);
-	fadeTimeoutPortrait->onCompleteFunction = [this](Timeout * _this){
+	/*fadeInTimeoutPortrait->onCompleteFunction = [this](Timeout * _this){
 		while(portraitPanel->background->mesh->textures.size() > 0){
 			portraitPanel->background->mesh->popTexture2D();
 		}
@@ -134,22 +143,17 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 			portraitPanel->background->mesh->pushTexture2D(portraitPanelOverlay->background->mesh->popTexture2D());
 		}
 		portraitPanelOverlay->setBackgroundColour(0,0,0,0);
-	};
-	fadeTimeoutPortrait->start();
-
-
-	
-	/*NodeUI * scratchings = new NodeUI(_world, _scene);
-	scratchings->setHeight(1.f);
-	scratchings->setWidth(1.f);
-	scratchings->background->mesh->pushTexture2D(WAG_ResourceManager::scratchings);
-	addChild(scratchings);*/
+		portraitPanelOverlay->setVisible(false);
+		portraitPanel->setVisible(true);
+	};*/
 }
 
 DialogueDisplay::~DialogueDisplay(){
 	delete autoProgressTimer;
-	delete fadeTimeoutFrame;
-	delete fadeTimeoutPortrait;
+	delete fadeInTimeoutFrame;
+	delete fadeInTimeoutPortrait;
+	delete fadeOutTimeoutFrame;
+	delete fadeOutTimeoutPortrait;
 }
 
 bool DialogueDisplay::sayNext(){
@@ -258,36 +262,52 @@ void DialogueDisplay::update(Step * _step){
 	if(autoProgress){
 		autoProgressTimer->update(_step);
 	}
-	fadeTimeoutFrame->update(_step);
-	fadeTimeoutPortrait->update(_step);
+	fadeInTimeoutFrame->update(_step);
+	fadeInTimeoutPortrait->update(_step);
+	fadeOutTimeoutFrame->update(_step);
+	//std::cout << fadeOutTimeoutPortrait->elapsedSeconds << std::endl;
+	fadeOutTimeoutPortrait->update(_step);
 	NodeUI::update(_step);
 }
 
 void DialogueDisplay::loadFrame(std::string _portrait){
-	if(!fadeTimeoutFrame->complete){
-		fadeTimeoutFrame->trigger();
+	if(!fadeOutTimeoutFrame->complete){
+		fadeOutTimeoutFrame->trigger();
+	}if(!fadeInTimeoutFrame->complete){
+		fadeInTimeoutFrame->trigger();
 	}
+
+	
+
 	while(framePanelOverlay->background->mesh->textures.size() > 0){
 		framePanelOverlay->background->mesh->popTexture2D();
 	}
+	while(framePanel->background->mesh->textures.size() > 0){
+		framePanelOverlay->background->mesh->pushTexture2D(framePanel->background->mesh->popTexture2D());
+	}
 
-	framePanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::getTexture(_portrait));
+	framePanel->background->mesh->pushTexture2D(WAG_ResourceManager::getTexture(_portrait));
 	
-	fadeTimeoutFrame->restart();
+	fadeOutTimeoutFrame->restart();
+	fadeInTimeoutFrame->restart();
 }
 
 void DialogueDisplay::loadPortrait(std::string _speaker){
-	if(!fadeTimeoutPortrait->complete){
-		fadeTimeoutPortrait->trigger();
+	if(!fadeOutTimeoutPortrait->complete){
+		fadeOutTimeoutPortrait->trigger();
+	}if(!fadeInTimeoutPortrait->complete){
+		fadeInTimeoutPortrait->trigger();
 	}
+
 	while(portraitPanelOverlay->background->mesh->textures.size() > 0){
 		portraitPanelOverlay->background->mesh->popTexture2D();
 	}
+	while(portraitPanel->background->mesh->textures.size() > 0){
+		portraitPanelOverlay->background->mesh->pushTexture2D(portraitPanel->background->mesh->popTexture2D());
+	}
 
-	Texture * tex = nullptr;
-	std::string speaker = (*stuffToSay)->getCurrentDialogue()->portrait;
-
-	portraitPanelOverlay->background->mesh->pushTexture2D(WAG_ResourceManager::getTexture(_speaker));
-
-	fadeTimeoutPortrait->restart();
+	portraitPanel->background->mesh->pushTexture2D(WAG_ResourceManager::getTexture(_speaker));
+	
+	fadeInTimeoutPortrait->restart();
+	fadeOutTimeoutPortrait->restart();
 }

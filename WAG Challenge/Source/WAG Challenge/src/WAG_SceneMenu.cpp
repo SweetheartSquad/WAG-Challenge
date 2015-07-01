@@ -9,6 +9,9 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	optionsLayout(new VerticalLinearLayout(uiLayer->world, this)),
 	warningLayout(new VerticalLinearLayout(uiLayer->world, this))
 {
+	// background music
+	WAG_ResourceManager::playthrough->getAudio("bgm")->sound->play(true);
+
 	bg = new NodeUI(uiLayer->world, this);
 	bg->setRationalHeight(1.f);
 	bg->setRationalWidth(1.f);
