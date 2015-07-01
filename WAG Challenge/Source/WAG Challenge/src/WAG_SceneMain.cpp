@@ -22,6 +22,7 @@
 
 #include <OpenALSound.h>
 #include <DialogueDisplay.h>
+#include <WAG_SceneStats.h>
 
 
 WAG_SceneMain::WAG_SceneMain(Game * _game) :
@@ -65,10 +66,11 @@ void WAG_SceneMain::update(Step * _step){
 		}
 	}
 
-	if(keyboard->keyJustUp(GLFW_KEY_E)){	
-		std::wcout << L"Calling RequestJSONValueAsync..." << std::endl;
-		//RequestJSONValueAsync(label);
+	if(dialogueDisplay->dialogue->getText() == L"The end for reals."){
+		game->scenes.insert(std::pair<std::string, Scene *>("STATS", new WAG_SceneStats(game)));
+		game->switchScene("STATS", true);
 	}
+
 	if(keyboard->keyJustUp(GLFW_KEY_ESCAPE)){	
 		game->switchScene("MENU", false);
 	}

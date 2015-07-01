@@ -4689,7 +4689,10 @@
                 {
                     "speaker": "None",
                     "portrait": "CREDITS",
-                    "text": ["The end."]
+                    "text": [
+                        "The end.",
+                        "The end for reals."
+                    ]
                 }
             ]
         }

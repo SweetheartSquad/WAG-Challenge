@@ -28,6 +28,7 @@
     <ClCompile Include="..\src\WAG_Scene.cpp" />
     <ClCompile Include="..\src\WAG_SceneMenu.cpp" />
     <ClCompile Include="..\src\WAG_SceneMain.cpp" />
+    <ClCompile Include="..\src\WAG_SceneStats.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Asset.h" />
@@ -46,6 +47,7 @@
     <ClInclude Include="..\include\WAG_Scene.h" />
     <ClInclude Include="..\include\WAG_SceneMenu.h" />
     <ClInclude Include="..\include\WAG_SceneMain.h" />
+    <ClInclude Include="..\include\WAG_SceneStats.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
