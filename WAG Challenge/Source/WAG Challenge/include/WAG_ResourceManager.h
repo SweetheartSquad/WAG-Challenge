@@ -18,7 +18,7 @@ public:
 	static int WAG_ResourceManager::noEatCountMayor;
 	static int WAG_ResourceManager::eatCountChipmunk;
 	static int WAG_ResourceManager::noEatCountChipmunk;
-	static int WAG_ResourceManager::eatCountMartent;
+	static int WAG_ResourceManager::eatCountMarten;
 	static int WAG_ResourceManager::noEatCountMarten;
 	static int WAG_ResourceManager::eatCountSquirrel;
 	static int WAG_ResourceManager::noEatCountSquirrel;

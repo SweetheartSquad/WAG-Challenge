@@ -6,7 +6,6 @@
 class WAG_SceneStats : public WAG_Scene{
 public:
 	VerticalLinearLayout * layout;
-	Fadein fade;
 	WAG_SceneStats(Game * _game);
 
 	virtual void update(Step * _step) override;

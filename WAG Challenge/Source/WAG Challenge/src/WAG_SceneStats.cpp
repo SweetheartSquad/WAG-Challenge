@@ -4,8 +4,7 @@
 
 WAG_SceneStats::WAG_SceneStats(Game * _game) :
 	WAG_Scene(_game),
-	layout(new VerticalLinearLayout(uiLayer->world, this)),
-	fade(2.f, layout)
+	layout(new VerticalLinearLayout(uiLayer->world, this))
 {
 	layout->setRationalWidth(1.f);
 	layout->horizontalAlignment = kCENTER;
@@ -25,26 +24,26 @@ WAG_SceneStats::WAG_SceneStats(Game * _game) :
 	chipmunk->mouseEnabled = false;
 	squirrel->mouseEnabled = false;
 	
-	stats->setText(L"Global Murders");
+	stats->setText(L"Global Player Decisions");
 
 	{std::wstringstream ss;
-	ss << "Mayor - Eaten: " << WAG_ResourceManager::eatCount << ", Spared: " << WAG_ResourceManager::noEatCount;
+	ss << "Mayor - Eaten: " << WAG_ResourceManager::eatCountMayor << ", Spared: " << WAG_ResourceManager::noEatCountMayor;
 	mayor->setText(ss.str());}
 
 	{std::wstringstream ss;
-	ss << "Dormouse - Eaten: " << WAG_ResourceManager::eatCount << ", Spared: " << WAG_ResourceManager::noEatCount;
+	ss << "Dormouse - Eaten: " << WAG_ResourceManager::eatCountDormouse << ", Spared: " << WAG_ResourceManager::noEatCountDormouse;
 	dormouse->setText(ss.str());}
 
 	{std::wstringstream ss;
-	ss << "Marten - Eaten: " << WAG_ResourceManager::eatCount << ", Spared: " << WAG_ResourceManager::noEatCount;
+	ss << "Marten - Eaten: " << WAG_ResourceManager::eatCountMarten << ", Spared: " << WAG_ResourceManager::noEatCountMarten;
 	marten->setText(ss.str());}
 
 	{std::wstringstream ss;
-	ss << "Chipmunk - Eaten: " << WAG_ResourceManager::eatCount << ", Spared: " << WAG_ResourceManager::noEatCount;
+	ss << "Chipmunk - Eaten: " << WAG_ResourceManager::eatCountChipmunk << ", Spared: " << WAG_ResourceManager::noEatCountChipmunk;
 	chipmunk->setText(ss.str());}
 
 	{std::wstringstream ss;
-	ss << "Squirrel - Eaten: " << WAG_ResourceManager::eatCount << ", Spared: " << WAG_ResourceManager::noEatCount;
+	ss << "Squirrel - Eaten: " << WAG_ResourceManager::eatCountSquirrel << ", Spared: " << WAG_ResourceManager::noEatCountSquirrel;
 	squirrel->setText(ss.str());}
 
 	back->setText(L"Back");
@@ -63,11 +62,8 @@ WAG_SceneStats::WAG_SceneStats(Game * _game) :
 	back->setMarginBottom(0.1f);
 
 	uiLayer->addChild(layout);
-
-	fade.start();
 }
 
 void WAG_SceneStats::update(Step * _step){
 	WAG_Scene::update(_step);
-	fade.update(_step);
 }

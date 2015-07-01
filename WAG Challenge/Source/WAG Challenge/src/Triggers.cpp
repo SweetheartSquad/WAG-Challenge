@@ -107,7 +107,7 @@ pplx::task<void> RequestJSONValueAsync(std::wstring & _url){
 					WAG_ResourceManager::eatCountChipmunk = eat;
 					WAG_ResourceManager::noEatCountChipmunk = no_eat;
 				}else if(name == L"marten") {
-					WAG_ResourceManager::eatCountMartent = eat;
+					WAG_ResourceManager::eatCountMarten = eat;
 					WAG_ResourceManager::noEatCountMarten = no_eat;
 				}else if(name == L"squirrel") {
 					WAG_ResourceManager::eatCountSquirrel = eat;
@@ -128,7 +128,7 @@ pplx::task<void> RequestJSONValueAsync(std::wstring & _url){
 			std::cout << WAG_ResourceManager::noEatCountMayor << std::endl;
 			std::cout << WAG_ResourceManager::eatCountChipmunk << std::endl;
 			std::cout << WAG_ResourceManager::noEatCountChipmunk << std::endl;
-			std::cout << WAG_ResourceManager::eatCountMartent << std::endl;
+			std::cout << WAG_ResourceManager::eatCountMarten << std::endl;
 			std::cout << WAG_ResourceManager::noEatCountMarten << std::endl;
 			std::cout << WAG_ResourceManager::eatCountSquirrel << std::endl;
 			std::cout << WAG_ResourceManager::noEatCountSquirrel << std::endl;
