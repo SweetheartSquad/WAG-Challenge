@@ -50,7 +50,9 @@ void WAG_SceneMain::update(Step * _step){
 	}
 	
 	if(dialogueDisplay->options.size() > 0){
-		if(dialogueDisplay->options.back()->getText().substr(3,3) == L"Eat"){
+		if(WAG_ResourceManager::playthrough->characters.at("WAG_FOX")->variables.at("ATE") != "1"
+			&&
+			dialogueDisplay->options.back()->getText().substr(3,3) == L"Eat"){
 			glm::vec3 p = dialogueDisplay->options.back()->getWorldPos();
 			p.x += dialogueDisplay->options.back()->getWidth()*0.5f;
 			p.y += dialogueDisplay->options.back()->getHeight()*0.5f;

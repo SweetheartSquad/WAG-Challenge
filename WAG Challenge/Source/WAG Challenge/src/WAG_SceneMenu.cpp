@@ -202,8 +202,5 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 }
 
 void WAG_SceneMenu::update(Step * _step){
-	if(keyboard->keyJustUp(GLFW_KEY_ESCAPE)){	
-		game->exit();
-	}
 	WAG_Scene::update(_step);
 }
