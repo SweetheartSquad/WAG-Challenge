@@ -17,27 +17,6 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	bg->setRationalWidth(1.f);
 	uiLayer->addChild(bg);
 
-	// warning
-	warningLayout->setRationalWidth(1.f);
-	warningLayout->setAutoresizeHeight();
-	warningLayout->horizontalAlignment = kCENTER;
-
-	WAG_Button * warning = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
-	WAG_Button * okay = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
-	warning->mouseEnabled = false;
-	warning->setText(L"This work of fiction containes graphic scenes. Reader discretion advised.");
-	
-	okay->setText(L"Okay");
-	okay->onClickFunction = [this](NodeUI * _this){
-		uiLayer->removeChild(warningLayout);
-		uiLayer->addChild(mainLayout);
-		bg->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("MENU")->texture);
-	};
-	okay->setMarginBottom(0.4f);
-
-	warningLayout->addChild(warning);
-	warningLayout->addChild(okay);
-
 	// main
 	mainLayout->setRationalWidth(1.f);
 	mainLayout->setAutoresizeHeight();
@@ -181,7 +160,44 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	optionsLayout->addChild(skipButt);
 
 
+
+
 	
+
+	// warning
+	warningLayout->setRationalWidth(1.f);
+	warningLayout->setAutoresizeHeight();
+	warningLayout->horizontalAlignment = kCENTER;
+
+	WAG_Button * warning = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
+	WAG_Button * okay = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
+	WAG_Button * notokay = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
+	warning->mouseEnabled = false;
+	warning->setText(L"This work of fiction containes graphic scenes. Would you like to censor these?");
+
+	okay->setText(L"Yes");
+	okay->onClickFunction = [this, censorButt](NodeUI * _this){
+		uiLayer->removeChild(warningLayout);
+		uiLayer->addChild(mainLayout);
+		bg->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("MENU")->texture);
+		WAG_ResourceManager::censored = true;
+		censorButt->setText(L"Graphic Images - Disabled");
+	};
+
+	notokay->setText(L"No");
+	notokay->onClickFunction = [this, censorButt](NodeUI * _this){
+		uiLayer->removeChild(warningLayout);
+		uiLayer->addChild(mainLayout);
+		bg->background->mesh->pushTexture2D(WAG_ResourceManager::playthrough->getTexture("MENU")->texture);
+		WAG_ResourceManager::censored = false;
+		censorButt->setText(L"Graphic Images - Enabled");
+	};
+	
+	warningLayout->addChild(warning);
+	warningLayout->addChild(okay);
+	warningLayout->addChild(notokay);
+	notokay->setMarginBottom(0.4f);
+
 	uiLayer->addChild(warningLayout);
 }
 
