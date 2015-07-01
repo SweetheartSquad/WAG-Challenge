@@ -2500,6 +2500,14 @@
                     "portrait": "FOREST_DAY3",
                     "text": [
                         "Raccoon goes back into her den."
+                    ],
+                    "triggers": [
+                        {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "Eat the Mayor?"
+                        }
                     ]
                 },
                 {
@@ -2509,12 +2517,6 @@
                         "You need to talk to the mayor."
                     ],
                     "triggers": [
-                        {
-                            "type": "setVar",
-                            "target": "WAG_FOX",
-                            "variable": "OPTION",
-                            "value": "Eat the Mayor?"
-                        },
                         {
                             "type": "setConversation",
                             "conversation": "CONFRONT"
