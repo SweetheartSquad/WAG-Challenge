@@ -2504,6 +2504,12 @@
                     ],
                     "triggers": [
                         {
+                            "type": "setVar",
+                            "target": "WAG_FOX",
+                            "variable": "OPTION",
+                            "value": "Eat the Mayor?"
+                        },
+                        {
                             "type": "setConversation",
                             "conversation": "CONFRONT"
                         }
