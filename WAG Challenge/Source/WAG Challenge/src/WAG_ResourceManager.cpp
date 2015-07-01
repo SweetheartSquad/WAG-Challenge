@@ -11,6 +11,16 @@ Texture * WAG_ResourceManager::cursor = new Texture("../assets/engine basics/cur
 Texture * WAG_ResourceManager::cheryl = new Texture("../assets/engine basics/img_cheryl.jpg", 256, 256, true, false);
 JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
 
+int WAG_ResourceManager::eatCountMayor = 0;
+int WAG_ResourceManager::noEatCountMayor = 0;
+int WAG_ResourceManager::eatCountChipmunk = 0;
+int WAG_ResourceManager::noEatCountChipmunk = 0;
+int WAG_ResourceManager::eatCountMartent = 0;
+int WAG_ResourceManager::noEatCountMarten = 0;
+int WAG_ResourceManager::eatCountSquirrel = 0;
+int WAG_ResourceManager::noEatCountSquirrel = 0;
+int WAG_ResourceManager::eatCountDormouse = 0;
+int WAG_ResourceManager::noEatCountDormouse = 0;
 
 std::string WAG_ResourceManager::speaker = "blip";
 bool WAG_ResourceManager::skipEnabled = false;

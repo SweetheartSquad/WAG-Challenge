@@ -93,12 +93,48 @@ pplx::task<void> RequestJSONValueAsync(std::wstring & _url){
 		try{
 			// Perform actions here to process the JSON value...
 			const web::json::value & v = previousTask.get();
+			web::json::array arr = v.as_array();
+
+			for(auto i = 0; i < v.as_array().size(); ++i) {
+				web::json::value obj = v.at(i);
+				std::wstring name = obj.as_object().at(L"name").as_string();
+				int eat =  obj.as_object().at(L"eat").as_integer();
+				int no_eat =  obj.as_object().at(L"no_eat").as_integer();
+				if(name == L"mayor") {
+					WAG_ResourceManager::eatCountMayor = eat;
+					WAG_ResourceManager::noEatCountMayor = no_eat;
+				}else if(name == L"chipmunk") {
+					WAG_ResourceManager::eatCountChipmunk = eat;
+					WAG_ResourceManager::noEatCountChipmunk = no_eat;
+				}else if(name == L"marten") {
+					WAG_ResourceManager::eatCountMartent = eat;
+					WAG_ResourceManager::noEatCountMarten = no_eat;
+				}else if(name == L"squirrel") {
+					WAG_ResourceManager::eatCountSquirrel = eat;
+					WAG_ResourceManager::noEatCountSquirrel = no_eat;
+				}else if(name == L"dormouse") {
+					WAG_ResourceManager::eatCountDormouse = eat;
+					WAG_ResourceManager::noEatCountDormouse = no_eat;
+				}
+			}
 			/*std::wcout << L"Test: " << v << std::endl;
-			WAG_ResourceManager::eatCount = std::stoi(v.as_object().at(L"eat").as_string());
+			
 			WAG_ResourceManager::noEatCount = std::stoi(v.as_object().at(L"noEat").as_string());
 			std::stringstream ss;
 			ss << "Eat: " << WAG_ResourceManager::eatCount << ", No Eat: " << WAG_ResourceManager::noEatCount;
 			Log::info(ss.str());*/
+
+			std::cout << WAG_ResourceManager::eatCountMayor << std::endl;
+			std::cout << WAG_ResourceManager::noEatCountMayor << std::endl;
+			std::cout << WAG_ResourceManager::eatCountChipmunk << std::endl;
+			std::cout << WAG_ResourceManager::noEatCountChipmunk << std::endl;
+			std::cout << WAG_ResourceManager::eatCountMartent << std::endl;
+			std::cout << WAG_ResourceManager::noEatCountMarten << std::endl;
+			std::cout << WAG_ResourceManager::eatCountSquirrel << std::endl;
+			std::cout << WAG_ResourceManager::noEatCountSquirrel << std::endl;
+			std::cout << WAG_ResourceManager::eatCountDormouse << std::endl;
+			std::cout << WAG_ResourceManager::noEatCountDormouse << std::endl;
+
 		}catch (const web::http::http_exception& e){
 			// Print error.
 			std::wostringstream ss;

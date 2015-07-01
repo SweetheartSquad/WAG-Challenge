@@ -14,6 +14,17 @@ public:
 	static Texture * cheryl;
 	static JsonPlaythroughParser * playthrough;
 
+	static int WAG_ResourceManager::eatCountMayor;
+	static int WAG_ResourceManager::noEatCountMayor;
+	static int WAG_ResourceManager::eatCountChipmunk;
+	static int WAG_ResourceManager::noEatCountChipmunk;
+	static int WAG_ResourceManager::eatCountMartent;
+	static int WAG_ResourceManager::noEatCountMarten;
+	static int WAG_ResourceManager::eatCountSquirrel;
+	static int WAG_ResourceManager::noEatCountSquirrel;
+	static int WAG_ResourceManager::eatCountDormouse;
+	static int WAG_ResourceManager::noEatCountDormouse;
+
 	static std::string speaker;
 	static bool skipEnabled;
 	static bool censored;
