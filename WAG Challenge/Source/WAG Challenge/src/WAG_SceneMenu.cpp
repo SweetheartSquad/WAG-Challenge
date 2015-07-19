@@ -200,7 +200,3 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 
 	uiLayer->addChild(warningLayout);
 }
-
-void WAG_SceneMenu::update(Step * _step){
-	WAG_Scene::update(_step);
-}

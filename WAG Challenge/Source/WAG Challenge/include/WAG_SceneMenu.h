@@ -10,6 +10,4 @@ public:
 	NodeUI * bg;
 
 	WAG_SceneMenu(Game * _game);
-
-	virtual void update(Step * _step) override;
 };
