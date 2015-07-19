@@ -4,10 +4,9 @@
 #include <LinearLayout.h>
 #include <TextArea.h>
 #include <Timeout.h>
-#include <Dialogue.h>
 #include <WAG_Button.h>
 #include <Easing.h>
-#include <Conversation.h>
+#include <scenario/Conversation.h>
 #include <DialogueText.h>
 #include <TimeoutEffects.h>
 

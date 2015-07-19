@@ -18,7 +18,7 @@ WAG_Scene::WAG_Scene(Game * _game) :
 	uiLayer->resize(0, sd.x, 0, sd.y);
 
 	// create the font based on the screen width
-	font = new Font("../assets/fonts/Mathlete-Skinny.otf", sd.x/40, false);
+	font = new Font("assets/fonts/Mathlete-Skinny.otf", sd.x/40, false);
 
 	// add the uiLayer to the scene
 	childTransform->addChild(uiLayer, false);

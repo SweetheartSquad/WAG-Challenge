@@ -4,7 +4,6 @@
 #include <WAG_Game.h>
 #include <WAG_ResourceManager.h>
 #include <WAG_Button.h>
-#include <JsonPlaythroughParser.h>
 #include <System.h>
 
 #include <UILayer.h>

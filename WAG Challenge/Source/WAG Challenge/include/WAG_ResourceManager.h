@@ -6,13 +6,12 @@
 #include <map>
 
 #include <OpenALSound.h>
-#include <JsonPlaythroughParser.h>
+#include <scenario/Scenario.h>
 
 class WAG_ResourceManager : public ResourceManager{
 public:
 	static Texture * cursor;
-	static Texture * cheryl;
-	static JsonPlaythroughParser * playthrough;
+	static Scenario * playthrough;
 
 	static int WAG_ResourceManager::eatCountMayor;
 	static int WAG_ResourceManager::noEatCountMayor;

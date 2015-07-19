@@ -21,8 +21,8 @@ int main(void){
 	_CrtMemCheckpoint( &s1 );
 #endif
 
-	vox::fullscreen = true;
-	vox::initialize("WAG Challenge - demo");
+	vox::fullscreen = false;
+	vox::initialize("WAG Challenge - post-jam build");
 	WAG_ResourceManager::init();
 	WAG_ResourceManager::load();
 	WAG_Game * game = new WAG_Game();
@@ -34,8 +34,6 @@ int main(void){
 	delete game;
 	game = nullptr;
 	WAG_ResourceManager::destruct();
-	delete WAG_ResourceManager::playthrough;
-	WAG_ResourceManager::playthrough = nullptr;
 #ifdef _DEBUG
 	if(Node::nodes.size() > 0){
 		std::stringstream ss;

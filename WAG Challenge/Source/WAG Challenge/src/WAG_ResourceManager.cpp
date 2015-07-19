@@ -7,9 +7,8 @@
 
 #include <math.h>
 
-Texture * WAG_ResourceManager::cursor = new Texture("../assets/engine basics/cursor.png", 32, 32, true, false);
-Texture * WAG_ResourceManager::cheryl = new Texture("../assets/engine basics/img_cheryl.jpg", 256, 256, true, false);
-JsonPlaythroughParser * WAG_ResourceManager::playthrough = nullptr;
+Texture * WAG_ResourceManager::cursor = new Texture("assets/engine basics/cursor.png", 32, 32, true, false);
+Scenario * WAG_ResourceManager::playthrough = nullptr;
 
 int WAG_ResourceManager::eatCountMayor = 0;
 int WAG_ResourceManager::noEatCountMayor = 0;
@@ -31,9 +30,9 @@ int WAG_ResourceManager::noEatCount = 0;
 int WAG_ResourceManager::eatCount = 0;
 
 void WAG_ResourceManager::init(){
-	playthrough = new JsonPlaythroughParser("../assets/json_structure.json");
+	playthrough = new Scenario("assets/json_structure.json");
 	resources.push_back(cursor);
-	resources.push_back(cheryl);
+	resources.push_back(playthrough);
 }
 
 float WAG_ResourceManager::getMusicVolume(){
