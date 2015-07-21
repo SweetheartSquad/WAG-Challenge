@@ -29,7 +29,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	newGameButt->setText(L"New Game");
 	newGameButt->onClickFunction = [this, continueGameButt](NodeUI * _this){
 		// enable the continue button
-		continueGameButt->mouseEnabled = true;
+		continueGameButt->setMouseEnabled(true);
 
 		// overwrite existing game
 		if(game->scenes.count("MAIN") > 0){
@@ -40,7 +40,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 		game->switchScene("MAIN", false);
 	};
 	continueGameButt->setText(L"Continue Game");
-	continueGameButt->mouseEnabled = false;
+	continueGameButt->setMouseEnabled(false);
 	continueGameButt->onClickFunction = [_game](NodeUI * _this){
 		_game->switchScene("MAIN", false);
 	};
@@ -111,8 +111,8 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	sfxVolumeText->setText(L"Sound Volume: 3");
 	sfxVolumeDown->setText(L"-");
 	sfxVolumeUp->setText(L"+");
-	musicVolumeText->mouseEnabled = false;
-	sfxVolumeText->mouseEnabled = false;
+	musicVolumeText->setMouseEnabled(false);
+	sfxVolumeText->setMouseEnabled(false);
 	
 	musicVolumeDown->onClickFunction = [musicVolumeText](NodeUI * _this){
 		WAG_ResourceManager::musicVolume = std::max(0, WAG_ResourceManager::musicVolume-1);
@@ -172,7 +172,7 @@ WAG_SceneMenu::WAG_SceneMenu(Game * _game) :
 	WAG_Button * warning = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
 	WAG_Button * okay = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
 	WAG_Button * notokay = new WAG_Button(uiLayer->world, this, font, textShader, 0.6f);
-	warning->mouseEnabled = false;
+	warning->setMouseEnabled(false);
 	warning->setText(L"This work of fiction containes graphic scenes. Would you like to censor these?");
 
 	okay->setText(L"Yes");

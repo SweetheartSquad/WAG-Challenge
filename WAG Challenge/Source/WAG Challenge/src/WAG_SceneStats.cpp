@@ -17,12 +17,12 @@ WAG_SceneStats::WAG_SceneStats(Game * _game) :
 	WAG_Button * squirrel = new WAG_Button(uiLayer->world, this, font, textShader, 0.4f);
 	WAG_Button * back = new WAG_Button(uiLayer->world, this, font, textShader, 0.4f);
 	
-	stats->mouseEnabled = false;
-	mayor->mouseEnabled = false;
-	dormouse ->mouseEnabled = false;
-	marten->mouseEnabled = false;
-	chipmunk->mouseEnabled = false;
-	squirrel->mouseEnabled = false;
+	stats->setMouseEnabled(false);
+	mayor->setMouseEnabled(false);
+	dormouse->setMouseEnabled(false);
+	marten->setMouseEnabled(false);
+	chipmunk->setMouseEnabled(false);
+	squirrel->setMouseEnabled(false);
 	
 	stats->setText(L"Global Player Decisions");
 

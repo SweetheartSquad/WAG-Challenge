@@ -232,7 +232,7 @@ bool DialogueDisplay::sayNext(){
 				o->setText(ss.str());
 				options.push_back(o);
 				optionslayout->addChild(o);
-				o->mouseEnabled = false;
+				o->setMouseEnabled(false);
 				o->setBackgroundColour(-0.2f, -0.2f, -0.2f, 0.5f);
 			}
 
