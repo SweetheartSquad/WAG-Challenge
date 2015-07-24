@@ -7,7 +7,7 @@
 
 #include <math.h>
 
-Texture * WAG_ResourceManager::cursor = new Texture("assets/engine basics/cursor.png", 32, 32, true, false);
+Texture * WAG_ResourceManager::cursor = new Texture("assets/engine basics/cursor.png", true, false);
 Scenario * WAG_ResourceManager::playthrough = nullptr;
 
 int WAG_ResourceManager::eatCountMayor = 0;

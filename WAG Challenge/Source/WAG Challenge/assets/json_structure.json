@@ -2848,14 +2848,6 @@
                             "target": "WAG_FOX",
                             "variable": "ATE",
                             "value": "1"
-                        },
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "mayor",
-                                "eat": "true"
-                            }
                         }
                     ]
                 }
@@ -2886,14 +2878,6 @@
                             "target": "WAG_FOX",
                             "variable": "HUNGER",
                             "value": "0.25"
-                        },
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "mayor",
-                                "eat": "false"
-                            }
                         }
                     ]
                 }
@@ -3060,14 +3044,6 @@
                             "target": "WAG_FOX",
                             "variable": "ATE",
                             "value": "1"
-                        },
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "dormouse",
-                                "eat": "true"
-                            }
                         }
                     ]
                 }
@@ -3104,16 +3080,6 @@
                     ],
                     "text": [
                         "I... need to leave."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "dormouse",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
@@ -3547,14 +3513,6 @@
                             "target": "WAG_FOX",
                             "variable": "ATE",
                             "value": "1"
-                        },
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "marten",
-                                "eat": "true"
-                            }
                         }
                     ]
                 }
@@ -3591,16 +3549,6 @@
                     ],
                     "text": [
                         "But I... I did kill."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "marten",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
@@ -4062,14 +4010,6 @@
                             "target": "WAG_FOX",
                             "variable": "ATE",
                             "value": "1"
-                        },
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "chipmunk",
-                                "eat": "true"
-                            }
                         }
                     ]
                 }
@@ -4106,16 +4046,6 @@
                     ],
                     "text": [
                         "Chipmunk closes her eyes and doesn't speak."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "chipmunk",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
@@ -4391,14 +4321,6 @@
                             "target": "WAG_FOX",
                             "variable": "ATE",
                             "value": "1"
-                        },
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "squirrel",
-                                "eat": "true"
-                            }
                         }
                     ]
                 }
@@ -4412,16 +4334,6 @@
                     "portrait": "FOREST_DAY3_SQUIRREL",
                     "text": [
                         "It's okay, Squirrel."
-                    ],
-                    "triggers": [
-                        {
-                            "type": "postData",
-                            "url": "http://ryanbluth.com/wag/choice.php",
-                            "variables": {
-                                "name": "squirrel",
-                                "eat": "false"
-                            }
-                        }
                     ]
                 },
                 {
