@@ -5,8 +5,7 @@
 #include <CharacterUtils.h>
 
 DialogueTextLabel::DialogueTextLabel(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader) :
-	TextLabel(_world, _scene, _font, _textShader, 1.f),
-	NodeBulletBody(_world)
+	TextLabel(_world, _scene, _font, _textShader, 1.f)
 {
 
 }
@@ -64,7 +63,6 @@ void DialogueTextLabel::update(Step * _step){
 
 DialogueTextArea::DialogueTextArea(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader) :
 	TextArea(_world, _scene, _font, _textShader, 1.f),
-	NodeBulletBody(_world),
 	ticking(false)
 {
 

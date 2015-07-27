@@ -9,8 +9,7 @@
 #include <MeshFactory.h>
 
 WAG_Button::WAG_Button(BulletWorld * _world, Scene * _scene, Font * _font, Shader * _textShader, float _width) :
-	TextArea(_world, _scene, _font, _textShader, _width),
-	NodeBulletBody(_world)
+	TextArea(_world, _scene, _font, _textShader, _width)
 {
 	mouseEnabled = true;
 	horizontalAlignment = kCENTER;

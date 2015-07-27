@@ -14,7 +14,6 @@ DialogueDisplay::DialogueDisplay(BulletWorld * _world, Scene * _scene, Font * _f
 	font(_font),
 	textShader(_textShader),
 	NodeUI(_world, _scene),
-	NodeBulletBody(_world),
 	shouldSayNext(false),
 	autoProgress(false),
 	stuffToSay(&WAG_ResourceManager::playthrough->currentConversation)
